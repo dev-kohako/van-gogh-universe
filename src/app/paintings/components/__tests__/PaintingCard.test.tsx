@@ -3,7 +3,7 @@ import React from "react";
 import { PaintingCard } from "../PaintingCard";
 import { Painting } from "@/types/types";
 
-jest.mock("../components/usePaintingAnimations", () => ({
+jest.mock("../usePaintingAnimations", () => ({
   usePaintingAnimations: () => ({
     imageVariants: {},
     overlayVariants: {},
@@ -58,6 +58,7 @@ const mockPhoto = {
   datePainting: "1889",
   imagePainting: "/assets/noite-estrelada.jpg",
   alt: "Pintura Noite Estrelada",
+  blurDataURL: "data:image/webp;base64,AAAA",
   width: 800,
   height: 600,
 } as Painting;
@@ -71,13 +72,15 @@ describe("PaintingCard", () => {
         isActive={false}
         onCardClick={handleClick}
         index={0}
-      />
+      />,
     );
 
     const [card] = screen.getAllByRole("button");
 
     expect(card).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /noite estrelada/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /noite estrelada/i }),
+    ).toBeInTheDocument();
     expect(screen.getAllByText(/1889/i)).toHaveLength(2);
 
     const img = screen.getByTestId("mock-image");
@@ -93,7 +96,7 @@ describe("PaintingCard", () => {
         isActive={false}
         onCardClick={handleClick}
         index={0}
-      />
+      />,
     );
 
     const [card] = screen.getAllByRole("button");
@@ -110,7 +113,7 @@ describe("PaintingCard", () => {
         isActive={false}
         onCardClick={handleClick}
         index={0}
-      />
+      />,
     );
 
     const [card] = screen.getAllByRole("button");
@@ -130,7 +133,7 @@ describe("PaintingCard", () => {
         isActive={false}
         onCardClick={handleClick}
         index={0}
-      />
+      />,
     );
 
     const link = screen.getByTestId("mock-link");
@@ -146,7 +149,7 @@ describe("PaintingCard", () => {
         isActive={false}
         onCardClick={handleClick}
         index={0}
-      />
+      />,
     );
 
     const button = screen.getByTestId("mock-button");
@@ -163,7 +166,7 @@ describe("PaintingCard", () => {
         isActive={false}
         onCardClick={handleClick}
         index={7}
-      />
+      />,
     );
 
     const img = screen.getByTestId("mock-image");
@@ -178,10 +181,33 @@ describe("PaintingCard", () => {
         isActive={true}
         onCardClick={handleClick}
         index={0}
-      />
+      />,
     );
 
     const [card] = screen.getAllByRole("button");
     expect(card).toHaveAttribute("animate", "hover");
+  });
+
+  it("shows a blurred preview until the image loads", () => {
+    const { container } = render(
+      <PaintingCard
+        photo={mockPhoto}
+        isActive={false}
+        onCardClick={jest.fn()}
+        index={0}
+      />,
+    );
+
+    const img = screen.getByTestId("mock-image");
+    expect(img).toHaveClass("opacity-0");
+    expect(container.querySelector(".shimmer")).toBeInTheDocument();
+    expect(
+      container.querySelector('[style*="data:image/webp;base64,AAAA"]'),
+    ).toBeInTheDocument();
+
+    fireEvent.load(img);
+
+    expect(img).toHaveClass("opacity-100");
+    expect(container.querySelector(".shimmer")).not.toBeInTheDocument();
   });
 });

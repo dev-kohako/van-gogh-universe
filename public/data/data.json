@@ -13,13 +13,31 @@
       "physicalDimensions": "73.7 cm × 92.1 cm",
       "local": "Museu de Arte Moderna (MoMA) em Nova Iorque, EUA",
       "description": "Uma das obras mais icônicas de Van Gogh, pintada enquanto ele estava no asilo em Saint-Rémy-de-Provence. A pintura retrata a vista da janela do seu quarto, pouco antes do nascer do sol, com a adição de um vilarejo idealizado.",
-      "color1": "#b19c2b",
-      "color2": "#6484b6",
-      "color3": "#1c3470",
-      "color4": "#607894",
-      "color5": "#b7c494",
       "width": 2560,
-      "height": 2027
+      "height": 2027,
+      "palette": [
+        {
+          "hex": "#466190",
+          "share": 0.286
+        },
+        {
+          "hex": "#1e2520",
+          "share": 0.241
+        },
+        {
+          "hex": "#718b92",
+          "share": 0.241
+        },
+        {
+          "hex": "#273575",
+          "share": 0.158
+        },
+        {
+          "hex": "#b4a338",
+          "share": 0.075
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQAgCdASoQAA0AAsBMJYgCdADp+Rs/VSyQAP7bzTbIMImjHd6jBba6IspOXqTMuL1LIt1lCbQ0HgX6uVtu4U42KucKEwtV7ZcamDsqlQyRrVQNHVHvB2+iLXjEwetItjAAAA=="
     },
     {
       "id": "2",
@@ -34,13 +52,31 @@
       "physicalDimensions": "92.1 cm × 73 cm",
       "local": "Museu Van Gogh em Amsterdã, Países Baixos",
       "description": "Parte de uma série de pinturas de girassóis feitas em Arles para decorar o quarto de seu amigo, Paul Gauguin. A obra é célebre pelo uso vibrante do amarelo.",
-      "color1": "#d4a133",
-      "color2": "#dcba6e",
-      "color3": "#704024",
-      "color4": "#a67c66",
-      "color5": "#c4cbb6",
       "width": 1024,
-      "height": 1280
+      "height": 1280,
+      "palette": [
+        {
+          "hex": "#521f17",
+          "share": 0.376
+        },
+        {
+          "hex": "#2e5844",
+          "share": 0.301
+        },
+        {
+          "hex": "#9f4521",
+          "share": 0.139
+        },
+        {
+          "hex": "#4b8075",
+          "share": 0.139
+        },
+        {
+          "hex": "#c66f49",
+          "share": 0.046
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABwAgCdASoNABAAAsBMJbACdH8AGDVeyC9CpG4AAP7o9bVi5ukKCwRYBU9wTJoWnWcWFO+oWHpNIBRbfCQaVZdRKffs/am3Qo/Za9rfOWRO6sOzpp+GbJE4q7jbU2PlG+YBZL9PAoAAAA=="
     },
     {
       "id": "3",
@@ -55,13 +91,31 @@
       "physicalDimensions": "72.5 cm × 92 cm",
       "local": "Musée d'Orsay em Paris, França",
       "description": "Pintada nas margens do rio Ródano, esta obra captura a beleza do céu noturno e os reflexos da iluminação a gás na água, antes de sua famosa 'A Noite Estrelada'.",
-      "color1": "#538dbd",
-      "color2": "#9fbfda",
-      "color3": "#0a4679",
-      "color4": "#517796",
-      "color5": "#b4b985",
       "width": 2560,
-      "height": 1984
+      "height": 1984,
+      "palette": [
+        {
+          "hex": "#183757",
+          "share": 0.411
+        },
+        {
+          "hex": "#2d618c",
+          "share": 0.311
+        },
+        {
+          "hex": "#68795a",
+          "share": 0.137
+        },
+        {
+          "hex": "#4a82ad",
+          "share": 0.101
+        },
+        {
+          "hex": "#9ea566",
+          "share": 0.04
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoQAAwAAsBMJZACdAEDYR7igqAA/uX2a3ZG0qbfYugS62YNBAK9SXgjCoiQSvCt7mtVUp4a8hOX9/wxXsF5152XgAA="
     },
     {
       "id": "4",
@@ -76,13 +130,31 @@
       "physicalDimensions": "72 cm × 90 cm",
       "local": "Museu de Orsay em Paris, França",
       "description": "Van Gogh pintou três versões desta obra, retratando seu quarto na 'Casa Amarela' em Arles. Ele usou cores vibrantes para expressar tranquilidade e descanso.",
-      "color1": "#a07005",
-      "color2": "#d9c691",
-      "color3": "#ac7405",
-      "color4": "#907770",
-      "color5": "#8ba1b9",
       "width": 2560,
-      "height": 2002
+      "height": 2002,
+      "palette": [
+        {
+          "hex": "#ab9983",
+          "share": 0.35
+        },
+        {
+          "hex": "#a87517",
+          "share": 0.278
+        },
+        {
+          "hex": "#6789a7",
+          "share": 0.205
+        },
+        {
+          "hex": "#88412a",
+          "share": 0.111
+        },
+        {
+          "hex": "#d7c690",
+          "share": 0.057
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAQCdASoQAA0AAsBMJbACdACULsMjAADON7yJdACHyj0w+r1UoTuTsHPt/vAoG2k3Jh7YXwlwO8sbxUsf1gqxu94jTDng/O57vW0k2QnAAA=="
     },
     {
       "id": "5",
@@ -97,13 +169,31 @@
       "physicalDimensions": "80.7 cm × 65.3 cm",
       "local": "Kröller-Müller Museum em Otterlo, Países Baixos",
       "description": "Notável por ser a primeira pintura em que Van Gogh utilizou um fundo estrelado. Ele capturou a atmosfera de um café francês à noite, contrastando o amarelo luminoso com o azul profundo do céu.",
-      "color1": "#d79f15",
-      "color2": "#ede256",
-      "color3": "#705a1a",
-      "color4": "#a69767",
-      "color5": "#d4cfb2",
       "width": 800,
-      "height": 1003
+      "height": 1003,
+      "palette": [
+        {
+          "hex": "#bdab48",
+          "share": 0.246
+        },
+        {
+          "hex": "#61683d",
+          "share": 0.236
+        },
+        {
+          "hex": "#2d2d28",
+          "share": 0.206
+        },
+        {
+          "hex": "#6e7fa5",
+          "share": 0.178
+        },
+        {
+          "hex": "#a96a2e",
+          "share": 0.134
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwAQCdASoNABAAAsBMJbACdADHSeTN8/AA9GHPsyTU3YmzQNiVxxfasf8kZX1uWyn5EM15bg9PF5Rg7ZWAox6gEPuvlsWu7ZnVuLDOIEN4Etwd6yURC7GZzm9LeRcEdaKu7eYgAAA="
     },
     {
       "id": "6",
@@ -118,13 +208,31 @@
       "physicalDimensions": "60 cm × 49 cm",
       "local": "Courtauld Gallery em Londres, Reino Unido",
       "description": "Pintado pouco depois do infame incidente em que Van Gogh mutilou sua própria orelha. A obra é uma exploração crua de seu estado mental e físico.",
-      "color1": "#cb953d",
-      "color2": "#f4ddaa",
-      "color3": "#99462b",
-      "color4": "#a99a60",
-      "color5": "#d7caa4",
       "width": 2356,
-      "height": 2861
+      "height": 2861,
+      "palette": [
+        {
+          "hex": "#d4c68b",
+          "share": 0.308
+        },
+        {
+          "hex": "#406741",
+          "share": 0.306
+        },
+        {
+          "hex": "#798a7c",
+          "share": 0.164
+        },
+        {
+          "hex": "#c59d4e",
+          "share": 0.118
+        },
+        {
+          "hex": "#26241e",
+          "share": 0.104
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAwAgCdASoNABAAAsBMJbACdAYtBuJG32iZqAD+15UvbfQ6ReC6z8ts0ISQvhGW1/QQ+2uWW9lG8El7jw4Dn+Jj7qi8kHrOaAI2HH9uXRvx35vLHEu036+zcY+S/eRe1LcJOoAA"
     },
     {
       "id": "7",
@@ -139,13 +247,31 @@
       "physicalDimensions": "64.2 cm × 80.3 cm",
       "local": "Museu Kröller-Müller em Otterlo, Países Baixos",
       "description": "Inspirado por Jean-François Millet, Van Gogh pintou várias versões do semeador. Esta versão de Arles é notável pelo sol dominante e pelas cores expressivas.",
-      "color1": "#e1bd4b",
-      "color2": "#e7da71",
-      "color3": "#69442d",
-      "color4": "#ab9060",
-      "color5": "#b3c8ca",
       "width": 2000,
-      "height": 1589
+      "height": 1589,
+      "palette": [
+        {
+          "hex": "#bea775",
+          "share": 0.254
+        },
+        {
+          "hex": "#ae814e",
+          "share": 0.192
+        },
+        {
+          "hex": "#6aa0b7",
+          "share": 0.192
+        },
+        {
+          "hex": "#dabf4e",
+          "share": 0.182
+        },
+        {
+          "hex": "#3d6c85",
+          "share": 0.18
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAwAgCdASoQAA0AAsBMJbACdGuAAr6nC6GRgAD+kacnG+UoLfmJgiwybFvZ2zYiuFzyeJSWmb8EGayXrwCXfZXpNAaKG5XSgDJ7S00WWSxgAA=="
     },
     {
       "id": "8",
@@ -160,13 +286,31 @@
       "physicalDimensions": "50.5 cm × 103 cm",
       "local": "Museu Van Gogh em Amsterdã, Países Baixos",
       "description": "Uma de suas últimas obras, frequentemente interpretada como uma representação de sua angústia. O céu tempestuoso, os corvos e o caminho sem destino criam uma atmosfera de desolação.",
-      "color1": "#c5aa35",
-      "color2": "#e6d55d",
-      "color3": "#9b7d09",
-      "color4": "#557aa8",
-      "color5": "#93b6b1",
       "width": 3508,
-      "height": 1669
+      "height": 1669,
+      "palette": [
+        {
+          "hex": "#9a8116",
+          "share": 0.354
+        },
+        {
+          "hex": "#33619e",
+          "share": 0.234
+        },
+        {
+          "hex": "#71421d",
+          "share": 0.153
+        },
+        {
+          "hex": "#152e50",
+          "share": 0.143
+        },
+        {
+          "hex": "#c9b141",
+          "share": 0.115
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAQCdASoQAAgAAsBMJbACdGuAAZVVFUAA/tJpcNsJqsjlrYRPmbRBd8mrKY7E00e7gVdMVs0xWZ8pZMMvuuGNU5qM4TxfPO5nyldFFIs6AAAA"
     },
     {
       "id": "9",
@@ -181,13 +325,31 @@
       "physicalDimensions": "71 cm × 93 cm",
       "local": "Getty Center em Los Angeles, Estados Unidos",
       "description": "Pintado no jardim do asilo de Saint-Rémy, este estudo de íris é uma das obras mais célebres de seu período no hospital. Cada flor é única, mostrando sua observação atenta da natureza.",
-      "color1": "#d0b12a",
-      "color2": "#eddc69",
-      "color3": "#1c4e6b",
-      "color4": "#a3964a",
-      "color5": "#b9bd8a",
       "width": 2481,
-      "height": 3141
+      "height": 3141,
+      "palette": [
+        {
+          "hex": "#d9c148",
+          "share": 0.444
+        },
+        {
+          "hex": "#b48930",
+          "share": 0.18
+        },
+        {
+          "hex": "#5f7f54",
+          "share": 0.155
+        },
+        {
+          "hex": "#3e5744",
+          "share": 0.134
+        },
+        {
+          "hex": "#072744",
+          "share": 0.086
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABQAgCdASoNABAAAsBMJbACdAdwCBr7zVGaVgAA/rILCt1dmv5NZT2DfJs0MJBtdAPZMdkpFhlKUkMwyN2D5hP6yrha7PJ4qsXJ+zg2cvjP2SPSbpyxp+9Rtty4j+dtstezhYZvQXI5tw3sXfAxgCp6YY1kk/AA"
     },
     {
       "id": "10",
@@ -202,13 +364,31 @@
       "physicalDimensions": "67 cm × 56 cm",
       "local": "Coleção privada",
       "description": "Retrato do médico que cuidou de Van Gogh em suas últimas semanas. A expressão melancólica de Gachet reflete, segundo Van Gogh, 'a expressão desoladora de nosso tempo'.",
-      "color1": "#f0b218",
-      "color2": "#f8e883",
-      "color3": "#873a10",
-      "color4": "#928c63",
-      "color5": "#d1d5b7",
       "width": 819,
-      "height": 1008
+      "height": 1008,
+      "palette": [
+        {
+          "hex": "#36343a",
+          "share": 0.398
+        },
+        {
+          "hex": "#5c6966",
+          "share": 0.243
+        },
+        {
+          "hex": "#c1a85a",
+          "share": 0.175
+        },
+        {
+          "hex": "#e5cd7a",
+          "share": 0.139
+        },
+        {
+          "hex": "#bd5c1e",
+          "share": 0.044
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAQAgCdASoNABAAAsBMJbACdAEYGtZ5CVYAAP64G54uWLd6GtHPW/gsM9vzVMDQciFpp0cbDUTSpoTgsOlUbpDWsEo8aS5KT3UAP7u0LQ2LlI2839yDqjB2S9U/GHuZ552bsK/j9RaN+A2RZ0XkjIAA"
     },
     {
       "id": "11",
@@ -223,13 +403,31 @@
       "physicalDimensions": "40.4 cm × 31.8 cm",
       "local": "Metropolitan Museum of Art, Nova Iorque, EUA",
       "description": "Um dos muitos autorretratos feitos em Paris, onde Van Gogh adotou técnicas impressionistas e pontilhistas, usando pinceladas vibrantes e cores puras para estudar a teoria das cores.",
-      "color1": "#e1b231",
-      "color2": "#d6bd77",
-      "color3": "#954912",
-      "color4": "#9b8960",
-      "color5": "#d5c9ad",
       "width": 1806,
-      "height": 2106
+      "height": 2106,
+      "palette": [
+        {
+          "hex": "#4d3840",
+          "share": 0.52
+        },
+        {
+          "hex": "#75645b",
+          "share": 0.169
+        },
+        {
+          "hex": "#caab59",
+          "share": 0.151
+        },
+        {
+          "hex": "#b5753c",
+          "share": 0.096
+        },
+        {
+          "hex": "#904032",
+          "share": 0.064
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAQAgCdASoOABAAAsBMJZgCdAEXzRD1KpmwAP7bn2A07Gw0QULblrCCtF2M/OQoZsPK88Jzcw7Uvh+lxL4I5bDUmwEp1B6qUI1l5pf0N2BafbCpOC8hHURnXylblDurZTQ4f0AA"
     },
     {
       "id": "12",
@@ -244,13 +442,31 @@
       "physicalDimensions": "75 cm × 93 cm",
       "local": "Museu Pushkin em Moscou, Rússia",
       "description": "Famosa por ser a única pintura que Van Gogh comprovadamente vendeu durante sua vida. A obra retrata a colheita de uvas em Arles, com cores outonais intensas.",
-      "color1": "#ceb656",
-      "color2": "#ebe585",
-      "color3": "#573811",
-      "color4": "#a27550",
-      "color5": "#d2bf97",
       "width": 1280,
-      "height": 998
+      "height": 998,
+      "palette": [
+        {
+          "hex": "#8b8356",
+          "share": 0.268
+        },
+        {
+          "hex": "#7d4537",
+          "share": 0.265
+        },
+        {
+          "hex": "#3d2d2b",
+          "share": 0.26
+        },
+        {
+          "hex": "#d0bc56",
+          "share": 0.132
+        },
+        {
+          "hex": "#ba5c41",
+          "share": 0.074
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAQCdASoQAAwAAsBMJbACdAEPbrv10QAA/qn6tyJIAO+WxsfCupR1jMmy8T6zf+U4g5+EgYzj6XAU2yU5WHtK1/cVKlCmKqkXEIppb44yfq+cIoLi9aAAAAA="
     },
     {
       "id": "13",
@@ -265,13 +481,31 @@
       "physicalDimensions": "49.5 cm × 64.5 cm",
       "local": "Museu Kröller-Müller em Otterlo, Países Baixos",
       "description": "Van Gogh ficou encantado com esta ponte levadiça em Arles, que o lembrava de sua terra natal, a Holanda. Ele a pintou em várias versões, explorando diferentes luzes e cores.",
-      "color1": "#e0891f",
-      "color2": "#f3be4f",
-      "color3": "#684719",
-      "color4": "#61949e",
-      "color5": "#a6c9d1",
       "width": 4688,
-      "height": 3603
+      "height": 3603,
+      "palette": [
+        {
+          "hex": "#8cbbc7",
+          "share": 0.496
+        },
+        {
+          "hex": "#65897c",
+          "share": 0.159
+        },
+        {
+          "hex": "#6b4f17",
+          "share": 0.155
+        },
+        {
+          "hex": "#b7701c",
+          "share": 0.123
+        },
+        {
+          "hex": "#debb84",
+          "share": 0.068
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQAgCdASoQAAwAAsBMJbACdH8AFczJQ0YWtAAA/sb2MwNKsEKO14dNswsOV7iL/Y567rj/5XP/QRHObaw7AYPj4MZP5iU6cPay7vPKnjH3zCBlCT1XCddYgAA="
     },
     {
       "id": "14",
@@ -286,13 +520,31 @@
       "physicalDimensions": "51 cm × 45 cm",
       "local": "Coleção privada",
       "description": "Outra versão do autorretrato após o incidente da orelha, desta vez com um cachimbo. A obra transmite uma sensação de calma e resignação, apesar do trauma recente.",
-      "color1": "#ec6838",
-      "color2": "#eacf7f",
-      "color3": "#932922",
-      "color4": "#ac9671",
-      "color5": "#aba496",
       "width": 2147,
-      "height": 2428
+      "height": 2428,
+      "palette": [
+        {
+          "hex": "#2a3526",
+          "share": 0.396
+        },
+        {
+          "hex": "#e46a36",
+          "share": 0.312
+        },
+        {
+          "hex": "#9e3025",
+          "share": 0.183
+        },
+        {
+          "hex": "#dbae5e",
+          "share": 0.082
+        },
+        {
+          "hex": "#f3e99e",
+          "share": 0.027
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACQAgCdASoOABAAAsBMJbACdDiAAUwByy5t2eNwAADNmB70utxBnHQUIulpeRk/r52TGgkiZsoUxeeU+TgKV5Dktm/YNy3lnlKUNJazqxwGoeVEnaH+7h/Qv5JeDnlQmsHPf6v/JB1Nz9/S92SE9rXdxO0itk5gAAA="
     },
     {
       "id": "15",
@@ -307,13 +559,31 @@
       "physicalDimensions": "32.5 cm × 40.3 cm",
       "local": "Museu Van Gogh em Amsterdã, Países Baixos",
       "description": "Nesta versão do Semeador, Van Gogh usa cores contrastantes e pinceladas expressivas para retratar a figura simbólica do trabalhador rural contra um sol poente dramático.",
-      "color1": "#f3cf2a",
-      "color2": "#e4cd77",
-      "color3": "#6c4109",
-      "color4": "#8b6f6c",
-      "color5": "#a9979d",
       "width": 2908,
-      "height": 2297
+      "height": 2297,
+      "palette": [
+        {
+          "hex": "#371910",
+          "share": 0.262
+        },
+        {
+          "hex": "#644628",
+          "share": 0.262
+        },
+        {
+          "hex": "#ccc228",
+          "share": 0.226
+        },
+        {
+          "hex": "#a57f4f",
+          "share": 0.17
+        },
+        {
+          "hex": "#e3e634",
+          "share": 0.081
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAwAgCdASoQAA0AAsBMJbACdAYwTVcP6nt/YAD+tsW6Y7lPwrUfn4xu/y1LyflzVk2p46JpKI7bBTWd9cagxnfHkAM3Cqq/P0mE/699N1KOdYGshQRvHOX/8NCXt3VdX69teVH8oP45HO9K6awAAA=="
     },
     {
       "id": "16",
@@ -328,13 +598,31 @@
       "physicalDimensions": "72 cm × 91.5 cm",
       "local": "Museu Van Gogh em Amsterdã, Países Baixos",
       "description": "Retrata a casa em Arles que Van Gogh alugou, esperando criar uma comunidade de artistas. O amarelo vibrante simboliza a felicidade e a esperança que ele sentia na época.",
-      "color1": "#3c84b4",
-      "color2": "#dac086",
-      "color3": "#04456e",
-      "color4": "#af985b",
-      "color5": "#c1cd9b",
       "width": 6917,
-      "height": 5366
+      "height": 5366,
+      "palette": [
+        {
+          "hex": "#18547c",
+          "share": 0.312
+        },
+        {
+          "hex": "#8c7e57",
+          "share": 0.306
+        },
+        {
+          "hex": "#b79f5d",
+          "share": 0.282
+        },
+        {
+          "hex": "#525938",
+          "share": 0.077
+        },
+        {
+          "hex": "#22382e",
+          "share": 0.024
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAwAgCdASoQAAwAAsBMJbACdH8AGARKPK4P4AD+6NURplwkH1iTem3RARJN8ehb7ECdE3gXL1jJEmohR6BtlO2RZgWP/uDfVyAAAA=="
     },
     {
       "id": "17",
@@ -349,13 +637,31 @@
       "physicalDimensions": "73.5 cm × 92.5 cm",
       "local": "Museu Pushkin em Moscou, Rússia",
       "description": "Uma das cenas de Auvers-sur-Oise, onde Van Gogh passou seus últimos meses. As pinceladas dinâmicas e as cores vivas capturam a frescura da paisagem após a chuva.",
-      "color1": "#bab257",
-      "color2": "#d0c379",
-      "color3": "#586611",
-      "color4": "#88966e",
-      "color5": "#a9a9c7",
       "width": 1492,
-      "height": 1200
+      "height": 1200,
+      "palette": [
+        {
+          "hex": "#8d9442",
+          "share": 0.323
+        },
+        {
+          "hex": "#596730",
+          "share": 0.227
+        },
+        {
+          "hex": "#c5c372",
+          "share": 0.226
+        },
+        {
+          "hex": "#a4acc9",
+          "share": 0.195
+        },
+        {
+          "hex": "#b25332",
+          "share": 0.029
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAQCdASoQAA0AAsBMJbAC7ADxDxuVETAA4eYHOZR6Hi2eBfbFWD23kXeBmkjhQIroiLBTq2y0Drbsjqer00DVhm4lRam+gnPYe/DIMIkKWPO/yChs2DAA"
     },
     {
       "id": "18",
@@ -370,13 +676,31 @@
       "physicalDimensions": "73.5 cm × 92 cm",
       "local": "Museu Van Gogh em Amsterdã, Países Baixos",
       "description": "Pintado para celebrar o nascimento de seu sobrinho e afilhado, Vincent Willem. Os galhos de amendoeira em flor contra um céu azul simbolizam o despertar e a nova vida.",
-      "color1": "#14a49c",
-      "color2": "#a4d4b9",
-      "color3": "#0f7f82",
-      "color4": "#5fa0a3",
-      "color5": "#cdc6a6",
       "width": 1600,
-      "height": 1261
+      "height": 1261,
+      "palette": [
+        {
+          "hex": "#46969b",
+          "share": 0.56
+        },
+        {
+          "hex": "#a9a363",
+          "share": 0.145
+        },
+        {
+          "hex": "#197376",
+          "share": 0.107
+        },
+        {
+          "hex": "#68683c",
+          "share": 0.095
+        },
+        {
+          "hex": "#d3cba4",
+          "share": 0.093
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAQCdASoQAA0AAsBMJbACdH8ACboAAPyvZ9OgYboc4Q6h09JkbYfbuxtLhfc0+L1wQEUTdrBDMZ0EgHPX4V5ncMka6NjjVCEwmgAA"
     },
     {
       "id": "19",
@@ -391,13 +715,31 @@
       "physicalDimensions": "59 cm x 72.5 cm",
       "local": "Museu Hermitage, São Petersburgo, Rússia",
       "description": "Pintado em Auvers poucas semanas antes de sua morte, a obra retrata uma casa sob um céu noturno com uma estrela proeminente, possivelmente Vênus. A atmosfera é ao mesmo tempo serena e melancólica.",
-      "color1": "#db924e",
-      "color2": "#dcc68e",
-      "color3": "#653c2a",
-      "color4": "#557da2",
-      "color5": "#c4cd9a",
       "width": 1024,
-      "height": 850
+      "height": 850,
+      "palette": [
+        {
+          "hex": "#c4ad6c",
+          "share": 0.424
+        },
+        {
+          "hex": "#7494b1",
+          "share": 0.286
+        },
+        {
+          "hex": "#344c39",
+          "share": 0.162
+        },
+        {
+          "hex": "#b35c30",
+          "share": 0.085
+        },
+        {
+          "hex": "#365a93",
+          "share": 0.044
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADQAQCdASoQAA0AAsBMJbACdADpNJ64AAD6gTGeBnSn77lnlj6KDByVDGOSW3Xb5h4rnVS77K9Ia4YbCDZqQ9y25A98H8MrPNx5GPg3vaFTJBxQLdaGAOKH4EVd94yVtTaBoxWHo05rNXwA"
     },
     {
       "id": "20",
@@ -412,13 +754,31 @@
       "physicalDimensions": "34.9 cm × 26.7 cm",
       "local": "Detroit Institute of Arts, Detroit, EUA",
       "description": "Neste autorretrato do período parisiense, Van Gogh se retrata como um camponês, alinhando-se com os trabalhadores rurais que ele tanto admirava e pintava.",
-      "color1": "#deb11e",
-      "color2": "#eecf69",
-      "color3": "#7d3e23",
-      "color4": "#a8886b",
-      "color5": "#c8aa96",
       "width": 964,
-      "height": 1200
+      "height": 1200,
+      "palette": [
+        {
+          "hex": "#ab896a",
+          "share": 0.466
+        },
+        {
+          "hex": "#d5aa34",
+          "share": 0.173
+        },
+        {
+          "hex": "#c8b39c",
+          "share": 0.169
+        },
+        {
+          "hex": "#6e5b37",
+          "share": 0.12
+        },
+        {
+          "hex": "#a2643b",
+          "share": 0.072
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAwAgCdASoNABAAAsBMJbACdAEf08XKNX3rAAD81JaKzDKIfKYk6bueAieWg8+GA2y5WRMsKwOtQQWqs8O5ur9MPdiKvm+8CSpgws+CvJUqzdoxU7wAAA=="
     },
     {
       "id": "21",
@@ -433,13 +793,31 @@
       "physicalDimensions": "73.5 cm × 92.5 cm",
       "local": "Coleção particular",
       "description": "Uma vista da ponte sobre o Ródano em Arles, caracterizada por uma perspectiva dramática e cores não naturalistas que expressam a emoção do artista em relação à cena.",
-      "color1": "#345678",
-      "color2": "#89abcd",
-      "color3": "#456789",
-      "color4": "#abcfde",
-      "color5": "#234567",
       "width": 900,
-      "height": 725
+      "height": 725,
+      "palette": [
+        {
+          "hex": "#afc4a4",
+          "share": 0.299
+        },
+        {
+          "hex": "#6f9076",
+          "share": 0.227
+        },
+        {
+          "hex": "#446153",
+          "share": 0.192
+        },
+        {
+          "hex": "#d0eee7",
+          "share": 0.151
+        },
+        {
+          "hex": "#73a5bd",
+          "share": 0.132
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADwAQCdASoQAA0AAsBMJZACdAYulYfd+AAA/lv84LGMhMelS4r9XJ/44l0r5wIiIOYGcZuPWPbSqouu/LpsELbXdKpzvXxNwIjtSXzcItf629AHtKpPXplra4lzXyQmWSabuAAA"
     },
     {
       "id": "22",
@@ -454,13 +832,31 @@
       "physicalDimensions": "81.3 cm × 65.4 cm",
       "local": "Museu de Arte Moderna de Nova Iorque, EUA",
       "description": "Joseph Roulin, o carteiro, era um amigo próximo de Van Gogh em Arles. Van Gogh o pintou diversas vezes, admirando sua aparência 'socrática' e seu caráter.",
-      "color1": "#885e29",
-      "color2": "#e0c099",
-      "color3": "#24446c",
-      "color4": "#8b8260",
-      "color5": "#b5ac90",
       "width": 4500,
-      "height": 5335
+      "height": 5335,
+      "palette": [
+        {
+          "hex": "#4c5c39",
+          "share": 0.389
+        },
+        {
+          "hex": "#394765",
+          "share": 0.209
+        },
+        {
+          "hex": "#978f6d",
+          "share": 0.138
+        },
+        {
+          "hex": "#222e2b",
+          "share": 0.132
+        },
+        {
+          "hex": "#845d38",
+          "share": 0.131
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACQAQCdASoOABAAAsBMJQBdgBtYDoAA/tFhU0Rxrg6xeCMiZihWV3xe0sLc+Ylvf8yV+1oUlIxctbUFA7PGtsFiJ19TDgAA"
     },
     {
       "id": "23",
@@ -475,13 +871,31 @@
       "physicalDimensions": "94 cm × 74 cm",
       "local": "Museu de Orsay em Paris, França",
       "description": "Uma representação dramática e expressiva da igreja gótica em Auvers-sur-Oise. As linhas distorcidas e as cores intensas refletem o estado emocional turbulento do artista.",
-      "color1": "#1c3a4f",
-      "color2": "#69889c",
-      "color3": "#234567",
-      "color4": "#89aabc",
-      "color5": "#a1bccd",
       "width": 800,
-      "height": 1033
+      "height": 1033,
+      "palette": [
+        {
+          "hex": "#2b3c90",
+          "share": 0.389
+        },
+        {
+          "hex": "#938356",
+          "share": 0.274
+        },
+        {
+          "hex": "#5060b8",
+          "share": 0.137
+        },
+        {
+          "hex": "#b8b358",
+          "share": 0.121
+        },
+        {
+          "hex": "#dfd3a3",
+          "share": 0.079
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADQAQCdASoMABAAAsBMJbACdADbafeDAAD+8RJO3Z+kbSdh1EeuShDjyyZ6+aglTT6G26rwXWP0FpT5Cxx2hTyRiity16goKJV+TdUG+rfrhdSqmZbESRBozX0AAA=="
     },
     {
       "id": "24",
@@ -496,13 +910,31 @@
       "physicalDimensions": "72.6 cm × 91.4 cm",
       "local": "Museu de Arte Moderna de Nova Iorque, EUA",
       "description": "Parte de uma série de quinze pinturas sobre oliveiras. Para Van Gogh, elas representavam a vida, o ciclo da natureza e a conexão divina, um consolo para seu sofrimento.",
-      "color1": "#b3af50",
-      "color2": "#d6d4a2",
-      "color3": "#74642c",
-      "color4": "#6086a5",
-      "color5": "#c5cbb7",
       "width": 4500,
-      "height": 3580
+      "height": 3580,
+      "palette": [
+        {
+          "hex": "#436549",
+          "share": 0.324
+        },
+        {
+          "hex": "#9fac7a",
+          "share": 0.198
+        },
+        {
+          "hex": "#678bac",
+          "share": 0.172
+        },
+        {
+          "hex": "#142b30",
+          "share": 0.17
+        },
+        {
+          "hex": "#5d8252",
+          "share": 0.136
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADwAQCdASoQAA0AAsBMJYgCdAEemq6rMgAA8qVVaPZtgKY3NRfz1wNUBxd750wEeGLvFn65ZPW3Oo5qxr5DT39+V6kXp3tBrQQmcAlXdWX7jE9/fCjEo7LSKPcmUAAA"
     },
     {
       "id": "25",
@@ -517,13 +949,31 @@
       "physicalDimensions": "70 cm × 89 cm",
       "local": "Galeria de Arte da Universidade de Yale",
       "description": "Retrata o interior do Café de la Gare em Arles, frequentado por Van Gogh. Ele queria expressar 'as terríveis paixões da humanidade' através do contraste entre vermelho e verde.",
-      "color1": "#b6974a",
-      "color2": "#d8c8a0",
-      "color3": "#84620a",
-      "color4": "#b1aa6b",
-      "color5": "#6d5a2b",
       "width": 3000,
-      "height": 2368
+      "height": 2368,
+      "palette": [
+        {
+          "hex": "#786928",
+          "share": 0.395
+        },
+        {
+          "hex": "#75321f",
+          "share": 0.217
+        },
+        {
+          "hex": "#b3984c",
+          "share": 0.171
+        },
+        {
+          "hex": "#7b8b67",
+          "share": 0.122
+        },
+        {
+          "hex": "#2e2c21",
+          "share": 0.096
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAQCdASoQAA0AAsBMJbACdADwePEM2sAA/uZlVRAJQxxm8rU3d5jR8BoquwLc8U4c1BYAh36nV/j3AsUHk4+mTbFCSWoeZElexHA5G+hCHNb5BQ0CilHeAAA="
     },
     {
       "id": "26",
@@ -538,13 +988,31 @@
       "physicalDimensions": "65.1 cm × 50 cm",
       "local": "Museu Van Gogh em Amsterdã, Países Baixos",
       "description": "Neste autorretrato parisiense, Van Gogh se apresenta como um artista moderno, segurando paleta e pincéis. A obra reflete sua confiança crescente e a influência do impressionismo.",
-      "color1": "#b48649",
-      "color2": "#d8c0a0",
-      "color3": "#133850",
-      "color4": "#9d8b66",
-      "color5": "#c6b693",
       "width": 600,
-      "height": 790
+      "height": 790,
+      "palette": [
+        {
+          "hex": "#adaea0",
+          "share": 0.314
+        },
+        {
+          "hex": "#304d62",
+          "share": 0.235
+        },
+        {
+          "hex": "#89693f",
+          "share": 0.212
+        },
+        {
+          "hex": "#9e8960",
+          "share": 0.182
+        },
+        {
+          "hex": "#6f422e",
+          "share": 0.057
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoMABAAAsBMJQBOgBuj6xFrR8AA/rOw7DURCrM6ElcPqYzeMSVWpZPtLC+zDUCeMYV1wRJvkzbUrzbdLgZstZCRYo+jcrUAAAA="
     },
     {
       "id": "27",
@@ -559,13 +1027,31 @@
       "physicalDimensions": "41.9 cm × 31.5 cm",
       "local": "Museu Van Gogh em Amsterdã, Países Baixos",
       "description": "Pintado em Paris, este autorretrato mostra Van Gogh experimentando com pinceladas curtas e cores vibrantes, características do pontilhismo e do impressionismo.",
-      "color1": "#8e6a2b",
-      "color2": "#e0c699",
-      "color3": "#244f5c",
-      "color4": "#a28c60",
-      "color5": "#755723",
       "width": 1280,
-      "height": 1712
+      "height": 1712,
+      "palette": [
+        {
+          "hex": "#3b4647",
+          "share": 0.424
+        },
+        {
+          "hex": "#6a5343",
+          "share": 0.206
+        },
+        {
+          "hex": "#816a3e",
+          "share": 0.159
+        },
+        {
+          "hex": "#3f6266",
+          "share": 0.159
+        },
+        {
+          "hex": "#242b2f",
+          "share": 0.052
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoMABAAAsBMJQBOgB0959DtAAD+7NlpSagxA6gIZzoXvcvcxiiYCkyulQcekrTpo92BbnwFuAA="
     },
     {
       "id": "28",
@@ -580,13 +1066,31 @@
       "physicalDimensions": "41.5 cm × 32 cm",
       "local": "Museu Van Gogh em Amsterdã, Países Baixos",
       "description": "Pintado para sua mãe, mostra a igreja onde seu pai era pastor. Van Gogh adicionou as figuras de luto mais tarde, após a morte de seu pai, transformando a obra.",
-      "color1": "#5a4f4c",
-      "color2": "#847d78",
-      "color3": "#38322f",
-      "color4": "#a09794",
-      "color5": "#635d59",
       "width": 1200,
-      "height": 1581
+      "height": 1581,
+      "palette": [
+        {
+          "hex": "#383532",
+          "share": 0.335
+        },
+        {
+          "hex": "#73654a",
+          "share": 0.271
+        },
+        {
+          "hex": "#a99252",
+          "share": 0.204
+        },
+        {
+          "hex": "#9dbfd0",
+          "share": 0.143
+        },
+        {
+          "hex": "#e5e6eb",
+          "share": 0.047
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAQCdASoMABAAAsBMJYgCdADyoHUr1QAA+Tvvst75TeL+vzAaCroX9zX17TAIcLmJVWR/yi1rvf+RWNbx46l8/azocc4aUhhJf9fDB/BI4PB75Iown8bYKAAAAA=="
     },
     {
       "id": "29",
@@ -601,13 +1105,31 @@
       "physicalDimensions": "50.2 cm × 50.2 cm",
       "local": "Coleção privada",
       "description": "Adeline Ravoux era a filha do estalajadeiro onde Van Gogh se hospedou em Auvers. Ele pintou três retratos dela, capturando sua juventude com pinceladas rápidas e expressivas.",
-      "color1": "#8e6253",
-      "color2": "#b58a7d",
-      "color3": "#684237",
-      "color4": "#c3a89a",
-      "color5": "#987663",
       "width": 2024,
-      "height": 2490
+      "height": 2490,
+      "palette": [
+        {
+          "hex": "#21314c",
+          "share": 0.498
+        },
+        {
+          "hex": "#526278",
+          "share": 0.193
+        },
+        {
+          "hex": "#141a25",
+          "share": 0.133
+        },
+        {
+          "hex": "#b39855",
+          "share": 0.12
+        },
+        {
+          "hex": "#837441",
+          "share": 0.056
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQAgCdASoNABAAAsBMJZACdADhV44UvzPyAP7vY1E4XYUkZ6Dqdg/I+ekDB+cMkMMGrafDNOPBkOWoUq0oYTHJK7lu5a37rhrvBFaXVEHminXbIREZ9anQAAA="
     },
     {
       "id": "30",
@@ -622,13 +1144,31 @@
       "physicalDimensions": "91.8 cm × 73 cm",
       "local": "National Gallery, Londres, Reino Unido",
       "description": "Um 'autorretrato' simbólico através de um objeto. A cadeira de madeira simples e o cachimbo representam sua própria identidade, em contraste com a poltrona mais elaborada de Gauguin.",
-      "color1": "#7d4e35",
-      "color2": "#a2805f",
-      "color3": "#573625",
-      "color4": "#bda590",
-      "color5": "#8e725a",
       "width": 4678,
-      "height": 6000
+      "height": 6000,
+      "palette": [
+        {
+          "hex": "#726739",
+          "share": 0.44
+        },
+        {
+          "hex": "#939449",
+          "share": 0.207
+        },
+        {
+          "hex": "#5c8379",
+          "share": 0.167
+        },
+        {
+          "hex": "#92b493",
+          "share": 0.153
+        },
+        {
+          "hex": "#cbc762",
+          "share": 0.034
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoMABAAAsBMJbACdADcrSi+eHAAAP5f4WAbdQlVBDPC/0qW4s1apANzx7wb0THwbeiBZscyZEXYStzbCZtKihZ4AAA="
     },
     {
       "id": "31",
@@ -643,13 +1183,31 @@
       "physicalDimensions": "73 cm × 92 cm",
       "local": "Museu de Arte de Helsinque, Finlândia",
       "description": "Uma cena de rua pacífica em Auvers, caracterizada por pinceladas enérgicas e uma paleta de cores brilhantes, típica de seu período final.",
-      "color1": "#384e5a",
-      "color2": "#7a8995",
-      "color3": "#2b3641",
-      "color4": "#90a0ab",
-      "color5": "#546772",
       "width": 600,
-      "height": 477
+      "height": 477,
+      "palette": [
+        {
+          "hex": "#838f38",
+          "share": 0.386
+        },
+        {
+          "hex": "#c0b378",
+          "share": 0.185
+        },
+        {
+          "hex": "#4f8bbb",
+          "share": 0.184
+        },
+        {
+          "hex": "#e1dbcd",
+          "share": 0.162
+        },
+        {
+          "hex": "#cd6c10",
+          "share": 0.083
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACwAQCdASoQAA0AAsBMJbACdAEGD0awAP62APt0BvJe7sAPEnm0r0SQPjsZobIip7xb0bREug9HJMYb0ofg6V1AXyEomSAh7EItUPaf0uTBSs0ioG/GtieHLf8Bw/eCdEJRAgmD3ETp4wAA"
     },
     {
       "id": "32",
@@ -664,13 +1222,31 @@
       "physicalDimensions": "93 cm × 73 cm",
       "local": "Galeria Nacional de Londres, Reino Unido",
       "description": "Uma das quatro pinturas de girassóis feitas em Arles em 1888. Esta versão é famosa por sua paleta predominantemente amarela e pela forma expressiva das flores em vários estágios de vida.",
-      "color1": "#e89a27",
-      "color2": "#f2bf2a",
-      "color3": "#603d13",
-      "color4": "#d2aa49",
-      "color5": "#c3c2b8",
       "width": 3349,
-      "height": 4226
+      "height": 4226,
+      "palette": [
+        {
+          "hex": "#ded47b",
+          "share": 0.4
+        },
+        {
+          "hex": "#b4a01e",
+          "share": 0.313
+        },
+        {
+          "hex": "#8e711d",
+          "share": 0.239
+        },
+        {
+          "hex": "#879067",
+          "share": 0.038
+        },
+        {
+          "hex": "#50472e",
+          "share": 0.011
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAABQAgCdASoNABAAAsBMJbACdAYwxn04L6ZNOYgA/u49bHVxwijbixsiLW58ukE/UpBOtR3nGf18awqjM5XQvVPn9l0T5cF8tN1af8c8XhvzM0jdvE8qeJAgYN/+xfsD/CJdekKFNzsSAAAA"
     },
     {
       "id": "33",
@@ -685,13 +1261,31 @@
       "physicalDimensions": "55 cm × 63 cm",
       "local": "Museu Van Gogh em Amsterdã, Países Baixos",
       "description": "Uma vista de Montmartre durante o período de Van Gogh em Paris. A paleta ainda é um tanto sombria, mas já mostra a influência do impressionismo na forma como a luz é tratada.",
-      "color1": "#53697a",
-      "color2": "#859bae",
-      "color3": "#3a4b5d",
-      "color4": "#a9bccd",
-      "color5": "#6f8397",
       "width": 1280,
-      "height": 1164
+      "height": 1164,
+      "palette": [
+        {
+          "hex": "#abaaa0",
+          "share": 0.313
+        },
+        {
+          "hex": "#626148",
+          "share": 0.255
+        },
+        {
+          "hex": "#8b7e64",
+          "share": 0.247
+        },
+        {
+          "hex": "#cec9b4",
+          "share": 0.117
+        },
+        {
+          "hex": "#484239",
+          "share": 0.067
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQAgCdASoQAA8AAsBMJQBOgCPgnkTvqjmgAP6yKhqQKBCxtkLoSUZC8lwO3jejApMC1cAR2XOr2WsjlUqq0Dcstb8k1RkDuVm4spX80VQAAA=="
     },
     {
       "id": "34",
@@ -706,13 +1300,31 @@
       "physicalDimensions": "56 cm × 101.5 cm",
       "local": "Museu Van Gogh em Amsterdã, Países Baixos",
       "description": "Pintado em Auvers, este é o jardim do pintor Charles-François Daubigny, que Van Gogh admirava. É uma de suas últimas obras, completada pouco antes de sua morte.",
-      "color1": "#324f39",
-      "color2": "#608f69",
-      "color3": "#253c2e",
-      "color4": "#8fa786",
-      "color5": "#5b7b60",
       "width": 956,
-      "height": 640
+      "height": 640,
+      "palette": [
+        {
+          "hex": "#7f8059",
+          "share": 0.574
+        },
+        {
+          "hex": "#3b5447",
+          "share": 0.194
+        },
+        {
+          "hex": "#b2b491",
+          "share": 0.162
+        },
+        {
+          "hex": "#152225",
+          "share": 0.044
+        },
+        {
+          "hex": "#dedfbf",
+          "share": 0.025
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADQAQCdASoQAAsAAsBMJZACdAD0qtaaKAD+3fwUDfe4KOnVZYn3l1zDZdHIRWlQ0H9cGX5CQ0eU6oI5ZhQZqkKyQDCAAA=="
     },
     {
       "id": "35",
@@ -727,13 +1339,31 @@
       "physicalDimensions": "40 cm × 31 cm",
       "local": "Coleção privada",
       "description": "Um de seus últimos autorretratos, pintado como um presente para sua mãe. É uma imagem idealizada, onde ele aparece mais saudável e calmo do que realmente estava.",
-      "color1": "#4e4e4e",
-      "color2": "#858585",
-      "color3": "#363636",
-      "color4": "#a1a1a1",
-      "color5": "#626262",
       "width": 1200,
-      "height": 1506
+      "height": 1506,
+      "palette": [
+        {
+          "hex": "#889179",
+          "share": 0.439
+        },
+        {
+          "hex": "#524e62",
+          "share": 0.184
+        },
+        {
+          "hex": "#c7ad77",
+          "share": 0.135
+        },
+        {
+          "hex": "#8e5d41",
+          "share": 0.128
+        },
+        {
+          "hex": "#707484",
+          "share": 0.115
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABwAgCdASoNABAAAsBMJZgCdH8AFlzSXRNt+jYAAPyyGXRFwqlFzNmvMvBBGUOnDklKPu7yPC3PDAj5jaJNKHlMlshbXprhwqQiMZmhXSwa70g9913Ux2wAAAA="
     },
     {
       "id": "36",
@@ -748,13 +1378,31 @@
       "physicalDimensions": "63 cm x 50.5 cm",
       "local": "Coleção privada",
       "description": "Uma das últimas pinturas de figura de Van Gogh. A identidade da mulher é desconhecida, mas a cena captura a tranquilidade de um jardim em Auvers.",
-      "color1": "#ffffff",
-      "color2": "#e9e9e9",
-      "color3": "#d2d2d2",
-      "color4": "#f0f0f0",
-      "color5": "#bcbcbc",
       "width": 2034,
-      "height": 3000
+      "height": 3000,
+      "palette": [
+        {
+          "hex": "#8eab84",
+          "share": 0.578
+        },
+        {
+          "hex": "#c5cdc4",
+          "share": 0.243
+        },
+        {
+          "hex": "#677e57",
+          "share": 0.143
+        },
+        {
+          "hex": "#dbc85e",
+          "share": 0.023
+        },
+        {
+          "hex": "#af7129",
+          "share": 0.013
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAACQAQCdASoLABAAAsBMJQBOgB44rMAA/o0jRU2R1uRLhKeHPr5jhJ4oitrYtyyQAogE1hH7WodyFAAA"
     },
     {
       "id": "37",
@@ -769,13 +1417,31 @@
       "physicalDimensions": "63 cm × 79 cm",
       "local": "Museu Van Gogh em Amsterdã, Países Baixos",
       "description": "Esta obra do período holandês mostra a antiga torre da igreja de Nuenen. Van Gogh focou na conexão entre os camponeses e a terra, simbolizada pelo cemitério em primeiro plano.",
-      "color1": "#5a4f4c",
-      "color2": "#847d78",
-      "color3": "#38322f",
-      "color4": "#a09794",
-      "color5": "#635d59",
       "width": 1280,
-      "height": 1037
+      "height": 1037,
+      "palette": [
+        {
+          "hex": "#524c2b",
+          "share": 0.41
+        },
+        {
+          "hex": "#878c79",
+          "share": 0.28
+        },
+        {
+          "hex": "#677260",
+          "share": 0.147
+        },
+        {
+          "hex": "#2b2e1f",
+          "share": 0.112
+        },
+        {
+          "hex": "#ada485",
+          "share": 0.051
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoQAA0AAsBMJYgCdAD6PQ7gAAD4wPqU9QBZhcVIX3j5cXTu/K8n3CsCFhpbeBWfp82H4/otsW5MxxBsAAA="
     },
     {
       "id": "38",
@@ -790,13 +1456,31 @@
       "physicalDimensions": "73.3 cm × 60.3 cm",
       "local": "Galeria Nacional de Arte, Washington D.C., EUA",
       "description": "Inspirado pelo romance 'Madame Chrysanthème' de Pierre Loti, Van Gogh pintou esta jovem provençal, capturando uma mistura de influências japonesas e do sul da França.",
-      "color1": "#635c4e",
-      "color2": "#8f897b",
-      "color3": "#4d4739",
-      "color4": "#afa793",
-      "color5": "#786e5f",
       "width": 1551,
-      "height": 2000
+      "height": 2000,
+      "palette": [
+        {
+          "hex": "#291810",
+          "share": 0.675
+        },
+        {
+          "hex": "#303010",
+          "share": 0.176
+        },
+        {
+          "hex": "#553f0e",
+          "share": 0.127
+        },
+        {
+          "hex": "#7f5e1b",
+          "share": 0.018
+        },
+        {
+          "hex": "#9e772d",
+          "share": 0.004
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoMABAAAsBMJQBOgCP/9Be7vAAA/vM7cOH5BclsvMccI+i9q70kC6FAAI8526q9Bn7HkPkAAAA="
     },
     {
       "id": "39",
@@ -811,13 +1495,31 @@
       "physicalDimensions": "82 cm × 114 cm",
       "local": "Museu Van Gogh em Amsterdã, Países Baixos",
       "description": "Considerada a primeira grande obra-prima de Van Gogh. Ele procurou retratar a vida dura e honesta dos camponeses, usando uma paleta de cores escuras e terrosas.",
-      "color1": "#5d4a3a",
-      "color2": "#8a7968",
-      "color3": "#3d352d",
-      "color4": "#a68f5e",
-      "color5": "#c4b79d",
       "width": 1280,
-      "height": 909
+      "height": 909,
+      "palette": [
+        {
+          "hex": "#0a110c",
+          "share": 0.55
+        },
+        {
+          "hex": "#35361f",
+          "share": 0.366
+        },
+        {
+          "hex": "#646133",
+          "share": 0.067
+        },
+        {
+          "hex": "#8b844b",
+          "share": 0.014
+        },
+        {
+          "hex": "#b3aa6b",
+          "share": 0.003
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAQAgCdASoQAAsAAsBMJZQAAt0NnOJl/QyQAP72wsrASWpPHxc+H7hSIzToVBZe5YTvM8uxxZxtw/Z3MgAAAA=="
     },
     {
       "id": "40",
@@ -832,13 +1534,31 @@
       "physicalDimensions": "32 cm × 24.5 cm",
       "local": "Museu Van Gogh em Amsterdã, Países Baixos",
       "description": "Uma obra macabra e humorística pintada provavelmente como um exercício de anatomia na academia de Antuérpia. É uma vanitas, uma reflexão sobre a mortalidade.",
-      "color1": "#2d251e",
-      "color2": "#8e7b60",
-      "color3": "#dcd2b8",
-      "color4": "#605342",
-      "color5": "#c0a98f",
       "width": 800,
-      "height": 1060
+      "height": 1060,
+      "palette": [
+        {
+          "hex": "#0b0a02",
+          "share": 0.513
+        },
+        {
+          "hex": "#322d10",
+          "share": 0.211
+        },
+        {
+          "hex": "#7e7146",
+          "share": 0.121
+        },
+        {
+          "hex": "#bbb17d",
+          "share": 0.082
+        },
+        {
+          "hex": "#9a8d5d",
+          "share": 0.074
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABQAgCdASoMABAAAsBMJYgCdAYuRuKVlVG6tpAA/vX+FVXRg3+BFAoBcO1CbDkiC0x13/QdzhWldrDJHVbz5AM89jQejHTTXUmnLxpP3Ki4Z5JWxMgrurnR2CmLcL0d9wAAAA=="
     },
     {
       "id": "41",
@@ -853,13 +1573,31 @@
       "physicalDimensions": "64 cm × 55 cm",
       "local": "Coleção particular",
       "description": "Uma das muitas cópias que Van Gogh fez de obras de Jean-François Millet enquanto estava no asilo. Ele usou a composição de Millet, mas aplicou seu próprio estilo de cor e pincelada.",
-      "color1": "#3e5c7a",
-      "color2": "#a1b6c7",
-      "color3": "#8d6f4f",
-      "color4": "#647b59",
-      "color5": "#d7d8d2",
       "width": 611,
-      "height": 800
+      "height": 800,
+      "palette": [
+        {
+          "hex": "#806d5e",
+          "share": 0.278
+        },
+        {
+          "hex": "#b8a998",
+          "share": 0.232
+        },
+        {
+          "hex": "#6a5a4f",
+          "share": 0.201
+        },
+        {
+          "hex": "#9b8672",
+          "share": 0.199
+        },
+        {
+          "hex": "#50433e",
+          "share": 0.09
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADQAQCdASoMABAAAsBMJYwCdADyVxU2gAD+kI6FsHHGESEKK/NcPD5naXzkFHpl57IzTvXnl3ArM3Is/8HxcoTdgYAAAA=="
     },
     {
       "id": "42",
@@ -874,13 +1612,31 @@
       "physicalDimensions": "73 cm × 91 cm",
       "local": "Musée d'Orsay em Paris, França",
       "description": "Baseado em uma gravura de Millet, Van Gogh reimagina a cena do descanso dos camponeses com sua paleta de cores vibrantes, especialmente o contraste entre azul e amarelo.",
-      "color1": "#f2d65d",
-      "color2": "#75a3c2",
-      "color3": "#2b4e87",
-      "color4": "#e7dcb0",
-      "color5": "#c58b3c",
       "width": 850,
-      "height": 666
+      "height": 666,
+      "palette": [
+        {
+          "hex": "#a27c2c",
+          "share": 0.374
+        },
+        {
+          "hex": "#6591bf",
+          "share": 0.227
+        },
+        {
+          "hex": "#b19b72",
+          "share": 0.211
+        },
+        {
+          "hex": "#cfbb77",
+          "share": 0.137
+        },
+        {
+          "hex": "#3b5c87",
+          "share": 0.05
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAQAgCdASoQAA0AAsBMJbACdEH/ghGpqWAAAM3RFODgLHlTSHLZojHZ2ahWYiy4+QO671KdCUqutm1+pFuP1vL5AA3KmojHjmxNNT2aHDtMsoMOaB2AAA=="
     },
     {
       "id": "43",
@@ -895,13 +1651,31 @@
       "physicalDimensions": "80 cm × 64 cm",
       "local": "Museu Kröller-Müller em Otterlo, Países Baixos",
       "description": "Baseado em uma litografia anterior do próprio Van Gogh, esta pintura expressa um profundo desespero e solidão, sentimentos que o artista conhecia bem. O título foi dado postumamente.",
-      "color1": "#2e5a87",
-      "color2": "#8e6345",
-      "color3": "#d1a862",
-      "color4": "#e3e0d4",
-      "color5": "#a5a3a2",
       "width": 800,
-      "height": 1013
+      "height": 1013,
+      "palette": [
+        {
+          "hex": "#9b855a",
+          "share": 0.394
+        },
+        {
+          "hex": "#b4a99b",
+          "share": 0.354
+        },
+        {
+          "hex": "#646979",
+          "share": 0.096
+        },
+        {
+          "hex": "#6f5412",
+          "share": 0.09
+        },
+        {
+          "hex": "#e0cfc0",
+          "share": 0.067
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADQAQCdASoNABAAAsBMJZgCdAC5/zYOwAD+8IGxRgfrGYk4BwkYf9CciPozq6R+cZQ2nouyrPOAD1HqdL/CEnFryN0u7yvQAAA="
     },
     {
       "id": "44",
@@ -916,13 +1690,31 @@
       "physicalDimensions": "90 cm × 72.5 cm",
       "local": "Museu Metropolitano de Arte em Nova Iorque, EUA",
       "description": "Retrato de Marie Ginoux, a proprietária do Café de la Gare em Arles, que posou para Van Gogh e Gauguin. Esta versão, com livros, a retrata como uma mulher pensativa e melancólica.",
-      "color1": "#f5d505",
-      "color2": "#2b2924",
-      "color3": "#2b483e",
-      "color4": "#e0d8c6",
-      "color5": "#8e6345",
       "width": 800,
-      "height": 1007
+      "height": 1007,
+      "palette": [
+        {
+          "hex": "#daba42",
+          "share": 0.435
+        },
+        {
+          "hex": "#252a23",
+          "share": 0.234
+        },
+        {
+          "hex": "#404e34",
+          "share": 0.129
+        },
+        {
+          "hex": "#b39e62",
+          "share": 0.126
+        },
+        {
+          "hex": "#a86129",
+          "share": 0.075
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAABwAgCdASoNABAAAsBMJbACdAdwB9gW8WGo+XgAAP7XNajFmGs8nStPiWJvX9nFqdY2N+irUFD9yXbTZdjbOZ0dtIECKjEFZralCoINLRu3krI93IuUuyW4KSucCBS/Pf/+0/aexB2/RzVQ0vPOdV0cFFpDbFbdgokhPY4A"
     },
     {
       "id": "45",
@@ -937,13 +1729,31 @@
       "physicalDimensions": "73.2 cm × 92.7 cm",
       "local": "Museu Van Gogh em Amsterdã, Países Baixos",
       "description": "Pintado a partir da janela de seu quarto no asilo. O ceifador, para Van Gogh, não era um símbolo da morte, mas sim da humanidade colhendo o que semeou, com o sol representando a força da natureza.",
-      "color1": "#f2d65d",
-      "color2": "#b6c37c",
-      "color3": "#867da8",
-      "color4": "#c4d3de",
-      "color5": "#384e3a",
       "width": 800,
-      "height": 633
+      "height": 633,
+      "palette": [
+        {
+          "hex": "#b38e31",
+          "share": 0.499
+        },
+        {
+          "hex": "#b0c785",
+          "share": 0.352
+        },
+        {
+          "hex": "#719199",
+          "share": 0.092
+        },
+        {
+          "hex": "#718642",
+          "share": 0.042
+        },
+        {
+          "hex": "#486568",
+          "share": 0.016
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoQAA0AAsBMJbACdAENy/f5hAD+6o/YyjHsu1CT/cEu1A90tTgFHXR9j8yJr5oHmyT+yMDZ6Wv32gAAAAA="
     },
     {
       "id": "46",
@@ -958,13 +1768,31 @@
       "physicalDimensions": "80 cm × 64 cm",
       "local": "Museu Pushkin em Moscou, Rússia",
       "description": "Baseado em uma gravura de Gustave Doré, a obra retrata a monotonia e o desespero da vida na prisão. Muitos acreditam que a figura central, sem chapéu, é um autorretrato de Van Gogh, simbolizando seu próprio confinamento.",
-      "color1": "#314f6b",
-      "color2": "#65805d",
-      "color3": "#8b6c4e",
-      "color4": "#a7a398",
-      "color5": "#c3d0d8",
       "width": 800,
-      "height": 1019
+      "height": 1019,
+      "palette": [
+        {
+          "hex": "#6c866e",
+          "share": 0.316
+        },
+        {
+          "hex": "#496753",
+          "share": 0.284
+        },
+        {
+          "hex": "#344c43",
+          "share": 0.201
+        },
+        {
+          "hex": "#1a2726",
+          "share": 0.119
+        },
+        {
+          "hex": "#a0a684",
+          "share": 0.079
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoNABAAAsBMJQBOgBwgftmGgAD9HwScvLkwuI9aaxATvfgRATEo+NeQmIS9j9n7hcC1c18AAAA="
     },
     {
       "id": "47",
@@ -979,13 +1807,31 @@
       "physicalDimensions": "73 cm × 60 cm",
       "local": "Museu Kröller-Müller em Otterlo, Países Baixos",
       "description": "A interpretação de Van Gogh da pintura de Eugène Delacroix sobre a parábola bíblica. Ele infunde a cena com sua paleta de cores e pinceladas expressivas, focando na compaixão e no sofrimento.",
-      "color1": "#2e5a87",
-      "color2": "#6b845d",
-      "color3": "#8e6345",
-      "color4": "#d18c4c",
-      "color5": "#1e3a59",
       "width": 846,
-      "height": 1024
+      "height": 1024,
+      "palette": [
+        {
+          "hex": "#87793d",
+          "share": 0.273
+        },
+        {
+          "hex": "#607b8c",
+          "share": 0.237
+        },
+        {
+          "hex": "#889ca0",
+          "share": 0.223
+        },
+        {
+          "hex": "#4c442e",
+          "share": 0.148
+        },
+        {
+          "hex": "#a19c5c",
+          "share": 0.119
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAQCdASoNABAAAsBMJagCdACk/Z38hAD72D60NsTY9OTRyl1JcOGZTZ5wJHysaBWUxJPTHfob81+hxytu7ajHYauX1CESVgqGDoAA"
     },
     {
       "id": "48",
@@ -1000,13 +1846,31 @@
       "physicalDimensions": "73 cm × 92.1 cm",
       "local": "Art Institute of Chicago, Chicago, EUA",
       "description": "Parte de uma série de pinturas do jardim público em frente à Casa Amarela. Van Gogh queria capturar a atmosfera poética do lugar, usando cores vibrantes e formas simplificadas.",
-      "color1": "#3b5a3e",
-      "color2": "#f2d65d",
-      "color3": "#75a3c2",
-      "color4": "#a6b88b",
-      "color5": "#253c2e",
       "width": 960,
-      "height": 762
+      "height": 762,
+      "palette": [
+        {
+          "hex": "#435f20",
+          "share": 0.424
+        },
+        {
+          "hex": "#223222",
+          "share": 0.243
+        },
+        {
+          "hex": "#909843",
+          "share": 0.21
+        },
+        {
+          "hex": "#84641e",
+          "share": 0.105
+        },
+        {
+          "hex": "#c1bf76",
+          "share": 0.017
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoQAA0AAsBMJagC7AEfn2eb46LgAMxUSJbjzrI9C5XqVh/K7BaIhbiWbv4YKlZbUCIBSVp/P4+R/0bA8/nDNYYUAAA="
     },
     {
       "id": "49",
@@ -1021,13 +1885,31 @@
       "physicalDimensions": "73.5 cm × 92.5 cm",
       "local": "Museu Hermitage em São Petersburgo, Rússia",
       "description": "Pintada de memória em Arles, a obra retrata sua mãe e irmã no jardim da casa paroquial em Etten. As cores e formas são mais imaginativas do que realistas, refletindo uma lembrança.",
-      "color1": "#2e5a3e",
-      "color2": "#f2d65d",
-      "color3": "#75a3c2",
-      "color4": "#c04b4b",
-      "color5": "#e3e0d4",
       "width": 2021,
-      "height": 1583
+      "height": 1583,
+      "palette": [
+        {
+          "hex": "#be7237",
+          "share": 0.301
+        },
+        {
+          "hex": "#4b6c7c",
+          "share": 0.24
+        },
+        {
+          "hex": "#2b4c3f",
+          "share": 0.233
+        },
+        {
+          "hex": "#1a2736",
+          "share": 0.15
+        },
+        {
+          "hex": "#8f3a31",
+          "share": 0.077
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAABQAgCdASoQAA0AAsBMJaACsAdwBxlyBwW3hvQA/t0xmZzsLL6IYoJ+UfH1i21pY1RAJP3ogaDmA6QLbZXUt5j27ANojDd2tXbpI/4TMYyQU+kmr/z5cCWiqN80781lNqasVY5/WK3rJyoAAAA="
     },
     {
       "id": "50",
@@ -1042,13 +1924,31 @@
       "physicalDimensions": "50.3 cm × 100.1 cm",
       "local": "Museu Van Gogh em Amsterdã, Países Baixos",
       "description": "Provavelmente a última pintura de Van Gogh. A obra retrata raízes de árvores em uma encosta, com cores vibrantes e pinceladas agitadas, simbolizando a luta pela vida.",
-      "color1": "#587b9a",
-      "color2": "#6b845d",
-      "color3": "#8e6345",
-      "color4": "#d1a862",
-      "color5": "#a6b8c8",
       "width": 4000,
-      "height": 3000
+      "height": 3000,
+      "palette": [
+        {
+          "hex": "#93794e",
+          "share": 0.336
+        },
+        {
+          "hex": "#36260c",
+          "share": 0.218
+        },
+        {
+          "hex": "#4c6c44",
+          "share": 0.204
+        },
+        {
+          "hex": "#684423",
+          "share": 0.121
+        },
+        {
+          "hex": "#2d446e",
+          "share": 0.121
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADwAQCdASoQAAwAAsBMJbACdAD0qrUF8qAA/uUyAPXhmH7WuweN75xHQNaMoPU/i7G69IHUravDCkWUoJK29iyNCKwDaFkmZ01X9LQpETgAAA=="
     },
     {
       "id": "51",
@@ -1063,13 +1963,31 @@
       "physicalDimensions": "93.4 cm × 74 cm",
       "local": "Museu Metropolitano de Arte, Nova Iorque, EUA",
       "description": "Van Gogh ficou fascinado pelos ciprestes de Saint-Rémy, vendo-os como 'belos como um obelisco egípcio'. Ele os pintou com pinceladas espessas e redemoinhos, transmitindo sua energia vital.",
-      "color1": "#0e4a3b",
-      "color2": "#6fa55c",
-      "color3": "#d5c75b",
-      "color4": "#88b3d0",
-      "color5": "#f0e9b6",
       "width": 800,
-      "height": 1009
+      "height": 1009,
+      "palette": [
+        {
+          "hex": "#384528",
+          "share": 0.383
+        },
+        {
+          "hex": "#697036",
+          "share": 0.225
+        },
+        {
+          "hex": "#c4c0a6",
+          "share": 0.201
+        },
+        {
+          "hex": "#699f8d",
+          "share": 0.157
+        },
+        {
+          "hex": "#b0a545",
+          "share": 0.034
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADQAQCdASoNABAAAsBMJYgCdADa6wafgAD4tnbWhlUzl2+xbWeVOKak6hsojfOWMKvpUdnKjGBW7kZEOBPJUcDGYvtfRciuQnk2S8/DKlHbTKE76JitLiM6iolyuh9AAAA="
     },
     {
       "id": "52",
@@ -1084,13 +2002,31 @@
       "physicalDimensions": "92 cm × 73 cm",
       "local": "Museu Kröller-Müller, Otterlo, Países Baixos",
       "description": "Pintada pouco antes de deixar o asilo. A obra combina três elementos-chave de sua obra: o cipreste (morte e eternidade), a estrada (a jornada da vida) e as estrelas (esperança e destino).",
-      "color1": "#0a3d62",
-      "color2": "#f6e58d",
-      "color3": "#4a694d",
-      "color4": "#b8860b",
-      "color5": "#dfe4ea",
       "width": 2840,
-      "height": 3579
+      "height": 3579,
+      "palette": [
+        {
+          "hex": "#637888",
+          "share": 0.404
+        },
+        {
+          "hex": "#1d4382",
+          "share": 0.206
+        },
+        {
+          "hex": "#12131e",
+          "share": 0.172
+        },
+        {
+          "hex": "#a47c2e",
+          "share": 0.159
+        },
+        {
+          "hex": "#cfac56",
+          "share": 0.059
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADQAQCdASoNABAAAsBMJaACdAEfPe9WuAD+3bkTD26xy40XetkcbKAvMUnjCpAZvxF/hJDgOuMCDn6pKV6+DzybgdV+U0oikS/wIEIysfzEML0X4BM+SAOecAAAAA=="
     },
     {
       "id": "53",
@@ -1105,13 +2041,31 @@
       "physicalDimensions": "90.5 cm × 72.5 cm",
       "local": "Museu Van Gogh, Amsterdã, Países Baixos",
       "description": "Pintada como um par para 'A Cadeira de Van Gogh', esta obra representa seu amigo Paul Gauguin através de uma poltrona mais ornamentada, com livros e uma vela, simbolizando o intelecto e a sofisticação.",
-      "color1": "#b04b3a",
-      "color2": "#426b52",
-      "color3": "#d4a355",
-      "color4": "#8e633e",
-      "color5": "#e0d6b9",
       "width": 640,
-      "height": 800
+      "height": 800,
+      "palette": [
+        {
+          "hex": "#3a623c",
+          "share": 0.445
+        },
+        {
+          "hex": "#61361f",
+          "share": 0.362
+        },
+        {
+          "hex": "#847341",
+          "share": 0.13
+        },
+        {
+          "hex": "#302d20",
+          "share": 0.046
+        },
+        {
+          "hex": "#b4a661",
+          "share": 0.018
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADQAQCdASoNABAAAsBMJZgCdAD1PXh1SAD+zRTZN1jOOU80UY9/bQYSz/t5R9Ol6n0E7INxjCavIRKWG+uw0Ii7tYAAAA=="
     },
     {
       "id": "54",
@@ -1126,13 +2080,31 @@
       "physicalDimensions": "73 cm × 92 cm",
       "local": "Coleção particular",
       "description": "Van Gogh e Gauguin pintaram juntos esta antiga necrópole romana em Arles. A versão de Van Gogh foca na avenida de álamos com suas cores outonais vibrantes.",
-      "color1": "#d28a2a",
-      "color2": "#6a3e1a",
-      "color3": "#f5d56f",
-      "color4": "#4e6a71",
-      "color5": "#b8a06e",
       "width": 1598,
-      "height": 2000
+      "height": 2000,
+      "palette": [
+        {
+          "hex": "#937534",
+          "share": 0.554
+        },
+        {
+          "hex": "#585837",
+          "share": 0.147
+        },
+        {
+          "hex": "#bf9b32",
+          "share": 0.131
+        },
+        {
+          "hex": "#86a1a1",
+          "share": 0.098
+        },
+        {
+          "hex": "#68818c",
+          "share": 0.07
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAQCdASoNABAAAsBMJbACdAB5XCQAAPm6nOFX4PfjXstQ6Zq9fDxDL8ZY+XhNZ9/WZK2Dzp1xVlPKRT6fHgCYF8cgnq9PQ0MMAAAA"
     },
     {
       "id": "55",
@@ -1147,13 +2119,31 @@
       "physicalDimensions": "92.7 cm × 73.5 cm",
       "local": "Museu de Belas Artes, Boston, EUA",
       "description": "Retrato de Augustine Roulin, esposa do carteiro. 'La Berceuse' significa 'a embaladora' ou 'canção de ninar', e Van Gogh via a obra como um ícone de consolo e maternidade.",
-      "color1": "#2d6a4f",
-      "color2": "#d4503b",
-      "color3": "#f7d363",
-      "color4": "#954535",
-      "color5": "#e0c098",
       "width": 2374,
-      "height": 3000
+      "height": 3000,
+      "palette": [
+        {
+          "hex": "#23342b",
+          "share": 0.328
+        },
+        {
+          "hex": "#3c7952",
+          "share": 0.204
+        },
+        {
+          "hex": "#92722d",
+          "share": 0.185
+        },
+        {
+          "hex": "#3d503b",
+          "share": 0.183
+        },
+        {
+          "hex": "#7c2c26",
+          "share": 0.1
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADwAQCdASoNABAAAsBMJZgCdACzxITQOIAA/tqd6KwGbFNy5yt8Tgq42Ty2UK3uIQ1C8H9UJ2evnfRICj3Tz3/DecoRI6gWxrWjHkATIT2j3kPLm5t3dcmfWB9L71SnrNd0KdAA"
     },
     {
       "id": "56",
@@ -1168,13 +2158,31 @@
       "physicalDimensions": "47 cm × 61 cm",
       "local": "National Gallery, Londres, Reino Unido",
       "description": "Pintado após sua alta do hospital, esta natureza-morta foi inspirada por uma gravura japonesa de Hokusai. O contraste vibrante entre o laranja dos caranguejos e o fundo verde é notável.",
-      "color1": "#228b22",
-      "color2": "#ff6347",
-      "color3": "#b59b6c",
-      "color4": "#6b8e23",
-      "color5": "#f0e68c",
       "width": 6000,
-      "height": 4226
+      "height": 4226,
+      "palette": [
+        {
+          "hex": "#3c744f",
+          "share": 0.561
+        },
+        {
+          "hex": "#6b221d",
+          "share": 0.181
+        },
+        {
+          "hex": "#719877",
+          "share": 0.138
+        },
+        {
+          "hex": "#ab561e",
+          "share": 0.086
+        },
+        {
+          "hex": "#c4a376",
+          "share": 0.034
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoQAAsAAsBMJbACdADRTFI/pWAA/txyPWDGQvEFU3+mutnHfJhDI+nz3klNT1nmYAqjvqxZvJ3lvM0LYsnaDbaCWQmAAA=="
     },
     {
       "id": "57",
@@ -1189,13 +2197,31 @@
       "physicalDimensions": "92 cm × 75 cm",
       "local": "Musée Rodin, Paris, França",
       "description": "Julien 'Père' Tanguy era um comerciante de tintas e um dos primeiros apoiadores dos impressionistas. Van Gogh o retrata em frente a uma coleção de gravuras japonesas, mostrando sua admiração pela arte japonesa.",
-      "color1": "#d95f30",
-      "color2": "#2a6f97",
-      "color3": "#f2b705",
-      "color4": "#014f86",
-      "color5": "#e7d8c0",
       "width": 800,
-      "height": 1008
+      "height": 1008,
+      "palette": [
+        {
+          "hex": "#3b5067",
+          "share": 0.412
+        },
+        {
+          "hex": "#8f7732",
+          "share": 0.207
+        },
+        {
+          "hex": "#73809c",
+          "share": 0.177
+        },
+        {
+          "hex": "#c2ad9a",
+          "share": 0.14
+        },
+        {
+          "hex": "#6f3529",
+          "share": 0.064
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABQAgCdASoNABAAAsBMJYgCdMn8BCApgSyOtYAA2/2OsWWB5IKekNsFOor0/Z3XCLFmHmieFLXy9XIaNJlwqti3Sc1/YoDUNXCtvFvQwOPOOmdjhoJN4DZYj/vbyidVY5WEu6BFYDnwAA=="
     },
     {
       "id": "58",
@@ -1210,13 +2236,31 @@
       "physicalDimensions": "73 cm × 60.5 cm",
       "local": "Museu Van Gogh, Amsterdã, Países Baixos",
       "description": "A interpretação de Van Gogh da 'Pietà' de Delacroix. Ele se identificava com o sofrimento de Cristo, e acredita-se que a figura de Cristo tenha os traços e a cor do cabelo do próprio artista.",
-      "color1": "#0b4f6c",
-      "color2": "#ffc857",
-      "color3": "#623d21",
-      "color4": "#9d8469",
-      "color5": "#d9b48f",
       "width": 654,
-      "height": 800
+      "height": 800,
+      "palette": [
+        {
+          "hex": "#868561",
+          "share": 0.406
+        },
+        {
+          "hex": "#485441",
+          "share": 0.2
+        },
+        {
+          "hex": "#083359",
+          "share": 0.18
+        },
+        {
+          "hex": "#bbb357",
+          "share": 0.122
+        },
+        {
+          "hex": "#245b7c",
+          "share": 0.093
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADwAQCdASoNABAAAsBMJZgCdAEW/Szs8QAA+ploOVyk9xhsTAf5qTt7z7j8pfSsD7oVtHlwamf9OZks2k9Ye/JI9YmW0mNxXWiQUK7bRNsgYpdhNa0cfySJrWReH4KC5e9Jd8PsxhYAAA=="
     },
     {
       "id": "59",
@@ -1231,13 +2275,31 @@
       "physicalDimensions": "50 cm × 65 cm",
       "local": "Museu Van Gogh, Amsterdã, Países Baixos",
       "description": "Baseado em uma gravura de Rembrandt, Van Gogh remove a figura de Cristo, focando em Lázaro e suas irmãs. O sol poente simboliza a vida, a morte e a ressurreição.",
-      "color1": "#f4a261",
-      "color2": "#2a9d8f",
-      "color3": "#e9c46a",
-      "color4": "#264653",
-      "color5": "#e76f51",
       "width": 800,
-      "height": 612
+      "height": 612,
+      "palette": [
+        {
+          "hex": "#c2b070",
+          "share": 0.52
+        },
+        {
+          "hex": "#90855e",
+          "share": 0.326
+        },
+        {
+          "hex": "#5b7f49",
+          "share": 0.083
+        },
+        {
+          "hex": "#53523b",
+          "share": 0.056
+        },
+        {
+          "hex": "#222f29",
+          "share": 0.015
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoQAAwAAsBMJaACdAD2LCa0AIyAAP5bgOTlpvLbi8TCZy52EatdjfMtjJ8DIr9JC7jL5ftbyft6Ufafg9fFxlgtyRRQ0oAA"
     },
     {
       "id": "60",
@@ -1252,13 +2314,31 @@
       "physicalDimensions": "55.5 cm × 46.5 cm",
       "local": "Museu Van Gogh, Amsterdã, Países Baixos",
       "description": "Retrato de Agostina Segatori, dona do Café du Tambourin, onde Van Gogh expôs suas obras e teve um breve relacionamento com ela. A influência japonesa é visível no fundo.",
-      "color1": "#9e2a2b",
-      "color2": "#540b0e",
-      "color3": "#e09f3e",
-      "color4": "#c6ad8f",
-      "color5": "#7f5539",
       "width": 665,
-      "height": 800
+      "height": 800,
+      "palette": [
+        {
+          "hex": "#828c7b",
+          "share": 0.387
+        },
+        {
+          "hex": "#6c6d53",
+          "share": 0.294
+        },
+        {
+          "hex": "#52533e",
+          "share": 0.181
+        },
+        {
+          "hex": "#27332d",
+          "share": 0.104
+        },
+        {
+          "hex": "#904027",
+          "share": 0.034
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAQCdASoNABAAAsBMJQBdgA/1KPgAAOGCrXnNj6VxjfrBc98OXrjNo8/ifrIGAJx7noo+yY+TDZmRRxjMq2Kfz7MJ72m5egpoAA=="
     },
     {
       "id": "61",
@@ -1273,13 +2353,31 @@
       "physicalDimensions": "65 cm × 81.5 cm",
       "local": "Museu Van Gogh, Amsterdã, Países Baixos",
       "description": "Pintado durante uma curta viagem à vila de pescadores de Saintes-Maries-de-la-Mer. Van Gogh ficou fascinado pelas cores do Mediterrâneo e pelos barcos coloridos.",
-      "color1": "#0077b6",
-      "color2": "#fdf0d5",
-      "color3": "#c1121f",
-      "color4": "#8ecae6",
-      "color5": "#f7a072",
       "width": 800,
-      "height": 644
+      "height": 644,
+      "palette": [
+        {
+          "hex": "#9caea2",
+          "share": 0.569
+        },
+        {
+          "hex": "#847a5c",
+          "share": 0.327
+        },
+        {
+          "hex": "#cfb75f",
+          "share": 0.039
+        },
+        {
+          "hex": "#6b3a23",
+          "share": 0.038
+        },
+        {
+          "hex": "#1f2e2d",
+          "share": 0.026
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAQCdASoQAA0AAsBMJQBOgCKlGgnv1wAA/oxzTe9bnSuPX0/dtRR/1wSUCY1/JpZLvXOuvZzML+JS8ZwnI5n/FAA="
     },
     {
       "id": "62",
@@ -1294,13 +2392,31 @@
       "physicalDimensions": "81 cm × 65 cm",
       "local": "Museu Van Gogh, Amsterdã, Países Baixos",
       "description": "Retrato de um soldado de infantaria francês (zuavo) que Van Gogh conheceu em Arles. Ele ficou impressionado com a combinação de cores 'selvagem e inarmônica' do uniforme.",
-      "color1": "#d62828",
-      "color2": "#003049",
-      "color3": "#f77f00",
-      "color4": "#fcbf49",
-      "color5": "#eae2b7",
       "width": 670,
-      "height": 800
+      "height": 800,
+      "palette": [
+        {
+          "hex": "#111518",
+          "share": 0.318
+        },
+        {
+          "hex": "#895211",
+          "share": 0.265
+        },
+        {
+          "hex": "#12421a",
+          "share": 0.24
+        },
+        {
+          "hex": "#742b0c",
+          "share": 0.106
+        },
+        {
+          "hex": "#0c6733",
+          "share": 0.071
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAwAgCdASoNABAAAsBMJbACdAELz5gfxJTgAAD+9DaeeCBfhdgOr937IbCi5rRPI+T2Jez9sXYw8cC678xFzlsiZuNqrR4k3BYbljHcdlGRb3dA6UXauYlwgwL0/29XKYnAAA=="
     },
     {
       "id": "63",
@@ -1315,13 +2431,31 @@
       "physicalDimensions": "46.1 cm × 60.9 cm",
       "local": "Galeria Nacional de Arte, Washington D.C., EUA",
       "description": "Uma cena rural da Provença, perto de Arles. A pintura é caracterizada pela luz intensa do sul da França e pelas pinceladas vigorosas que definem os campos e as árvores.",
-      "color1": "#ffcb77",
-      "color2": "#4a7c59",
-      "color3": "#1e4d2b",
-      "color4": "#89a894",
-      "color5": "#f4e2d8",
       "width": 1000,
-      "height": 753
+      "height": 753,
+      "palette": [
+        {
+          "hex": "#b18128",
+          "share": 0.36
+        },
+        {
+          "hex": "#9cd5d1",
+          "share": 0.324
+        },
+        {
+          "hex": "#c3a641",
+          "share": 0.158
+        },
+        {
+          "hex": "#4a5b3b",
+          "share": 0.112
+        },
+        {
+          "hex": "#924f33",
+          "share": 0.046
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAQCdASoQAAwAAsBMJbACdAEJyZygAAD+yX7IZ3X0dxGdWZJwPhsQD8szpvq1qTFc+OvC5gpf6medvJfkV5XEj9huBLYN3Asirl6wTWTP3+a7LH7YASPXyopIAAAA"
     },
     {
       "id": "64",
@@ -1336,13 +2470,31 @@
       "physicalDimensions": "74 cm × 92 cm",
       "local": "Coleção Oskar Reinhart 'Am Römerholz', Winterthur, Suíça",
       "description": "Pintado durante sua internação no hospital de Arles após o incidente da orelha. A obra retrata a longa ala do hospital, transmitindo uma sensação de solidão e isolamento.",
-      "color1": "#c5443a",
-      "color2": "#dfd76b",
-      "color3": "#75884b",
-      "color4": "#ab9781",
-      "color5": "#e7e0cc",
       "width": 1223,
-      "height": 950
+      "height": 950,
+      "palette": [
+        {
+          "hex": "#44462b",
+          "share": 0.291
+        },
+        {
+          "hex": "#81a48f",
+          "share": 0.263
+        },
+        {
+          "hex": "#8c6d2f",
+          "share": 0.204
+        },
+        {
+          "hex": "#3e7089",
+          "share": 0.16
+        },
+        {
+          "hex": "#c8d4b0",
+          "share": 0.082
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQAgCdASoQAAwAAsBMJbACdAEe57wJ3sgAAPgzMKCpn1owJ/UqQgBJHFEmv2IgU8h4LYMfOCGqv/29KiJFNgFI5oXFxnzrj365r/eytZruPpDHwfnwiF6rm8BA1ygFa2oAAA=="
     },
     {
       "id": "65",
@@ -1357,13 +2509,31 @@
       "physicalDimensions": "72 cm × 91 cm",
       "local": "Musée d'Orsay, Paris, França",
       "description": "Uma das paisagens de Auvers-sur-Oise, pintada no último ano de sua vida. As pinceladas são turbulentas e expressivas, refletindo sua agitação interior.",
-      "color1": "#1d3557",
-      "color2": "#457b9d",
-      "color3": "#a8dadc",
-      "color4": "#f1faee",
-      "color5": "#e63946",
       "width": 5067,
-      "height": 4007
+      "height": 4007,
+      "palette": [
+        {
+          "hex": "#848c73",
+          "share": 0.264
+        },
+        {
+          "hex": "#515f4e",
+          "share": 0.208
+        },
+        {
+          "hex": "#98a9b7",
+          "share": 0.208
+        },
+        {
+          "hex": "#cbc9b2",
+          "share": 0.184
+        },
+        {
+          "hex": "#303c3b",
+          "share": 0.136
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACwAQCdASoQAA0AAsBMJYwCdADphMQAAM4CvzuXQuNNKtLfMZiUtAUj35FY/aHHJocc5uICZnTTKuOjTDiBH8nG2+ac+rgvuctGtPJRKfcpllg4svp+QAAA"
     },
     {
       "id": "66",
@@ -1378,13 +2548,31 @@
       "physicalDimensions": "40 cm × 30 cm",
       "local": "Galeria Nacional da Escócia, Edimburgo, Reino Unido",
       "description": "Um estudo da vida camponesa em Nuenen. Van Gogh usou tons escuros e terrosos para retratar a figura da mulher trabalhando a terra, enfatizando sua conexão com a natureza.",
-      "color1": "#3b3934",
-      "color2": "#766c5c",
-      "color3": "#a3957e",
-      "color4": "#585145",
-      "color5": "#c5baa9",
       "width": 800,
-      "height": 1003
+      "height": 1003,
+      "palette": [
+        {
+          "hex": "#696938",
+          "share": 0.261
+        },
+        {
+          "hex": "#343727",
+          "share": 0.254
+        },
+        {
+          "hex": "#110c11",
+          "share": 0.224
+        },
+        {
+          "hex": "#f2e7d7",
+          "share": 0.209
+        },
+        {
+          "hex": "#928c41",
+          "share": 0.052
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADwAQCdASoNABAAAsBMJYgCdADygNRauoAA/uKNsA3sBmID6v0LqeU0p7ko6Au4v06LSRwLqc9e0kh+x1xdS1ydnX8tMPZwBXP2OXVTn456RYRjHusJdZElg3h97AAA"
     },
     {
       "id": "67",
@@ -1399,13 +2587,31 @@
       "physicalDimensions": "91 cm × 72 cm",
       "local": "Neue Pinakothek, Munique, Alemanha",
       "description": "Uma das famosas pinturas de girassóis de Arles. Esta versão, com doze girassóis, mostra as flores em um vaso simples, explorando as muitas tonalidades do amarelo.",
-      "color1": "#ffbe0b",
-      "color2": "#fb5607",
-      "color3": "#8338ec",
-      "color4": "#3a86ff",
-      "color5": "#ff006e",
       "width": 717,
-      "height": 900
+      "height": 900,
+      "palette": [
+        {
+          "hex": "#7fc2ac",
+          "share": 0.325
+        },
+        {
+          "hex": "#986e39",
+          "share": 0.248
+        },
+        {
+          "hex": "#bc9b40",
+          "share": 0.247
+        },
+        {
+          "hex": "#6b482a",
+          "share": 0.111
+        },
+        {
+          "hex": "#e0c05f",
+          "share": 0.07
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAQAgCdASoNABAAAsBMJbACdAEfW9p1e1eAAP62dFB5761m6j7dHHDvkglc0zd1jue/tblB3Ob+H2gANTprwDyOLHHKxxYpVxI+Qjsb5TlraE9haPcCOyWTv4Dt74cG1vxYI5eAAAA="
     },
     {
       "id": "68",
@@ -1420,13 +2626,31 @@
       "physicalDimensions": "72 cm × 92 cm",
       "local": "Museu Kröller-Müller, Otterlo, Países Baixos",
       "description": "Pintado em Arles, esta paisagem de um vinhedo sob o sol da Provença é uma celebração da cor e da luz. A obra transmite a admiração de Van Gogh pela natureza e pelo trabalho rural.",
-      "color1": "#3d405b",
-      "color2": "#81b29a",
-      "color3": "#f2cc8f",
-      "color4": "#e07a5f",
-      "color5": "#f4f1de",
       "width": 1024,
-      "height": 803
+      "height": 803,
+      "palette": [
+        {
+          "hex": "#576b3b",
+          "share": 0.389
+        },
+        {
+          "hex": "#73b3d2",
+          "share": 0.266
+        },
+        {
+          "hex": "#77904a",
+          "share": 0.148
+        },
+        {
+          "hex": "#5089c6",
+          "share": 0.102
+        },
+        {
+          "hex": "#aaa848",
+          "share": 0.094
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAwAgCdASoQAA0AAsBMJZgCdGuAAs0H6kA+YAD82CmD5Z0qWjS0mNcwpuCk/z6pHz3htFnHO3uEXAwSwAgCJbvvhGdNp4o1EHRGmB/UgdHjE6urMn14uYRgAAA="
     },
     {
       "id": "69",
@@ -1441,13 +2665,31 @@
       "physicalDimensions": "73 cm × 92 cm",
       "local": "Museu Hermitage, São Petersburgo, Rússia",
       "description": "Pintado no jardim do asilo em Saint-Rémy. As pinceladas espessas e dinâmicas capturam a exuberância do arbusto de lírios, contrastando com o confinamento do artista.",
-      "color1": "#588157",
-      "color2": "#a3b18a",
-      "color3": "#dad7cd",
-      "color4": "#3a5a40",
-      "color5": "#344e41",
       "width": 7560,
-      "height": 5939
+      "height": 5939,
+      "palette": [
+        {
+          "hex": "#879355",
+          "share": 0.305
+        },
+        {
+          "hex": "#3f5f39",
+          "share": 0.246
+        },
+        {
+          "hex": "#ccb159",
+          "share": 0.214
+        },
+        {
+          "hex": "#07386b",
+          "share": 0.163
+        },
+        {
+          "hex": "#305b98",
+          "share": 0.072
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAwAgCdASoQAA0AAsBMJbACdAEQg+f8Z9kgAADMQ6kr3LZZMha7r2iI/bedHOIms4R96zE4XecgJ93I+8po7+XTP7bkRfFzYSEngVSzuxZr1ydvapQ8ULgA"
     },
     {
       "id": "70",
@@ -1462,13 +2704,31 @@
       "physicalDimensions": "72 cm × 92 cm",
       "local": "Museu Van Gogh, Amsterdã, Países Baixos",
       "description": "Parte de uma série de pinturas de pomares em flor que Van Gogh fez na primavera de 1888. A obra, influenciada pela arte japonesa, celebra o renascimento da natureza.",
-      "color1": "#4895ef",
-      "color2": "#f7b801",
-      "color3": "#7209b7",
-      "color4": "#b5179e",
-      "color5": "#fcf4ff",
       "width": 800,
-      "height": 635
+      "height": 635,
+      "palette": [
+        {
+          "hex": "#aebaa9",
+          "share": 0.349
+        },
+        {
+          "hex": "#9b916c",
+          "share": 0.3
+        },
+        {
+          "hex": "#688938",
+          "share": 0.192
+        },
+        {
+          "hex": "#516673",
+          "share": 0.085
+        },
+        {
+          "hex": "#566534",
+          "share": 0.074
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoQAA0AAsBMJaACdH8AEC/gAAD+08yi8Oq21kuYTo5z5XH6KtEIR0Qu0MDfRmDNwAA="
     },
     {
       "id": "71",
@@ -1483,13 +2743,31 @@
       "physicalDimensions": "44 cm × 53 cm",
       "local": "Museu Van Gogh, Amsterdã, Países Baixos",
       "description": "Durante sua visita a Saintes-Maries-de-la-Mer, Van Gogh explorou a cor do Mediterrâneo. Nesta obra, ele usa pinceladas curtas e cores contrastantes para capturar o movimento das ondas.",
-      "color1": "#023e8a",
-      "color2": "#0096c7",
-      "color3": "#90e0ef",
-      "color4": "#caf0f8",
-      "color5": "#ffffff",
       "width": 800,
-      "height": 623
+      "height": 623,
+      "palette": [
+        {
+          "hex": "#467a94",
+          "share": 0.398
+        },
+        {
+          "hex": "#82aab4",
+          "share": 0.324
+        },
+        {
+          "hex": "#1a5f62",
+          "share": 0.216
+        },
+        {
+          "hex": "#c4cab8",
+          "share": 0.052
+        },
+        {
+          "hex": "#854125",
+          "share": 0.01
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoQAAwAAsBMJbACdAEUlPnX9BpAAMskok//hI6kjlBf+p+BajBtdhJxj7IrlYQNKLr7ICQbrOdjvDLr4i0wiwrUAAA="
     },
     {
       "id": "72",
@@ -1504,13 +2782,31 @@
       "physicalDimensions": "81 cm × 60 cm",
       "local": "Musée d'Orsay, Paris, França",
       "description": "Acredita-se que a modelo seja Agostina Segatori. A pintura, com suas cores vibrantes e pinceladas pontilhistas, é um exemplo claro da experimentação de Van Gogh em Paris.",
-      "color1": "#ffd60a",
-      "color2": "#d00000",
-      "color3": "#003566",
-      "color4": "#ffc300",
-      "color5": "#e6ccb2",
       "width": 3922,
-      "height": 5312
+      "height": 5312,
+      "palette": [
+        {
+          "hex": "#a69356",
+          "share": 0.325
+        },
+        {
+          "hex": "#907541",
+          "share": 0.264
+        },
+        {
+          "hex": "#825a37",
+          "share": 0.262
+        },
+        {
+          "hex": "#5d2d28",
+          "share": 0.131
+        },
+        {
+          "hex": "#211a21",
+          "share": 0.018
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoMABAAAsBMJaACdACjHX/ZInAAAPKIuB+BEo1dQUIymxpJtUrU9SPjM+E3CiRtXurLaRNHjkH/+GM/r109kpJcsGWqRQAA"
     },
     {
       "id": "73",
@@ -1525,13 +2821,31 @@
       "physicalDimensions": "46.5 cm × 55.5 cm",
       "local": "Museu Van Gogh, Amsterdã, Países Baixos",
       "description": "Uma cena de rua parisiense que mostra a influência do impressionismo no trabalho de Van Gogh. Ele captura a atmosfera da cidade com pinceladas rápidas e uma paleta de cores mais claras.",
-      "color1": "#8d99ae",
-      "color2": "#edf2f4",
-      "color3": "#ef233c",
-      "color4": "#d90429",
-      "color5": "#2b2d42",
       "width": 800,
-      "height": 663
+      "height": 663,
+      "palette": [
+        {
+          "hex": "#bbb9ab",
+          "share": 0.336
+        },
+        {
+          "hex": "#a7a487",
+          "share": 0.322
+        },
+        {
+          "hex": "#988d6d",
+          "share": 0.254
+        },
+        {
+          "hex": "#8c623f",
+          "share": 0.053
+        },
+        {
+          "hex": "#5e5b47",
+          "share": 0.036
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoQAA0AAsBMJQBdgBuudEjfDMAA/rfVAIeUVTkgF5qPYwE37PFZBos6kZr7arPiWNcoDU6IAAA="
     },
     {
       "id": "74",
@@ -1546,13 +2860,31 @@
       "physicalDimensions": "72 cm × 91 cm",
       "local": "Gemeentemuseum Den Haag, Haia, Países Baixos",
       "description": "Uma das paisagens de Arles, pintada na primavera. A obra é uma explosão de cores, celebrando a beleza e a vitalidade da natureza no sul da França.",
-      "color1": "#386641",
-      "color2": "#6a994e",
-      "color3": "#a7c957",
-      "color4": "#f2e8cf",
-      "color5": "#bc4749",
       "width": 1000,
-      "height": 784
+      "height": 784,
+      "palette": [
+        {
+          "hex": "#887c3c",
+          "share": 0.343
+        },
+        {
+          "hex": "#9cb599",
+          "share": 0.219
+        },
+        {
+          "hex": "#a19a55",
+          "share": 0.216
+        },
+        {
+          "hex": "#3c5024",
+          "share": 0.166
+        },
+        {
+          "hex": "#904a28",
+          "share": 0.057
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQAgCdASoQAA0AAsBMJbACdADpII+XXKAAAPzQ9pefdvdcwvh/ZACgNTWsHAECzCKq2ViL8ADk3g9SOalezPFzMNW9+B3pSbOw99kjr/fMzY2QAAA="
     },
     {
       "id": "75",
@@ -1567,13 +2899,31 @@
       "physicalDimensions": "54 cm × 65 cm",
       "local": "Museu Kröller-Müller, Otterlo, Países Baixos",
       "description": "Outra versão da ponte levadiça em Arles. Nesta, Van Gogh inclui a figura das lavadeiras, adicionando um elemento de vida cotidiana à paisagem e mostrando seu interesse pela arte japonesa.",
-      "color1": "#fca311",
-      "color2": "#14213d",
-      "color3": "#e5e5e5",
-      "color4": "#ffffff",
-      "color5": "#6b705c",
       "width": 2000,
-      "height": 1662
+      "height": 1662,
+      "palette": [
+        {
+          "hex": "#7ba3cd",
+          "share": 0.306
+        },
+        {
+          "hex": "#7f7232",
+          "share": 0.28
+        },
+        {
+          "hex": "#5f4c23",
+          "share": 0.206
+        },
+        {
+          "hex": "#d3952d",
+          "share": 0.156
+        },
+        {
+          "hex": "#dec787",
+          "share": 0.052
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAQCdASoQAA0AAsBMJbACdACE3gtUAAD+05U9KZ1IGBD0nGaicjNkRpV6fWBEsKSH5qcIP8n8KaW8UQbUv0NPVIYGOGzdPj6w5J5kQmYy8+A1FyTlye6v514CmWsUsAAAAA=="
     },
     {
       "id": "76",
@@ -1588,13 +2938,31 @@
       "physicalDimensions": "65 cm × 81 cm",
       "local": "Museu Van Gogh, Amsterdã, Países Baixos",
       "description": "Parte da série de pomares floridos de Arles, esta obra celebra a chegada da primavera. As pinceladas e cores refletem a alegria e a esperança que Van Gogh sentia com o renascimento da natureza.",
-      "color1": "#f94144",
-      "color2": "#f3722c",
-      "color3": "#f8961e",
-      "color4": "#f9c74f",
-      "color5": "#90be6d",
       "width": 2789,
-      "height": 3722
+      "height": 3722,
+      "palette": [
+        {
+          "hex": "#697b2a",
+          "share": 0.387
+        },
+        {
+          "hex": "#afa15a",
+          "share": 0.216
+        },
+        {
+          "hex": "#e4dad3",
+          "share": 0.206
+        },
+        {
+          "hex": "#ac7a2c",
+          "share": 0.135
+        },
+        {
+          "hex": "#000000",
+          "share": 0.057
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACwAQCdASoMABAAAsBMJbACdAEQC0z8AP62Di4d9xG6O4yQLkNxQzZeXw5Q4jaNpf4XPYmsjKYkkiI2N+m7rsZRnCZi6yoGVTtjCa+DTnkfaAAA"
     },
     {
       "id": "77",
@@ -1609,13 +2977,31 @@
       "physicalDimensions": "73.4 cm × 91.8 cm",
       "local": "Museu Van Gogh, Amsterdã, Países Baixos",
       "description": "Esta paisagem panorâmica da planície de La Crau, perto de Arles, retrata a colheita de trigo sob o sol intenso do verão. A obra é uma sinfonia de amarelos e azuis.",
-      "color1": "#00b4d8",
-      "color2": "#ffc8dd",
-      "color3": "#ffafcc",
-      "color4": "#bde0fe",
-      "color5": "#a2d2ff",
       "width": 800,
-      "height": 637
+      "height": 637,
+      "palette": [
+        {
+          "hex": "#a7893f",
+          "share": 0.377
+        },
+        {
+          "hex": "#77632e",
+          "share": 0.249
+        },
+        {
+          "hex": "#629994",
+          "share": 0.228
+        },
+        {
+          "hex": "#424e2a",
+          "share": 0.123
+        },
+        {
+          "hex": "#cec092",
+          "share": 0.023
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAABQAgCdASoQAA0AAsBMJbACdGuAt/8D5asUNwAA8mZNJP0YyjgcGQFyKrwZv8PdZZJ+I63Qt+Iq+/dJn/Hp3/ApwBekE9VBYpQEmoAA"
     },
     {
       "id": "78",
@@ -1630,13 +3016,31 @@
       "physicalDimensions": "55 cm × 65 cm",
       "local": "Galeria de Arte Albright-Knox, Buffalo, EUA",
       "description": "Um moinho de vento em uma paisagem provençal. As pinceladas vigorosas e as cores expressivas, especialmente no céu, são características do estilo maduro de Van Gogh em Arles.",
-      "color1": "#2ec4b6",
-      "color2": "#e71d36",
-      "color3": "#ff9f1c",
-      "color4": "#fdfffc",
-      "color5": "#011627",
       "width": 3670,
-      "height": 4443
+      "height": 4443,
+      "palette": [
+        {
+          "hex": "#a78f5c",
+          "share": 0.368
+        },
+        {
+          "hex": "#b3cabe",
+          "share": 0.26
+        },
+        {
+          "hex": "#706344",
+          "share": 0.229
+        },
+        {
+          "hex": "#3f4736",
+          "share": 0.072
+        },
+        {
+          "hex": "#d8bc63",
+          "share": 0.071
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQAgCdASoNABAAAsBMJbACdAC9qjeQl/MAAP7q3AyYi2QMgsa/9DwoB8x/r33N/7UJG7SQomYlF3eb9Y3SOwrAgZUAGGPWrIvXs0ceWSk+cXt+r9f9x/HYAAA="
     },
     {
       "id": "79",
@@ -1651,13 +3055,31 @@
       "physicalDimensions": "73 cm × 92.1 cm",
       "local": "Art Institute of Chicago, Chicago, EUA",
       "description": "Esta versão do jardim público em Arles inclui um casal passeando, adicionando um elemento narrativo à paisagem poética que Van Gogh tanto admirava.",
-      "color1": "#3b5a3e",
-      "color2": "#f2d65d",
-      "color3": "#75a3c2",
-      "color4": "#a6b88b",
-      "color5": "#253c2e",
       "width": 1000,
-      "height": 804
+      "height": 804,
+      "palette": [
+        {
+          "hex": "#383514",
+          "share": 0.353
+        },
+        {
+          "hex": "#756e28",
+          "share": 0.233
+        },
+        {
+          "hex": "#bdad7a",
+          "share": 0.193
+        },
+        {
+          "hex": "#9a8f28",
+          "share": 0.133
+        },
+        {
+          "hex": "#f5dea8",
+          "share": 0.089
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADQAQCdASoQAA0AAsBMJbACdAD5KktWAAD+7vOLOmB9qHZcZb93EPSTtxo99sd+10CD4Cnij0qff63CAlAiVx+FH+asm6NGYpkkgORvG9FvBG1b3W2T9epRIcfRZ6BAAAA="
     },
     {
       "id": "80",
@@ -1672,13 +3094,31 @@
       "physicalDimensions": "49.5 cm × 45.5 cm",
       "local": "Museu de Arte de São Paulo (MASP), São Paulo, Brasil",
       "description": "Uma paisagem noturna pintada no asilo de Saint-Rémy. A obra retrata um casal caminhando sob um céu iluminado pela lua, transmitindo uma atmosfera de romance e melancolia.",
-      "color1": "#f9c74f",
-      "color2": "#90be6d",
-      "color3": "#43aa8b",
-      "color4": "#4d908e",
-      "color5": "#577590",
       "width": 886,
-      "height": 1000
+      "height": 1000,
+      "palette": [
+        {
+          "hex": "#d5aa73",
+          "share": 0.325
+        },
+        {
+          "hex": "#959b78",
+          "share": 0.32
+        },
+        {
+          "hex": "#726d59",
+          "share": 0.173
+        },
+        {
+          "hex": "#503f49",
+          "share": 0.133
+        },
+        {
+          "hex": "#251224",
+          "share": 0.05
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABQAgCdASoOABAAAsBMJZACdEf/gegxmkaCe4AA/llcRQ/tWxtHe9owpAIKvj4PNZnZDEIr11SOX39b8gtTdDseYsjuzRZ1XCckvV+rOlhPTfLkY0Ed3jufmFOqpsrWRl4AAA=="
     },
     {
       "id": "81",
@@ -1693,13 +3133,31 @@
       "physicalDimensions": "90 cm × 73 cm",
       "local": "Coleção particular",
       "description": "Uma cena do jardim do asilo em Saint-Rémy. As árvores retorcidas e as pinceladas turbulentas refletem o estado mental de Van Gogh, mas também sua profunda conexão com a natureza.",
-      "color1": "#006400",
-      "color2": "#ffd700",
-      "color3": "#ff4500",
-      "color4": "#4682b4",
-      "color5": "#deb887",
       "width": 3059,
-      "height": 3832
+      "height": 3832,
+      "palette": [
+        {
+          "hex": "#27353c",
+          "share": 0.291
+        },
+        {
+          "hex": "#9b6d32",
+          "share": 0.257
+        },
+        {
+          "hex": "#c59427",
+          "share": 0.203
+        },
+        {
+          "hex": "#51819e",
+          "share": 0.142
+        },
+        {
+          "hex": "#ddc77c",
+          "share": 0.106
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwAgCdASoNABAAAsBMJbACdGaAAuP5BFwagAD9bpNHwiQqVBzm1t+I1PPAA1qgy9TsyZWhvMiL30gi8MZstphryeXWfSwn9wgErDV/IHG9FvAX0HNlOv3O+QHdis1aMf9MBDrkO+TkSNjlRx1SWsVAAAA="
     },
     {
       "id": "82",
@@ -1714,13 +3172,31 @@
       "physicalDimensions": "72.4 cm × 91.2 cm",
       "local": "Museu Metropolitano de Arte, Nova Iorque, EUA",
       "description": "Uma interpretação colorida da obra de Millet. A cena terna de uma criança dando seus primeiros passos em direção ao pai é infundida com a paleta vibrante e a emoção de Van Gogh.",
-      "color1": "#2d6a4f",
-      "color2": "#74c69d",
-      "color3": "#d88c9a",
-      "color4": "#f2d3ab",
-      "color5": "#9a8c98",
       "width": 1859,
-      "height": 1480
+      "height": 1480,
+      "palette": [
+        {
+          "hex": "#8ba882",
+          "share": 0.42
+        },
+        {
+          "hex": "#c7cfb4",
+          "share": 0.358
+        },
+        {
+          "hex": "#73936f",
+          "share": 0.147
+        },
+        {
+          "hex": "#737159",
+          "share": 0.064
+        },
+        {
+          "hex": "#2d5062",
+          "share": 0.011
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoQAA0AAsBMJYgCdACvosJhwggA/tXFKJIDQE45hjbBh9VrPnlTJOUwhxAATn4FLpmzLcG57CQSDTLOrYvFzmQ2LJWJiUAAAAA="
     },
     {
       "id": "83",
@@ -1735,13 +3211,31 @@
       "physicalDimensions": "47.5 cm × 61.5 cm",
       "local": "Galleria d'Arte Moderna, Milão, Itália",
       "description": "Baseado em um desenho de seu amigo Émile Bernard, esta aquarela foi feita em Arles. Mostra mulheres em trajes tradicionais da Bretanha, refletindo o interesse de Van Gogh por temas rurais e exóticos.",
-      "color1": "#4c1a25",
-      "color2": "#a44a3f",
-      "color3": "#d4e09b",
-      "color4": "#f6f7eb",
-      "color5": "#8a6651",
       "width": 1200,
-      "height": 938
+      "height": 938,
+      "palette": [
+        {
+          "hex": "#705f3c",
+          "share": 0.26
+        },
+        {
+          "hex": "#aecabf",
+          "share": 0.222
+        },
+        {
+          "hex": "#9f9059",
+          "share": 0.209
+        },
+        {
+          "hex": "#43351f",
+          "share": 0.178
+        },
+        {
+          "hex": "#dcd37a",
+          "share": 0.131
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAwAgCdASoQAAwAAsBMJagCdAYvhnSL8SwCgAD2t8k/aBVAdOyuATw66O/P5A1hrJbMI9o2NXtcAkCKF+5JDViECKqwumrY4tWhbpR0jasPVwQ9pzQP9D29AQvPSxF/3h8NPcUCE1uyYk2sTJLpDcAA"
     },
     {
       "id": "84",
@@ -1756,13 +3250,31 @@
       "physicalDimensions": "69 cm × 56 cm",
       "local": "Coleção Niarchos (Coleção particular)",
       "description": "Retrato de um pastor de Camargue. Van Gogh queria pintar um 'homem velho do campo', mostrando a nobreza e a sabedoria forjadas por uma vida de trabalho sob o sol.",
-      "color1": "#f7d74f",
-      "color2": "#a34a28",
-      "color3": "#5a7d6e",
-      "color4": "#5a3a29",
-      "color5": "#e0b89a",
       "width": 3870,
-      "height": 5082
+      "height": 5082,
+      "palette": [
+        {
+          "hex": "#6283a0",
+          "share": 0.316
+        },
+        {
+          "hex": "#e5aa5b",
+          "share": 0.258
+        },
+        {
+          "hex": "#ad8c5b",
+          "share": 0.228
+        },
+        {
+          "hex": "#303033",
+          "share": 0.121
+        },
+        {
+          "hex": "#e6d25a",
+          "share": 0.077
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABwAgCdASoMABAAAsBMJbACdAELhzoNJ1+uydQAAP7TrbCnihrCjdGon7M1ttIdEU+mPrdq408NH6G8jpukL2MTeowfn7f5mTFDvsKahLzAWfA35NceiyI5bfgAAA=="
     },
     {
       "id": "85",
@@ -1777,13 +3289,31 @@
       "physicalDimensions": "46.3 cm × 33.2 cm",
       "local": "Museu Van Gogh, Amsterdã, Países Baixos",
       "description": "Um retrato que captura a solidão e o isolamento da vida parisiense. A figura sentada em um café, com um copo de absinto, era um tema comum entre os artistas da época.",
-      "color1": "#8b0000",
-      "color2": "#000000",
-      "color3": "#cd5c5c",
-      "color4": "#f0e68c",
-      "color5": "#a52a2a",
       "width": 600,
-      "height": 852
+      "height": 852,
+      "palette": [
+        {
+          "hex": "#dcb36f",
+          "share": 0.336
+        },
+        {
+          "hex": "#af7c3b",
+          "share": 0.281
+        },
+        {
+          "hex": "#874916",
+          "share": 0.178
+        },
+        {
+          "hex": "#57330c",
+          "share": 0.115
+        },
+        {
+          "hex": "#efd6ad",
+          "share": 0.091
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAQCdASoLABAAAsBMJbACdADhXOQO3AAA+N/KdFn130N4k4X3DbH/791DkBEDT1X1OhEZTtb2kUGMgGxFx5UzlghHNim0SAWf438oegVS7s1hwdksAA=="
     },
     {
       "id": "86",
@@ -1798,13 +3328,31 @@
       "physicalDimensions": "73 cm × 92 cm",
       "local": "Coleção particular",
       "description": "Uma paisagem primaveril de Arles. A obra retrata um vinhedo florescendo, com cores vibrantes que celebram a fertilidade e a beleza da natureza provençal.",
-      "color1": "#dda15e",
-      "color2": "#bc6c25",
-      "color3": "#606c38",
-      "color4": "#283618",
-      "color5": "#fefae0",
       "width": 3072,
-      "height": 2409
+      "height": 2409,
+      "palette": [
+        {
+          "hex": "#77b8d7",
+          "share": 0.275
+        },
+        {
+          "hex": "#3c4d2e",
+          "share": 0.256
+        },
+        {
+          "hex": "#637f3e",
+          "share": 0.227
+        },
+        {
+          "hex": "#afad4a",
+          "share": 0.138
+        },
+        {
+          "hex": "#4b84c2",
+          "share": 0.105
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAwAgCdASoQAA0AAsBMJZgCdGuAAsOg7niXwAD82CmHgdaRTiSXGWPTcb8/s54JKWSomtyRv5ijhB31DbN2lGeu578p1JpeackDCQBb6CQgTX0Cs5btu9jzqucAAA=="
     },
     {
       "id": "87",
@@ -1819,13 +3367,31 @@
       "physicalDimensions": "74 cm × 60 cm",
       "local": "Art Institute of Chicago, Chicago, EUA",
       "description": "Retrato de um jovem pescador de Arles. A obra é notável pelo uso de cores fortes e pinceladas expressivas, que capturam a personalidade e a vitalidade do modelo.",
-      "color1": "#001219",
-      "color2": "#005f73",
-      "color3": "#0a9396",
-      "color4": "#94d2bd",
-      "color5": "#e9d8a6",
       "width": 1749,
-      "height": 2728
+      "height": 2728,
+      "palette": [
+        {
+          "hex": "#867e65",
+          "share": 0.334
+        },
+        {
+          "hex": "#a2aca7",
+          "share": 0.311
+        },
+        {
+          "hex": "#241c13",
+          "share": 0.153
+        },
+        {
+          "hex": "#493d2f",
+          "share": 0.114
+        },
+        {
+          "hex": "#656656",
+          "share": 0.088
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQAgCdASoKABAAAsBMJYwAD5CNQkPrJ/8AAP5gCrtx/4v36UXChditJ5cr/7Z5ifUDAGLmjsdu/W/hbWXj96Sv+5YdwNWuEAWd/fVQSLnP6D2A8AA="
     },
     {
       "id": "88",
@@ -1840,13 +3406,31 @@
       "physicalDimensions": "54 cm × 65 cm",
       "local": "Museu Thyssen-Bornemisza, Madrid, Espanha",
       "description": "A obra retrata trabalhadores descarregando areia de barcaças no rio Ródano. Van Gogh usa cores fortes e contrastantes para capturar a luz e o calor do trabalho sob o sol de Arles.",
-      "color1": "#1a535c",
-      "color2": "#4ecdc4",
-      "color3": "#ff6b6b",
-      "color4": "#ffe66d",
-      "color5": "#f7fff7",
       "width": 2000,
-      "height": 1666
+      "height": 1666,
+      "palette": [
+        {
+          "hex": "#93a243",
+          "share": 0.311
+        },
+        {
+          "hex": "#2b3a2c",
+          "share": 0.263
+        },
+        {
+          "hex": "#e7ab32",
+          "share": 0.183
+        },
+        {
+          "hex": "#080f19",
+          "share": 0.136
+        },
+        {
+          "hex": "#c2843b",
+          "share": 0.107
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAQCdASoQAA0AAsBMJbACdAEfkKExAgAA/ezgNp4HetejxKL1y0AKMemlD6Ash/PDi5vNXJF0EAzML0RwAe8XbpBo2dvLz7tV/kQhSXz1lCKFhQ4r7OXL75HAAA=="
     },
     {
       "id": "89",
@@ -1861,13 +3445,31 @@
       "physicalDimensions": "38 cm × 56 cm",
       "local": "Rijksmuseum, Amsterdã, Países Baixos",
       "description": "Uma natureza-morta do período de Antuérpia. A paleta é escura e sombria, típica de seu trabalho inicial, mas as pinceladas já mostram uma energia expressiva.",
-      "color1": "#5e503f",
-      "color2": "#c6ac8f",
-      "color3": "#2a2a2a",
-      "color4": "#a48a6f",
-      "color5": "#816f59",
       "width": 1400,
-      "height": 1016
+      "height": 1016,
+      "palette": [
+        {
+          "hex": "#877143",
+          "share": 0.425
+        },
+        {
+          "hex": "#c68f34",
+          "share": 0.315
+        },
+        {
+          "hex": "#4c4731",
+          "share": 0.144
+        },
+        {
+          "hex": "#13221b",
+          "share": 0.063
+        },
+        {
+          "hex": "#ddb45a",
+          "share": 0.054
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwAgCdASoQAAwAAsBMJbACdAEQ48P6IFMDgADwCwaAAo6d6QLoRQH03lCGwkJ1oHJ0zmX6umLo2mFwWLS+q6GnrsqsBVE1+iqKHF7j9LwtCUNgL3bUPdfglN6q2+eAAAA="
     },
     {
       "id": "90",
@@ -1882,13 +3484,31 @@
       "physicalDimensions": "54.5 cm × 65.5 cm",
       "local": "Musée d'Orsay, Paris, França",
       "description": "Pintado nos arredores de Paris, este trabalho mostra a influência do impressionismo. Van Gogh usa cores brilhantes e pinceladas curtas para capturar a luz e a atmosfera de um dia de verão.",
-      "color1": "#fec89a",
-      "color2": "#f08080",
-      "color3": "#b5838d",
-      "color4": "#6d6875",
-      "color5": "#e5e5e5",
       "width": 850,
-      "height": 705
+      "height": 705,
+      "palette": [
+        {
+          "hex": "#a1a78a",
+          "share": 0.399
+        },
+        {
+          "hex": "#dfd09d",
+          "share": 0.292
+        },
+        {
+          "hex": "#8a7a34",
+          "share": 0.145
+        },
+        {
+          "hex": "#3a532b",
+          "share": 0.108
+        },
+        {
+          "hex": "#9c583e",
+          "share": 0.057
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAQAgCdASoQAA0AAsBMJaACdAERAo0uYogAAP7oK8gOQe+rhtbanmidqxCUJdatynJMJ7oYjsgHcstH0l+Vj2IcB6FftlzNqVT6yASsPsMJyyiSo5TJreAA"
     },
     {
       "id": "91",
@@ -1903,13 +3523,31 @@
       "physicalDimensions": "81.3 cm × 65.4 cm",
       "local": "Museu de Belas Artes, Boston, EUA",
       "description": "Uma das várias versões que Van Gogh pintou de seu amigo, o carteiro Joseph Roulin. O fundo floral e as cores vibrantes do uniforme destacam a personalidade calorosa do modelo.",
-      "color1": "#003f88",
-      "color2": "#fdc500",
-      "color3": "#9d5c0d",
-      "color4": "#e8e5d6",
-      "color5": "#4a7631",
       "width": 1787,
-      "height": 2233
+      "height": 2233,
+      "palette": [
+        {
+          "hex": "#b0cacc",
+          "share": 0.412
+        },
+        {
+          "hex": "#0c4062",
+          "share": 0.262
+        },
+        {
+          "hex": "#071732",
+          "share": 0.135
+        },
+        {
+          "hex": "#867b53",
+          "share": 0.098
+        },
+        {
+          "hex": "#366b89",
+          "share": 0.093
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAACwAgCdASoNABAAAsBMJaACdEf/i1tOYy8qvg3RGgAA/uqVK5qXznz0lSW7vrOF8Tn1wgmfFT8KFY59FzVes5hmrUv009qKjri/G7IfysC3PkUO8dFDMChSid6apewktkrZNz4rP/Vvnwojb/aakyChwAA="
     },
     {
       "id": "92",
@@ -1924,13 +3562,31 @@
       "physicalDimensions": "38.2 cm × 46.2 cm",
       "local": "Museu Solomon R. Guggenheim, Nova Iorque, EUA",
       "description": "Pintado logo após sua chegada em Arles, que surpreendentemente estava coberta de neve. A obra mostra sua habilidade em capturar os efeitos da luz na paisagem nevada, com influências da arte japonesa.",
-      "color1": "#d7d7d7",
-      "color2": "#ffffff",
-      "color3": "#a0522d",
-      "color4": "#808080",
-      "color5": "#2f4f4f",
       "width": 1280,
-      "height": 1042
+      "height": 1042,
+      "palette": [
+        {
+          "hex": "#a2baba",
+          "share": 0.386
+        },
+        {
+          "hex": "#98886a",
+          "share": 0.273
+        },
+        {
+          "hex": "#e0dcd0",
+          "share": 0.163
+        },
+        {
+          "hex": "#5c5a2e",
+          "share": 0.115
+        },
+        {
+          "hex": "#bf9c3f",
+          "share": 0.063
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQAgCdASoQAA0AAsBMJZgCdADhfrocjyUAAP6x94szIKDdIU/AIP2p9ncoi6NkJUAfY01qu9L2KjHSN6bm2ymyGnA2UBUwCbdpecLTmxAJb5Fcqp4V6Pq0EGTAAA=="
     },
     {
       "id": "93",
@@ -1945,13 +3601,31 @@
       "physicalDimensions": "73 cm × 92 cm",
       "local": "Coleção Oskar Reinhart 'Am Römerholz', Winterthur, Suíça",
       "description": "Enquanto internado no hospital de Arles, Van Gogh pintou o pátio florido. Apesar de sua condição, a pintura é vibrante e cheia de vida, mostrando seu poder de encontrar beleza mesmo em tempos difíceis.",
-      "color1": "#03045e",
-      "color2": "#0077b6",
-      "color3": "#ffc300",
-      "color4": "#e5383b",
-      "color5": "#f7f7f2",
       "width": 2931,
-      "height": 2363
+      "height": 2363,
+      "palette": [
+        {
+          "hex": "#717640",
+          "share": 0.296
+        },
+        {
+          "hex": "#dcd1a9",
+          "share": 0.234
+        },
+        {
+          "hex": "#2e79a9",
+          "share": 0.218
+        },
+        {
+          "hex": "#bba23c",
+          "share": 0.2
+        },
+        {
+          "hex": "#ebce3b",
+          "share": 0.051
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAAAQAgCdASoQAA0AAsBMJbACdAEWUK1mnzmgAPQMhG09mhh9YvGqo6HDBuAAXfkdUWKTkmfxcz9OiaVxVXll3xKWmNJa3Utse1jB+VbqcgKiTD8Z8PO4pTVNDJt26wzcAjS90p1rgMkgwpyRzFXbtsxw7vcFBHTGAAA="
     },
     {
       "id": "94",
@@ -1966,13 +3640,31 @@
       "physicalDimensions": "67 cm × 56 cm",
       "local": "Musée d'Orsay, Paris, França",
       "description": "Segunda versão do retrato do Dr. Gachet. A expressão melancólica e a pose pensativa do médico, que também era um artista amador, refletiam a própria sensibilidade de Van Gogh.",
-      "color1": "#d00000",
-      "color2": "#3a0ca3",
-      "color3": "#e85d04",
-      "color4": "#b5a68c",
-      "color5": "#292a2d",
       "width": 839,
-      "height": 1000
+      "height": 1000,
+      "palette": [
+        {
+          "hex": "#d1c7a8",
+          "share": 0.443
+        },
+        {
+          "hex": "#8a8470",
+          "share": 0.226
+        },
+        {
+          "hex": "#aba48b",
+          "share": 0.212
+        },
+        {
+          "hex": "#686454",
+          "share": 0.107
+        },
+        {
+          "hex": "#4e4b3f",
+          "share": 0.011
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAQCdASoNABAAAsBMJQBOgBulp79GNwAA/uhLjU4YFuGyj6U/m7SBtbmwgCGx6FyNWA5tIop7DomFdiawuy3USO/6l6+4rE3rVSrljhYeBMopLpca09AA"
     },
     {
       "id": "95",
@@ -1987,13 +3679,31 @@
       "physicalDimensions": "60 cm × 45 cm",
       "local": "Musée d'Orsay, Paris, França",
       "description": "Retrato do poeta e pintor belga Eugène Boch. Van Gogh queria pintar 'o poeta', um homem de sonhos, e usou um fundo estrelado para representar o infinito e a imaginação.",
-      "color1": "#003566",
-      "color2": "#ffc300",
-      "color3": "#ffd60a",
-      "color4": "#4f772d",
-      "color5": "#c28e46",
       "width": 641,
-      "height": 850
+      "height": 850,
+      "palette": [
+        {
+          "hex": "#111e3d",
+          "share": 0.443
+        },
+        {
+          "hex": "#b68729",
+          "share": 0.358
+        },
+        {
+          "hex": "#796332",
+          "share": 0.141
+        },
+        {
+          "hex": "#d2be93",
+          "share": 0.052
+        },
+        {
+          "hex": "#fbe9b3",
+          "share": 0.006
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAwAgCdASoMABAAAsBMJbACdADbPtPfac2ZAAD+9sL33MeufvktWQbln1jTCQPW1+hBx/o8nOK3DXHmXFTdgMEgYYpG/opiH5mK/rqeTkruh/z8HaZU99cmIPjdsen03nYAAA=="
     },
     {
       "id": "96",
@@ -2008,13 +3718,31 @@
       "physicalDimensions": "37.5 cm × 45 cm",
       "local": "Museu Van Gogh, Amsterdã, Países Baixos",
       "description": "Uma de várias pinturas de sapatos feitas por Van Gogh. A obra transcende uma simples natureza-morta, evocando a vida dura e a jornada de um trabalhador rural.",
-      "color1": "#4a2c2a",
-      "color2": "#8e6a4b",
-      "color3": "#2d1e18",
-      "color4": "#c2a382",
-      "color5": "#6a4f38",
       "width": 1204,
-      "height": 1000
+      "height": 1000,
+      "palette": [
+        {
+          "hex": "#6b5e3e",
+          "share": 0.3
+        },
+        {
+          "hex": "#463e2b",
+          "share": 0.289
+        },
+        {
+          "hex": "#9b8d67",
+          "share": 0.191
+        },
+        {
+          "hex": "#21221c",
+          "share": 0.184
+        },
+        {
+          "hex": "#b2a378",
+          "share": 0.037
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAQAgCdASoQAA0AAsBMJYgCdAEWlSb5QvQAAP68gLuDdWu5+4GGa3kUF0hjWBH3DsN6iP/bdLyYoq3jjRanlft9AOYazBTEoQ5TPYkPy7jU6TCY3Lt7QAAA"
     },
     {
       "id": "97",
@@ -2029,13 +3757,31 @@
       "physicalDimensions": "45.5 cm × 56.5 cm",
       "local": "Museu Kröller-Müller, Otterlo, Países Baixos",
       "description": "Pintado em Paris, este interior de restaurante mostra a adoção de Van Gogh de cores brilhantes e pinceladas visíveis, influenciado pelo contato com os artistas impressionistas.",
-      "color1": "#e6b800",
-      "color2": "#b33f62",
-      "color3": "#f95738",
-      "color4": "#0d3b66",
-      "color5": "#faf0ca",
       "width": 1108,
-      "height": 900
+      "height": 900,
+      "palette": [
+        {
+          "hex": "#a1977f",
+          "share": 0.501
+        },
+        {
+          "hex": "#c2c6ae",
+          "share": 0.211
+        },
+        {
+          "hex": "#6d825b",
+          "share": 0.205
+        },
+        {
+          "hex": "#875b4f",
+          "share": 0.074
+        },
+        {
+          "hex": "#544e5d",
+          "share": 0.009
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACQAQCdASoQAA0AAsBMJYgCdABlBbAAyQwdiYyz+XebVwd6cjtS3/LJ49h/E1EoANRPNtmoNtvioQ9lx8XBjMubMXj/YJj0Zu7gAAAA"
     },
     {
       "id": "98",
@@ -2050,13 +3796,31 @@
       "physicalDimensions": "50.4 cm × 101.3 cm",
       "local": "Museu Van Gogh, Amsterdã, Países Baixos",
       "description": "Uma das paisagens finais de Auvers, pintada em um formato de tela dupla. O céu escuro e ameaçador contrasta com o amarelo vibrante do trigo, expressando a turbulência emocional do artista.",
-      "color1": "#032b43",
-      "color2": "#3f88c5",
-      "color3": "#4caf50",
-      "color4": "#d5a021",
-      "color5": "#f7e57c",
       "width": 6212,
-      "height": 3053
+      "height": 3053,
+      "palette": [
+        {
+          "hex": "#5682bb",
+          "share": 0.36
+        },
+        {
+          "hex": "#3154a8",
+          "share": 0.23
+        },
+        {
+          "hex": "#88a67b",
+          "share": 0.216
+        },
+        {
+          "hex": "#497a3c",
+          "share": 0.113
+        },
+        {
+          "hex": "#e0d79b",
+          "share": 0.082
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADQAQCdASoQAAgAAsBMJagCdAEVk+FTEAD4YUxEB4JRU+WF3Xmq8Zd4uYSYQEhhHhraYc3K/7yBHR9N8N0eIVMcIAAAAA=="
     },
     {
       "id": "99",
@@ -2071,13 +3835,31 @@
       "physicalDimensions": "63.5 cm × 54 cm",
       "local": "Museu de Arte de São Paulo (MASP), São Paulo, Brasil",
       "description": "Retrato de Camille Roulin, o filho mais novo de seu amigo carteiro. A obra captura a inocência da juventude com cores fortes e um fundo vibrante.",
-      "color1": "#ffba08",
-      "color2": "#d00000",
-      "color3": "#03071e",
-      "color4": "#6a040f",
-      "color5": "#faa307",
       "width": 1693,
-      "height": 2000
+      "height": 2000,
+      "palette": [
+        {
+          "hex": "#83362c",
+          "share": 0.353
+        },
+        {
+          "hex": "#285a6e",
+          "share": 0.243
+        },
+        {
+          "hex": "#51868e",
+          "share": 0.209
+        },
+        {
+          "hex": "#807111",
+          "share": 0.109
+        },
+        {
+          "hex": "#a65121",
+          "share": 0.086
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAABQAgCdASoOABAAAsBMJbACdH8AF8fH8zUNFQAA/uv+XlIofOIBpdG44yUujjmY/BM68L5qe51Jhyu9vecWAzjFgO+Bnmfl/y+z8lAkAgQ2hxHyLudkAAAA"
     },
     {
       "id": "100",
@@ -2092,13 +3874,31 @@
       "physicalDimensions": "65.7 cm × 78.5 cm",
       "local": "Museu Van Gogh, Amsterdã, Países Baixos",
       "description": "Pintado após a morte de seu pai, esta obra é um tributo a ele. A grande Bíblia aberta representa seu pai pastor, enquanto o pequeno romance de Zola, 'La Joie de Vivre', simboliza a visão de mundo mais moderna de Vincent.",
-      "color1": "#2a211a",
-      "color2": "#6b4528",
-      "color3": "#d4b47c",
-      "color4": "#a17c38",
-      "color5": "#403329",
       "width": 800,
-      "height": 665
+      "height": 665,
+      "palette": [
+        {
+          "hex": "#141614",
+          "share": 0.357
+        },
+        {
+          "hex": "#67532d",
+          "share": 0.274
+        },
+        {
+          "hex": "#3b3010",
+          "share": 0.272
+        },
+        {
+          "hex": "#8a7c53",
+          "share": 0.081
+        },
+        {
+          "hex": "#aea175",
+          "share": 0.017
+        }
+      ],
+      "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQAgCdASoQAA0AAsBMJZgCdAEORjz9m0eAAP75FGkz2T+gusnAYPbFeXmi4wR/p/mwU57kEv8K+QR+7wam2JNyAewuNaOn4a4qbPBbqyAAAA=="
     }
   ]
 }

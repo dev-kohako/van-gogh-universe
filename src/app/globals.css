@@ -130,3 +130,43 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Loading shimmer used by image placeholders. */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.shimmer {
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklch, var(--foreground) 12%, transparent),
+    transparent
+  );
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmer::after {
+    animation: none;
+  }
+}
+
+@keyframes art-loader-slide {
+  0% {
+    left: -33%;
+  }
+  100% {
+    left: 100%;
+  }
+}
