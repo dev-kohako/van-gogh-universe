@@ -2,15 +2,6 @@ import { render, screen } from "@testing-library/react";
 import React from "react";
 import GalleryPage from "../page";
 
-jest.mock("../useGallery", () => ({
-  useGallery: () => ({
-    scaleX: 1,
-    hoverVariants: {},
-    overlayVariants: {},
-    titleVariants: {},
-  }),
-}));
-
 jest.mock("../components/GalleryCard", () => ({
   GalleryCard: ({ painting, index }: any) => (
     <div data-testid="mock-gallery-card">
@@ -64,6 +55,12 @@ jest.mock("../../../../public/data/data.json", () => ({
 
 describe("GalleryPage", () => {
   beforeEach(() => {
+    // Skip the entrance animations so everything is visible right away.
+    (window.matchMedia as jest.Mock).mockImplementation((query: string) => ({
+      matches: query.includes("reduce"),
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+    }));
     mockPaintings = [
       {
         id: "1",

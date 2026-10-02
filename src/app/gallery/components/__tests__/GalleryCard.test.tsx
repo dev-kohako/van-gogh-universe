@@ -1,11 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import { GalleryCard } from "../GalleryCard";
 import React from "react";
-import { Painting } from "@/types/types";
+import type { GalleryPainting } from "@/types/galleryTypes.type";
 
 jest.mock("next/image", () => ({
   __esModule: true,
-  default: ({ src, alt, priority, blurDataURL, ...props }: any) => (
+  default: ({ src, alt, priority, blurDataURL, placeholder, ...props }: any) => (
     <img
       src={src}
       alt={alt}
@@ -26,17 +26,12 @@ describe("GalleryCard", () => {
     alt: "Pintura Noite Estrelada",
     width: 800,
     height: 600,
-  } as Painting;
-
-  const mockVariants = {
-    hover: {},
-    overlay: {},
-    title: {},
-  };
+    blurDataURL: "data:image/webp;base64,AAAA",
+  } as GalleryPainting;
 
   it("renders painting image and title", () => {
     render(
-      <GalleryCard painting={mockPainting} index={0} variants={mockVariants} />
+      <GalleryCard painting={mockPainting} index={0} />
     );
 
     const img = screen.getByTestId("mock-image");
@@ -49,11 +44,16 @@ describe("GalleryCard", () => {
 
   it("applies correct link and aria-label", () => {
     render(
-      <GalleryCard painting={mockPainting} index={0} variants={mockVariants} />
+      <GalleryCard painting={mockPainting} index={0} />
     );
     const link = screen.getByRole("link", { name: /ampliar noite estrelada/i });
 
-    expect(link).toHaveAttribute("href", mockPainting.imagePainting);
+    // The lightbox opens a resized copy instead of the (huge) original.
+    expect(link).toHaveAttribute(
+      "href",
+      `/_next/image?url=${encodeURIComponent(mockPainting.imagePainting)}&w=2048&q=80`,
+    );
+    expect(link.getAttribute("data-thumb")).toContain("w=256");
     expect(link).toHaveAttribute(
       "aria-label",
       expect.stringContaining("Ampliar")
@@ -62,7 +62,7 @@ describe("GalleryCard", () => {
 
   it("sets priority and loading correctly for first 5 paintings", () => {
     const { rerender } = render(
-      <GalleryCard painting={mockPainting} index={2} variants={mockVariants} />
+      <GalleryCard painting={mockPainting} index={2} />
     );
 
     let img = screen.getByTestId("mock-image");
@@ -70,7 +70,7 @@ describe("GalleryCard", () => {
     expect(img).toHaveAttribute("loading", "eager");
 
     rerender(
-      <GalleryCard painting={mockPainting} index={6} variants={mockVariants} />
+      <GalleryCard painting={mockPainting} index={6} />
     );
     img = screen.getByTestId("mock-image");
 
@@ -78,9 +78,18 @@ describe("GalleryCard", () => {
     expect(img).toHaveAttribute("loading", "lazy");
   });
 
+  it("uses the painting's own blurred preview while loading", () => {
+    render(<GalleryCard painting={mockPainting} index={0} />);
+
+    expect(screen.getByTestId("mock-image")).toHaveAttribute(
+      "data-blur",
+      "true",
+    );
+  });
+
   it("renders custom HTML data attribute with painting info", () => {
     render(
-      <GalleryCard painting={mockPainting} index={0} variants={mockVariants} />
+      <GalleryCard painting={mockPainting} index={0} />
     );
     const link = screen.getByRole("link", { name: /ampliar noite estrelada/i });
 
@@ -91,7 +100,7 @@ describe("GalleryCard", () => {
 
   it("applies correct aspect ratio based on width and height", () => {
     render(
-      <GalleryCard painting={mockPainting} index={0} variants={mockVariants} />
+      <GalleryCard painting={mockPainting} index={0} />
     );
     const link = screen.getByRole("link", { name: /ampliar noite estrelada/i });
 
