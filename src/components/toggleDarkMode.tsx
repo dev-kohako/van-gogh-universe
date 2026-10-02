@@ -2,10 +2,16 @@
 
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { type MouseEvent, useEffect, useState } from "react";
+import { flushSync } from "react-dom";
 
 import { Button } from "@/components/ui/button";
+import { prefersReducedMotion } from "@/lib/gsap";
 import { cn } from "@/lib/utils";
+
+type ViewTransitionDocument = Document & {
+  startViewTransition?: (update: () => void) => { ready: Promise<void> };
+};
 
 export function ModeToggle({ className }: { className?: string }) {
   const { resolvedTheme, setTheme } = useTheme();
@@ -22,8 +28,45 @@ export function ModeToggle({ className }: { className?: string }) {
       ? "Ativar modo claro"
       : "Ativar modo escuro";
 
-  function handleToggle() {
-    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+  function handleToggle(event: MouseEvent<HTMLButtonElement>) {
+    const next = resolvedTheme === "dark" ? "light" : "dark";
+    const doc = document as ViewTransitionDocument;
+    if (!doc.startViewTransition || prefersReducedMotion()) {
+      setTheme(next);
+      return;
+    }
+
+    // The new theme spreads from the button like light filling the room.
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+    const radius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y),
+    );
+
+    const transition = doc.startViewTransition(() => {
+      flushSync(() => setTheme(next));
+      document.documentElement.classList.toggle("dark", next === "dark");
+      document.documentElement.style.colorScheme = next;
+    });
+    transition.ready
+      .then(() => {
+        document.documentElement.animate(
+          {
+            clipPath: [
+              `circle(0px at ${x}px ${y}px)`,
+              `circle(${radius}px at ${x}px ${y}px)`,
+            ],
+          },
+          {
+            duration: 700,
+            easing: "cubic-bezier(0.65, 0, 0.35, 1)",
+            pseudoElement: "::view-transition-new(root)",
+          },
+        );
+      })
+      .catch(() => {});
   }
 
   return (
