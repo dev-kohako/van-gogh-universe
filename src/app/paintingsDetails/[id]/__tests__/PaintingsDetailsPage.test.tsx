@@ -21,14 +21,16 @@ jest.mock("framer-motion", () => {
   const React = require("react");
   return {
     __esModule: true,
-    motion: new Proxy({}, {
-      get: (_, prop) => (props: any) =>
-        React.createElement(prop as string, props, props.children),
-    }),
+    motion: new Proxy(
+      {},
+      {
+        get: (_, prop) => (props: any) =>
+          React.createElement(prop as string, props, props.children),
+      },
+    ),
     AnimatePresence: ({ children }: any) => <>{children}</>,
   };
 });
-
 
 jest.mock("@/components/ui/back-button", () => ({
   BackButton: () => <div data-testid="mock-back-button">BackButton</div>,
@@ -90,8 +92,8 @@ describe("PaintingsDetailsPage", () => {
     jest.clearAllMocks();
   });
 
-    afterEach(() => {
-    jest.restoreAllMocks(); 
+  afterEach(() => {
+    jest.restoreAllMocks();
   });
 
   it("renders main layout, title, and subcomponents correctly", () => {
@@ -146,7 +148,7 @@ describe("PaintingsDetailsPage", () => {
     expect(screen.getByTestId("mock-fullscreen-viewer")).toBeInTheDocument();
   });
 
-  it("renders Painting3DViewer when show3D is true", () => {
+  it("renders Painting3DViewer when show3D is true", async () => {
     const { usePaintingDetails } = require("../usePaintingDetails");
     usePaintingDetails.mockReturnValue({
       prevPainting: { id: "0" },
@@ -158,7 +160,8 @@ describe("PaintingsDetailsPage", () => {
     });
 
     render(<PaintingsDetailsPage />);
-    expect(screen.getByTestId("mock-3d-viewer")).toBeInTheDocument();
+    // The viewer is lazy-loaded with next/dynamic.
+    expect(await screen.findByTestId("mock-3d-viewer")).toBeInTheDocument();
   });
 
   it("locks and unlocks body scroll when modals open/close", () => {
