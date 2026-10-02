@@ -1,12 +1,13 @@
 "use client";
 
-import { memo } from "react";
+import { memo, useState } from "react";
 import type { KeyboardEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 import type { Painting } from "@/types/types";
+import { cn } from "@/lib/utils";
 
 import { Button } from "@/components/ui/button";
 import { usePaintingAnimations } from "./usePaintingAnimations";
@@ -34,6 +35,8 @@ export const PaintingCard = memo(function PaintingCard({
     descriptionDateVariants,
   } = usePaintingAnimations();
 
+  const [loaded, setLoaded] = useState(false);
+
   const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
@@ -54,17 +57,34 @@ export const PaintingCard = memo(function PaintingCard({
       onClick={() => onCardClick(photo.id)}
     >
       <motion.figure className="m-0 relative">
+        {/* Blurred preview of the painting + shimmer until the image arrives. */}
+        <div
+          aria-hidden="true"
+          className={cn(
+            "absolute inset-x-0 top-0 h-64 overflow-hidden bg-muted transition-opacity duration-700",
+            loaded && "opacity-0",
+          )}
+        >
+          {photo.blurDataURL && (
+            <div
+              className="absolute inset-0 scale-110 bg-cover bg-center blur-xl"
+              style={{ backgroundImage: `url(${photo.blurDataURL})` }}
+            />
+          )}
+          {!loaded && <div className="shimmer absolute inset-0" />}
+        </div>
         <MotionImage
           src={photo.imagePainting}
           alt={photo.alt}
           width={photo.width}
           height={photo.height}
-          placeholder="blur"
-          blurDataURL="/placeholder.jpg"
           loading={index < 6 ? "eager" : "lazy"}
           sizes="(min-width: 1280px) 30vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-          className="h-64 w-full object-cover opacity-0 transition-opacity duration-500 ease-in-out"
-          onLoad={(e) => e.currentTarget.classList.remove("opacity-0")}
+          className={cn(
+            "relative h-64 w-full object-cover transition-opacity duration-700 ease-out",
+            loaded ? "opacity-100" : "opacity-0",
+          )}
+          onLoad={() => setLoaded(true)}
           variants={imageVariants}
         />
 

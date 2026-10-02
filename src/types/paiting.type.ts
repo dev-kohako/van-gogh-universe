@@ -7,3 +7,9 @@ export interface UsePaintingsProps {
   paintings: Painting[];
   initialItemsPerPage?: number;
 }
+
+export interface FilterOption {
+  value: string;
+  /** Paintings shown for this value, given the other active filters. */
+  count: number;
+}
