@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useParams } from "next/navigation";
 import { usePaintingDetails } from "./usePaintingDetails";
-import { Painting3DViewer } from "./components/Painting3DViewer/Painting3DViewer";
 import { PaintingImage } from "./components/PaintingImage";
 import { PaintingDetails } from "./components/PaintingDetails";
 import { FullscreenImageViewer } from "./components/FullscreenImageViewer";
@@ -13,6 +12,16 @@ import { data_painting } from "../../../../public/data/data.json";
 import { Image } from "lucide-react";
 import { EmptySection } from "@/components/empty-section";
 import { BackButton } from "@/components/ui/back-button";
+import dynamic from "next/dynamic";
+
+// three.js and the scene are only downloaded when the 3D view is opened.
+const Painting3DViewer = dynamic(
+  () =>
+    import("./components/Painting3DViewer/Painting3DViewer").then(
+      (module) => module.Painting3DViewer,
+    ),
+  { ssr: false },
+);
 
 function usePainting(id: string): Painting | undefined {
   return useMemo(() => {
@@ -122,10 +131,8 @@ export default function PaintingsDetailsPage() {
         )}
         {show3D && painting && (
           <Painting3DViewer
-            imageUrl={painting.imagePainting}
-            title={painting.namePainting}
-            width={painting.width}
-            height={painting.height}
+            key={`3d-${painting.id}`}
+            painting={painting}
             onClose={() => setShow3D(false)}
           />
         )}

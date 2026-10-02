@@ -1,16 +1,9 @@
-import * as THREE from "three";
-import { Vector3 } from "three";
-import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
+import type * as THREE from "three";
 import { Painting } from "./types";
 import type { PaletteColor } from "@/lib/palette";
 import { RefObject } from "react";
 
 export type PaintingLink = { id: string | number } | undefined;
-
-export type PaintingSceneProps = Omit<
-  Painting3DViewerProps,
-  "onClose" | "title"
->;
 
 export interface PaintingImageProps {
   painting: Painting;
@@ -34,30 +27,47 @@ export interface FullscreenImageViewerProps {
 }
 
 export interface Painting3DViewerProps {
-  imageUrl: string;
+  painting: Painting;
+  onClose: () => void;
+}
+
+export type FrameStyle = "gold" | "wood" | "black";
+
+/** Text printed on the museum label next to the painting. */
+export type LabelContent = {
   title: string;
+  subtitle: string;
+  lines: string[];
+};
+
+export type WallTone = "charcoal" | "burgundy" | "green" | "ivory";
+
+/** Camera actions exposed by the 3D scene to the viewer toolbar. */
+export interface ViewerControlsApi {
+  reset: () => void;
+  zoom: (direction: 1 | -1) => void;
+}
+
+export interface PaintingSceneProps {
+  texture: THREE.Texture;
+  bumpMap: THREE.Texture | null;
+  /** Painting size in meters. */
   width: number;
   height: number;
-  onClose: () => void;
+  frameStyle: FrameStyle;
+  wallTone: WallTone;
+  label: LabelContent;
+  controlsApi: RefObject<ViewerControlsApi | null>;
+  onReady?: () => void;
+  onInteract?: () => void;
 }
 
 export interface FramedPaintingProps {
   width: number;
   height: number;
-  scaledWidth: number;
-  scaledHeight: number;
   texture: THREE.Texture;
-}
-
-export interface FrameBackProps {
-  frameWidth: number;
-  frameHeight: number;
-  frameDepth: number;
-}
-
-export interface GalleryPlaqueProps {
-  width: number;
-  height: number;
+  bumpMap: THREE.Texture | null;
+  frameStyle: FrameStyle;
 }
 
 export interface PaletteProps {
@@ -70,13 +80,6 @@ export interface ColorSwatchProps {
   share?: number;
   onCopy: (color: string) => void;
 }
-
-export type SceneSetupAndAnimationProps = {
-  controlsRef: RefObject<OrbitControlsImpl | null>;
-  targetPosition: Vector3;
-  isAnimating: boolean;
-  setIsAnimating: React.Dispatch<React.SetStateAction<boolean>>;
-};
 
 export interface PaintingNavigationProps {
   prevPainting: PaintingLink;
