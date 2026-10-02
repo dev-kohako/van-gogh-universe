@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -16,23 +16,28 @@ const PaintingCarousel = lazy(() =>
 );
 
 export function HomePageClient({ paintings }: HomePageClientProps) {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   return (
     <>
       <div
-        className="absolute inset-0 w-full h-full pointer-events-none -z-10"
+        className="fixed inset-0 w-screen h-dvh pointer-events-none -z-10"
         aria-hidden="true"
       >
-        <SparklesCore
-          id="tsparticlesfullpage"
-          background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
-          particleDensity={25}
-          className="w-full h-full"
-          particleColor={theme === "dark" ? "#d4d4d8" : "#09090b"}
-        />
+        {mounted && resolvedTheme && (
+          <SparklesCore
+            id="tsparticlesfullpage"
+            background="transparent"
+            minSize={0.6}
+            maxSize={1.6}
+            particleDensity={30}
+            className="w-full h-full"
+            particleColor={resolvedTheme === "dark" ? "#e4e4e7" : "#09090b"}
+          />
+        )}
       </div>
 
       <header className="mt-10 lg:mt-0">
