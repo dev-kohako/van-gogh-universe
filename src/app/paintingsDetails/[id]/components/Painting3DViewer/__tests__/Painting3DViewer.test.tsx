@@ -1,4 +1,10 @@
-import { act, fireEvent, render, screen } from "@testing-library/react";
+import {
+  act,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react";
 import type { Painting } from "@/types/types";
 import { Painting3DViewer } from "../Painting3DViewer";
 
@@ -39,9 +45,14 @@ jest.mock("../PaintingScene", () => {
   };
 });
 
-let resolveImage: (image: HTMLImageElement) => void;
-let rejectImage: (error: Error) => void;
-let reportProgress: (progress: number) => void;
+type MockLoad = {
+  sources: string[];
+  resolve: (image: HTMLImageElement) => void;
+  reject: (error: Error) => void;
+  progress: (progress: number) => void;
+};
+/** Calls to loadCachedImage: the preview first, then the sharp copy. */
+let loads: MockLoad[] = [];
 const mockLoadCachedImage = jest.fn();
 
 jest.mock("../sceneUtils", () => ({
@@ -64,43 +75,47 @@ const painting = {
 
 describe("Painting3DViewer", () => {
   beforeEach(() => {
+    loads = [];
     mockLoadCachedImage.mockImplementation(
-      (_sources: string[], onProgress: (progress: number) => void) => {
-        reportProgress = onProgress;
-        return {
-          promise: new Promise<HTMLImageElement>((resolve, reject) => {
-            resolveImage = resolve;
-            rejectImage = reject;
-          }),
-          unsubscribe: jest.fn(),
-        };
+      (sources: string[], onProgress: (progress: number) => void) => {
+        const load = { sources, progress: onProgress } as MockLoad;
+        const promise = new Promise<HTMLImageElement>((resolve, reject) => {
+          load.resolve = resolve;
+          load.reject = reject;
+        });
+        loads.push(load);
+        return { promise, unsubscribe: jest.fn() };
       },
     );
   });
 
   afterEach(() => jest.clearAllMocks());
 
-  it("requests the optimized image first and the original as fallback", () => {
+  const preview = () => loads[loads.length - 2];
+  const sharp = () => loads[loads.length - 1];
+
+  it("requests a light preview, then the sharp copy with the original as fallback", () => {
     render(<Painting3DViewer painting={painting} onClose={jest.fn()} />);
 
-    const [sources] = mockLoadCachedImage.mock.calls[0];
-    expect(sources[0]).toMatch(/^\/_next\/image\?url=/);
-    expect(sources[1]).toBe(painting.imagePainting);
+    expect(preview().sources).toHaveLength(1);
+    expect(preview().sources[0]).toMatch(/^\/_next\/image\?url=.*&w=640&/);
+    expect(sharp().sources[0]).toMatch(/^\/_next\/image\?url=/);
+    expect(sharp().sources[1]).toBe(painting.imagePainting);
   });
 
-  it("shows download progress and then the scene", async () => {
+  it("shows the preview's download progress and then the scene", async () => {
     render(<Painting3DViewer painting={painting} onClose={jest.fn()} />);
 
     expect(
       screen.getByRole("dialog", { name: /a noite estrelada/i }),
     ).toBeInTheDocument();
 
-    act(() => reportProgress(0.42));
+    act(() => preview().progress(0.42));
     expect(
       screen.getByRole("progressbar", { name: /carregando obra/i }),
     ).toHaveAttribute("aria-valuenow", "42");
 
-    await act(async () => resolveImage(new Image()));
+    await act(async () => preview().resolve(new Image()));
 
     expect(screen.getByTestId("mock-scene")).toHaveTextContent(
       "gold|charcoal|Vincent van Gogh · Junho de 1889",
@@ -110,9 +125,25 @@ describe("Painting3DViewer", () => {
     ).toBeInTheDocument();
   });
 
+  it("replaces the preview with the sharp texture", async () => {
+    render(<Painting3DViewer painting={painting} onClose={jest.fn()} />);
+    await act(async () => preview().resolve(new Image()));
+
+    expect(screen.getByRole("status")).toHaveTextContent(
+      /carregando alta resolução/i,
+    );
+
+    await act(async () => sharp().resolve(new Image()));
+    await waitFor(() =>
+      expect(
+        screen.queryByText(/carregando alta resolução/i),
+      ).not.toBeInTheDocument(),
+    );
+  });
+
   it("lets the user change the frame and the wall", async () => {
     render(<Painting3DViewer painting={painting} onClose={jest.fn()} />);
-    await act(async () => resolveImage(new Image()));
+    await act(async () => preview().resolve(new Image()));
 
     const wood = screen.getByRole("button", { name: "Moldura madeira" });
     fireEvent.click(wood);
@@ -124,13 +155,27 @@ describe("Painting3DViewer", () => {
 
   it("offers a retry when the image cannot be loaded", async () => {
     render(<Painting3DViewer painting={painting} onClose={jest.fn()} />);
-    await act(async () => rejectImage(new Error("network")));
+    await act(async () => {
+      preview().reject(new Error("network"));
+      sharp().reject(new Error("network"));
+    });
 
     expect(screen.getByRole("alert")).toHaveTextContent(
       /não foi possível carregar/i,
     );
     fireEvent.click(screen.getByRole("button", { name: /tentar novamente/i }));
-    expect(mockLoadCachedImage).toHaveBeenCalledTimes(2);
+    expect(mockLoadCachedImage).toHaveBeenCalledTimes(4);
+  });
+
+  it("keeps the preview when only the sharp copy fails", async () => {
+    render(<Painting3DViewer painting={painting} onClose={jest.fn()} />);
+    await act(async () => {
+      preview().resolve(new Image());
+      sharp().reject(new Error("network"));
+    });
+
+    expect(screen.getByTestId("mock-scene")).toBeInTheDocument();
+    expect(screen.queryByRole("alert")).not.toBeInTheDocument();
   });
 
   it("explains when the painting has no image data", () => {

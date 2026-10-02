@@ -1,20 +1,54 @@
 import * as THREE from "three";
+import { getOptimizedImageUrl } from "@/lib/image";
 import type { LabelContent } from "@/types/paintingDetails.type";
 
 /** World units are meters. */
 const DEFAULT_LONG_SIDE = 0.9;
 
-/**
- * Resized copy of a painting served by the Next.js image optimizer. Several
- * originals are 6000px / 10MB+, far more than a texture needs.
- */
-export function getOptimizedImageUrl(src: string, width: number, quality = 80) {
-  return `/_next/image?url=${encodeURIComponent(src)}&w=${width}&q=${quality}`;
-}
+// Resized copies from the Next.js image optimizer: originals are up to
+// 6000px, far more than a texture needs.
+export { getOptimizedImageUrl };
 
 /** Texture width matching the screen: large enough to zoom into strokes. */
 export function getTextureWidth(viewportWidth: number, pixelRatio: number) {
   return viewportWidth * Math.min(pixelRatio, 2) > 1400 ? 2048 : 1200;
+}
+
+/** Small copy shown first so the scene opens quickly. */
+export const PREVIEW_TEXTURE_WIDTH = 640;
+
+/**
+ * Sources for the progressive texture: a light preview and the sharp copy
+ * (falling back to the original file if the optimizer fails).
+ */
+export function getTextureSources(
+  src: string,
+  viewportWidth: number,
+  pixelRatio: number,
+) {
+  return {
+    preview: [getOptimizedImageUrl(src, PREVIEW_TEXTURE_WIDTH, 70)],
+    full: [
+      getOptimizedImageUrl(src, getTextureWidth(viewportWidth, pixelRatio)),
+      src,
+    ],
+  };
+}
+
+/** Starts downloading a painting's textures before the viewer opens. */
+export function preloadPaintingTexture(src: string) {
+  if (typeof window === "undefined" || !src) return;
+  const { preview, full } = getTextureSources(
+    src,
+    window.innerWidth,
+    window.devicePixelRatio,
+  );
+  const noop = () => {};
+  for (const sources of [preview, full]) {
+    const { promise, unsubscribe } = loadCachedImage(sources, noop);
+    unsubscribe();
+    promise.catch(noop);
+  }
 }
 
 /**
@@ -42,6 +76,17 @@ export function getPaintingSize(
   return aspect >= 1
     ? { width: longSide, height: longSide / aspect }
     : { width: longSide * aspect, height: longSide };
+}
+
+/**
+ * Color of the room beyond the picture light. The wall fades into it with
+ * distance, so the edge of the world is never visible.
+ */
+export function getRoomColor(wallColor: string) {
+  const color = new THREE.Color(wallColor);
+  // Light walls need a deeper shade to still read as a dim room.
+  const { l } = color.getHSL({ h: 0, s: 0, l: 0 });
+  return color.multiplyScalar(l > 0.5 ? 0.32 : 0.38);
 }
 
 /** Frame proportions relative to the painting, in meters. */
@@ -186,8 +231,11 @@ export function createCanvasBumpMap(
   return texture;
 }
 
-/** Subtle plaster noise for the gallery wall. */
-export function createPlasterBumpMap(size = 256) {
+/** Subtle plaster noise for the gallery wall: one tile per meter. */
+export function createPlasterBumpMap(
+  size = 256,
+  repeat: [number, number] = [24, 14],
+) {
   const canvas = document.createElement("canvas");
   canvas.width = canvas.height = size;
   const context = canvas.getContext("2d");
@@ -212,7 +260,7 @@ export function createPlasterBumpMap(size = 256) {
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.NoColorSpace;
   texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-  texture.repeat.set(24, 14);
+  texture.repeat.set(...repeat);
   return texture;
 }
 
@@ -391,7 +439,8 @@ type ImageEntry = {
   listeners: Set<(progress: number) => void>;
 };
 
-const MAX_CACHED_IMAGES = 3;
+// Preview + full copy of the last three paintings.
+const MAX_CACHED_IMAGES = 6;
 const imageCache = new Map<string, ImageEntry>();
 
 /**

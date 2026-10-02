@@ -19,63 +19,131 @@ import { FRAME_STYLES } from "./FramedPainting";
 import { CAMERA_FOV, PaintingScene, WALL_TONES } from "./PaintingScene";
 import {
   createCanvasBumpMap,
-  getOptimizedImageUrl,
   getPaintingSize,
-  getTextureWidth,
+  getRoomColor,
+  getTextureSources,
   loadCachedImage,
 } from "./sceneUtils";
+
+export { preloadPaintingTexture } from "./sceneUtils";
 
 type LoadState = {
   texture: THREE.Texture | null;
   bumpMap: THREE.Texture | null;
   /** 0–1, or null until the first bytes arrive. */
   progress: number | null;
+  /** The sharp texture (and its relief) replaced the preview. */
+  sharp: boolean;
   error: Error | null;
 };
 
-/** Downloads a resized copy of the painting and prepares its textures. */
+const EMPTY_STATE: LoadState = {
+  texture: null,
+  bumpMap: null,
+  progress: null,
+  sharp: false,
+  error: null,
+};
+
+function createTexture(image: HTMLImageElement) {
+  const texture = new THREE.Texture(image);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.needsUpdate = true;
+  return texture;
+}
+
+/** Runs heavy work when the main thread is idle (after the frame paints). */
+function whenIdle(callback: () => void) {
+  if ("requestIdleCallback" in window) {
+    const id = window.requestIdleCallback(callback, { timeout: 500 });
+    return () => window.cancelIdleCallback(id);
+  }
+  const id = setTimeout(callback, 16);
+  return () => clearTimeout(id);
+}
+
+/**
+ * Progressive textures: a light preview opens the scene quickly, then the
+ * sharp copy and its brush-stroke relief replace it.
+ */
 function usePaintingTextures(src: string, attempt: number) {
-  const [state, setState] = useState<LoadState>({
-    texture: null,
-    bumpMap: null,
-    progress: null,
-    error: null,
-  });
+  const [state, setState] = useState<LoadState>(EMPTY_STATE);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: `attempt` retries the download
   useEffect(() => {
     if (!src) return;
     let active = true;
-    let texture: THREE.Texture | null = null;
-    let bumpMap: THREE.Texture | null = null;
-    setState({ texture: null, bumpMap: null, progress: null, error: null });
+    let sharpApplied = false;
+    let previewFailed = false;
+    let fullFailed = false;
+    let cancelIdle: (() => void) | undefined;
+    const created: THREE.Texture[] = [];
+    setState(EMPTY_STATE);
 
-    const width = getTextureWidth(window.innerWidth, window.devicePixelRatio);
-    const { promise, unsubscribe } = loadCachedImage(
-      [getOptimizedImageUrl(src, width), src],
-      (progress) => {
-        if (active) setState((current) => ({ ...current, progress }));
-      },
+    const { preview, full } = getTextureSources(
+      src,
+      window.innerWidth,
+      window.devicePixelRatio,
     );
 
-    promise
+    const fail = (error: Error) => {
+      if (active && previewFailed && fullFailed) {
+        setState((current) => ({ ...current, error }));
+      }
+    };
+
+    const previewLoad = loadCachedImage(preview, (progress) => {
+      if (active && !sharpApplied) {
+        setState((current) => ({ ...current, progress }));
+      }
+    });
+    const fullLoad = loadCachedImage(full, () => {});
+
+    previewLoad.promise
       .then((image) => {
-        if (!active) return;
-        texture = new THREE.Texture(image);
-        texture.colorSpace = THREE.SRGBColorSpace;
-        texture.needsUpdate = true;
-        bumpMap = createCanvasBumpMap(image);
-        setState({ texture, bumpMap, progress: 1, error: null });
+        if (!active || sharpApplied) return;
+        const texture = createTexture(image);
+        created.push(texture);
+        setState((current) =>
+          current.sharp ? current : { ...current, texture, progress: 1 },
+        );
       })
       .catch((error: Error) => {
-        if (active) setState((current) => ({ ...current, error }));
+        previewFailed = true;
+        fail(error);
+      });
+
+    fullLoad.promise
+      .then((image) => {
+        if (!active) return;
+        cancelIdle = whenIdle(() => {
+          if (!active) return;
+          const texture = createTexture(image);
+          const bumpMap = createCanvasBumpMap(image);
+          created.push(texture);
+          if (bumpMap) created.push(bumpMap);
+          sharpApplied = true;
+          setState({
+            texture,
+            bumpMap,
+            progress: 1,
+            sharp: true,
+            error: null,
+          });
+        });
+      })
+      .catch((error: Error) => {
+        // The preview keeps showing when only the sharp copy failed.
+        fullFailed = true;
+        fail(error);
       });
 
     return () => {
       active = false;
-      unsubscribe();
-      texture?.dispose();
-      bumpMap?.dispose();
+      cancelIdle?.();
+      previewLoad.unsubscribe();
+      fullLoad.unsubscribe();
+      for (const texture of created) texture.dispose();
     };
   }, [src, attempt]);
 
@@ -98,7 +166,7 @@ export function Painting3DViewer({ painting, onClose }: Painting3DViewerProps) {
     Boolean(painting.height) &&
     Boolean(painting.imagePainting);
 
-  const { texture, bumpMap, progress, error } = usePaintingTextures(
+  const { texture, bumpMap, progress, sharp, error } = usePaintingTextures(
     hasRequiredData ? painting.imagePainting : "",
     attempt,
   );
@@ -162,8 +230,10 @@ export function Painting3DViewer({ painting, onClose }: Painting3DViewerProps) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className="dark fixed inset-0 z-[60] overflow-hidden text-foreground font-josefin"
-      style={{ backgroundColor: WALL_TONES[wallTone].color }}
+      className="dark fixed inset-0 z-[60] overflow-hidden text-foreground font-josefin transition-colors duration-700"
+      style={{
+        backgroundColor: `#${getRoomColor(WALL_TONES[wallTone].color).getHexString()}`,
+      }}
     >
       {hasRequiredData && texture && (
         <Canvas
@@ -258,6 +328,25 @@ export function Painting3DViewer({ painting, onClose }: Painting3DViewerProps) {
           <X className="w-5 h-5" aria-hidden="true" />
         </Button>
       </header>
+
+      <AnimatePresence>
+        {sceneReady && !sharp && !error && (
+          <motion.p
+            key="sharpening"
+            role="status"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, transition: { duration: 0.5 } }}
+            className="absolute left-1/2 top-20 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/45 px-3 pb-1 pt-1.5 text-xs text-zinc-200 backdrop-blur-sm sm:top-24"
+          >
+            <span
+              className="h-2 w-2 animate-pulse rounded-full bg-amber-300"
+              aria-hidden="true"
+            />
+            Carregando alta resolução…
+          </motion.p>
+        )}
+      </AnimatePresence>
 
       {sceneReady && (
         <motion.div
