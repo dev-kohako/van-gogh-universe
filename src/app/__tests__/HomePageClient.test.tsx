@@ -29,7 +29,7 @@ describe("HomePageClient", () => {
   ];
 
   it("renders title, description, and CTA correctly", async () => {
-    (useTheme as jest.Mock).mockReturnValue({ theme: "dark" });
+    (useTheme as jest.Mock).mockReturnValue({ resolvedTheme: "dark" });
     render(<HomePageClient paintings={mockPaintings} />);
 
     const vanGoghTexts = await screen.findAllByText(/Van Gogh/i);
@@ -47,7 +47,7 @@ describe("HomePageClient", () => {
   });
 
   it("renders SparklesCore with correct color based on theme", () => {
-    (useTheme as jest.Mock).mockReturnValue({ theme: "light" });
+    (useTheme as jest.Mock).mockReturnValue({ resolvedTheme: "light" });
     render(<HomePageClient paintings={mockPaintings} />);
     expect(screen.getByTestId("sparkles")).toHaveAttribute(
       "data-color",
@@ -56,7 +56,7 @@ describe("HomePageClient", () => {
   });
 
   it("renders PaintingCarousel inside Suspense fallback", async () => {
-    (useTheme as jest.Mock).mockReturnValue({ theme: "dark" });
+    (useTheme as jest.Mock).mockReturnValue({ resolvedTheme: "dark" });
     render(<HomePageClient paintings={mockPaintings} />);
     expect(screen.getByTestId("painting-carousel")).toBeInTheDocument();
   });
