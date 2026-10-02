@@ -1,12 +1,8 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import { useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-
-gsap.registerPlugin(useGSAP);
 
 const QUOTES = [
   "Não sei nada com certeza, mas a visão das estrelas me faz sonhar.",
@@ -57,86 +53,99 @@ const STARS: [number, number, number][] = [
 export function StarrySwirl({ className }: { className?: string }) {
   const ref = useRef<SVGSVGElement>(null);
 
-  useGSAP(
-    () => {
-      const mm = gsap.matchMedia();
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
-        const rings = gsap.utils.toArray<SVGGElement>("[data-ring]");
-        const strokes = gsap.utils.toArray<SVGCircleElement>("[data-stroke]");
+  useEffect(() => {
+    const svg = ref.current;
+    if (!svg) return;
+    let revert: (() => void) | undefined;
+    let cancelled = false;
 
-        // Strokes are "painted" in one after another, then keep swirling.
-        gsap
-          .timeline()
-          .from("[data-star]", {
-            scale: 0,
-            svgOrigin: "60 60",
-            duration: 0.6,
-            ease: "back.out(2)",
-          })
-          .from(
-            rings,
-            {
-              scale: 0.4,
-              opacity: 0,
-              rotation: -120,
+    // GSAP is loaded on demand so it is not part of every page's bundle; the
+    // swirl is already visible (static) while it loads.
+    import("gsap").then(({ gsap }) => {
+      if (cancelled) return;
+      const context = gsap.context(() => {
+        const mm = gsap.matchMedia();
+        mm.add("(prefers-reduced-motion: no-preference)", () => {
+          const rings = gsap.utils.toArray<SVGGElement>("[data-ring]");
+          const strokes = gsap.utils.toArray<SVGCircleElement>("[data-stroke]");
+
+          // Strokes are "painted" in one after another, then keep swirling.
+          gsap
+            .timeline()
+            .from("[data-star]", {
+              scale: 0,
               svgOrigin: "60 60",
-              duration: 0.9,
-              stagger: 0.12,
-              ease: "power3.out",
-            },
-            "<0.1",
-          );
+              duration: 0.6,
+              ease: "back.out(2)",
+            })
+            .from(
+              rings,
+              {
+                scale: 0.4,
+                opacity: 0,
+                rotation: -120,
+                svgOrigin: "60 60",
+                duration: 0.9,
+                stagger: 0.12,
+                ease: "power3.out",
+              },
+              "<0.1",
+            );
 
-        rings.forEach((ring, i) => {
-          gsap.to(ring, {
-            rotation: `+=${360 * RINGS[i].turn}`,
+          rings.forEach((ring, i) => {
+            gsap.to(ring, {
+              rotation: `+=${360 * RINGS[i].turn}`,
+              svgOrigin: "60 60",
+              duration: RINGS[i].duration,
+              ease: "none",
+              repeat: -1,
+            });
+          });
+
+          // Sliding the dash pattern makes the strokes flow like brush marks.
+          strokes.forEach((stroke, i) => {
+            gsap.to(stroke, {
+              strokeDashoffset: (i % 2 ? 1 : -1) * 96,
+              duration: 3 + i,
+              ease: "sine.inOut",
+              repeat: -1,
+              yoyo: true,
+            });
+          });
+
+          gsap.to("[data-orbit]", {
+            rotation: "+=360",
             svgOrigin: "60 60",
-            duration: RINGS[i].duration,
+            duration: 14,
             ease: "none",
             repeat: -1,
           });
-        });
+          gsap.to("[data-twinkle]", {
+            opacity: 0.2,
+            duration: 0.9,
+            ease: "sine.inOut",
+            stagger: { each: 0.35, repeat: -1, yoyo: true },
+          });
 
-        // Sliding the dash pattern makes the strokes flow like brush marks.
-        strokes.forEach((stroke, i) => {
-          gsap.to(stroke, {
-            strokeDashoffset: (i % 2 ? 1 : -1) * 96,
-            duration: 3 + i,
+          gsap.to("[data-glow]", {
+            scale: 1.18,
+            opacity: 0.7,
+            svgOrigin: "60 60",
+            duration: 1.2,
             ease: "sine.inOut",
             repeat: -1,
             yoyo: true,
           });
         });
+      }, svg);
+      revert = () => context.revert();
+    });
 
-        gsap.to("[data-orbit]", {
-          rotation: "+=360",
-          svgOrigin: "60 60",
-          duration: 14,
-          ease: "none",
-          repeat: -1,
-        });
-        gsap.to("[data-twinkle]", {
-          opacity: 0.2,
-          duration: 0.9,
-          ease: "sine.inOut",
-          repeat: -1,
-          yoyo: true,
-          stagger: { each: 0.35, repeat: -1, yoyo: true },
-        });
-
-        gsap.to("[data-glow]", {
-          scale: 1.18,
-          opacity: 0.7,
-          svgOrigin: "60 60",
-          duration: 1.2,
-          ease: "sine.inOut",
-          repeat: -1,
-          yoyo: true,
-        });
-      });
-    },
-    { scope: ref },
-  );
+    return () => {
+      cancelled = true;
+      revert?.();
+    };
+  }, []);
 
   return (
     <svg
