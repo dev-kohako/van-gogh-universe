@@ -1,16 +1,33 @@
 import type * as THREE from "three";
-import { Painting } from "./types";
+import type { Painting } from "./types";
 import type { PaletteColor } from "@/lib/palette";
-import { RefObject } from "react";
+import type { RefObject } from "react";
 
-export type PaintingLink = { id: string | number } | undefined;
+/** Minimal data about a neighbouring painting, for navigation. */
+export type PaintingLink =
+  | {
+      id: string;
+      namePainting: string;
+      imagePainting?: string;
+      blurDataURL?: string;
+    }
+  | undefined;
 
 export interface PaintingImageProps {
   painting: Painting;
-  prevPainting: PaintingLink | null;
-  nextPainting: PaintingLink | null;
   onShow3D: () => void;
   onOpenFullscreen: () => void;
+  /** Starts downloading the 3D viewer before it is opened. */
+  onPrefetch3D?: () => void;
+}
+
+export interface PaintingDetailsViewProps {
+  painting: Painting | undefined;
+  prevPainting?: PaintingLink;
+  nextPainting?: PaintingLink;
+  /** 1-based position in the catalogue. */
+  position?: number;
+  total?: number;
 }
 
 export interface PaintingDetailsProps {
@@ -79,9 +96,14 @@ export interface ColorSwatchProps {
   /** Fraction of the painting (0–1) covered by this color. */
   share?: number;
   onCopy: (color: string) => void;
+  /** Highlighted together with its segment in the proportion bar. */
+  active?: boolean;
+  onActiveChange?: (active: boolean) => void;
 }
 
 export interface PaintingNavigationProps {
   prevPainting: PaintingLink;
   nextPainting: PaintingLink;
+  position?: number;
+  total?: number;
 }

@@ -10,6 +10,7 @@ jest.mock("../PaintingPalette/PaintingPalette", () => ({
 
 jest.mock("@/lib/utils", () => ({
   capitalizeFirst: (str: string) => str.charAt(0).toUpperCase() + str.slice(1),
+  cn: (...classes: unknown[]) => classes.filter(Boolean).join(" "),
 }));
 
 describe("PaintingDetails", () => {
@@ -47,14 +48,14 @@ describe("PaintingDetails", () => {
     render(<PaintingDetails painting={painting} />);
 
     const expectedLabels = [
-      "Título original:",
-      "Data:",
-      "Local:",
-      "Materiais:",
-      "Estilo:",
-      "Dimensões:",
-      "Período:",
-      "Gênero:",
+      "Título original",
+      "Data",
+      "Local",
+      "Materiais",
+      "Estilo",
+      "Dimensões",
+      "Período",
+      "Gênero",
     ];
 
     expectedLabels.forEach((label) => {
@@ -95,6 +96,10 @@ describe("PaintingDetails", () => {
 
   it("has accessible structure and labels", () => {
     render(<PaintingDetails painting={painting} />);
+
+    expect(
+      screen.getByRole("heading", { level: 1, name: "Noite Estrelada" }),
+    ).toBeInTheDocument();
 
     const article = screen.getByRole("article", {
       name: /detalhes da pintura/i,
