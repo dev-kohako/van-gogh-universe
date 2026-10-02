@@ -40,10 +40,10 @@ describe("HomePageClient", () => {
       screen.getByRole("heading", { name: /galeria de destaque/i })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("button", {
+      screen.getByRole("link", {
         name: /explorar todas as obras de van gogh/i,
       })
-    ).toBeInTheDocument();
+    ).toHaveAttribute("href", "/paintings");
   });
 
   it("renders SparklesCore with correct color based on theme", () => {
