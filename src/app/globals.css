@@ -161,3 +161,12 @@
     animation: none;
   }
 }
+
+@keyframes art-loader-slide {
+  0% {
+    left: -33%;
+  }
+  100% {
+    left: 100%;
+  }
+}
