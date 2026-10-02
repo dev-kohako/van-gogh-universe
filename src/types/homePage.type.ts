@@ -1,6 +1,7 @@
 export interface SwiperPainting {
   src: string;
   alt: string;
+  blurDataURL?: string;
 }
 
 export interface HomePageClientProps {

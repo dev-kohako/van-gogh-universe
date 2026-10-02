@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
 import { FilterX, Palette, Search, X } from "lucide-react";
 import { useRef } from "react";
 
@@ -22,6 +21,8 @@ import {
 import { PaintingCard } from "./components/PaintingCard";
 import { PaintingsPagination } from "./components/PaintingsPagination";
 import { EmptySection } from "@/components/empty-section";
+import { useGsap } from "@/hooks/useGsap";
+import { gsap, prefersReducedMotion } from "@/lib/gsap";
 
 const paintings: Painting[] = (data_painting || [])
   .filter((p) => p.width && p.height && p.imagePainting)
@@ -38,20 +39,6 @@ const SORT_OPTIONS: { value: `${SortBy}-${SortOrder}`; label: string }[] = [
   { value: "date-desc", label: "Mais recentes" },
 ];
 
-const gridVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.06 } },
-} as const;
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.45, ease: "easeOut" },
-  },
-} as const;
-
 const shortPeriod = (period: string) => period.replace(/^Período de /, "");
 
 export default function PaintingsPage() {
@@ -59,7 +46,7 @@ export default function PaintingsPage() {
     paintings: paintings,
     initialItemsPerPage: 6,
   });
-  const reduceMotion = useReducedMotion();
+  const scopeRef = useRef<HTMLElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
 
   const firstItem =
@@ -74,12 +61,12 @@ export default function PaintingsPage() {
   const goToPage = (page: number) => {
     pagination.setCurrentPage(page);
     resultsRef.current?.scrollIntoView({
-      behavior: reduceMotion ? "auto" : "smooth",
+      behavior: prefersReducedMotion() ? "auto" : "smooth",
       block: "start",
     });
   };
 
-  // Remount the grid whenever its content changes so cards animate in.
+  // Cards animate in again whenever the grid content changes.
   const gridKey = [
     pagination.currentPage,
     pagination.itemsPerPage,
@@ -90,41 +77,102 @@ export default function PaintingsPage() {
     currentItems.map((item) => item.id).join(","),
   ].join("|");
 
+  useGsap(() => {
+    if (prefersReducedMotion()) {
+      gsap.set("[data-reveal]", { autoAlpha: 1 });
+      return;
+    }
+    gsap
+      .timeline({ defaults: { ease: "expo.out" } })
+      .set("[data-title]", { autoAlpha: 1 })
+      .from("[data-title-word]", {
+        yPercent: 120,
+        rotate: 4,
+        duration: 1.1,
+        stagger: 0.08,
+      })
+      .fromTo(
+        "[data-intro]",
+        { autoAlpha: 0, y: 20 },
+        { autoAlpha: 1, y: 0, duration: 0.9, stagger: 0.1 },
+        0.3,
+      );
+  }, scopeRef);
+
+  // Cards are hung on the wall one after another.
+  useGsap(
+    () => {
+      const cards = gsap.utils.toArray<HTMLElement>("[data-card]");
+      if (prefersReducedMotion()) {
+        gsap.set(cards, { autoAlpha: 1 });
+        return;
+      }
+      gsap.fromTo(
+        cards,
+        {
+          autoAlpha: 0,
+          y: 40,
+          rotationX: -18,
+          scale: 0.96,
+          transformPerspective: 1000,
+          transformOrigin: "50% 0%",
+        },
+        {
+          autoAlpha: 1,
+          y: 0,
+          rotationX: 0,
+          scale: 1,
+          duration: 0.9,
+          ease: "expo.out",
+          stagger: 0.06,
+          delay: 0.15,
+        },
+      );
+    },
+    scopeRef,
+    [gridKey],
+  );
+
   return (
-    <motion.main
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="px-[7.5%] min-[1350px]:!px-0 my-20 md:my-14 w-full max-w-7xl mx-auto"
+    <main
+      ref={scopeRef}
+      className="px-[6%] md:pl-24 md:pr-10 xl:pl-28 min-[1440px]:!px-10 pt-12 pb-10 md:pt-14 w-full max-w-7xl mx-auto"
     >
-      <header className="mb-10 md:pl-10 2xl:pl-5 text-center">
-        <motion.h1
+      <header className="mb-10 text-center">
+        <h1
           id="gallery-title"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          data-title
+          data-reveal
           className="text-5xl font-bold md:text-7xl tracking-tight"
         >
-          Galeria de Pinturas
-        </motion.h1>
+          {["Galeria", "de", "Pinturas"].map((word, index, words) => (
+            <span
+              key={word}
+              className="inline-block overflow-hidden pb-[0.1em] -mb-[0.1em] align-top"
+            >
+              <span data-title-word className="inline-block">
+                {word}
+              </span>
+              {index < words.length - 1 && "\u00a0"}
+            </span>
+          ))}
+        </h1>
 
-        <motion.p
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+        <p
+          data-intro
+          data-reveal
           className="mt-3 text-lg text-muted-foreground"
         >
           Explore as obras-primas de Van Gogh, contemplando cada traço e
           detalhe.
-        </motion.p>
+        </p>
       </header>
 
-      <motion.section
+      <section
         aria-label="Filtros de pesquisa"
-        initial={{ opacity: 0, y: 60 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="mb-5 md:pl-10 2xl:pl-5 scroll-mt-24"
+        data-intro
+        data-reveal
+        className="mb-5 scroll-mt-24"
       >
         <div className="grid grid-cols-2 gap-3 lg:grid-cols-[minmax(0,1fr)_repeat(3,minmax(0,11.5rem))] lg:items-end">
           <div className="col-span-2 lg:col-span-1 flex flex-col gap-1.5">
@@ -258,36 +306,27 @@ export default function PaintingsPage() {
             </Button>
           )}
         </div>
-      </motion.section>
+      </section>
 
       {currentItems.length > 0 ? (
-        <motion.section
-          aria-labelledby="gallery-title"
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mx-auto md:pl-10 2xl:pl-5"
-        >
-          <motion.ul
+        <section aria-labelledby="gallery-title" className="mx-auto">
+          <ul
             key={gridKey}
             ref={ui.containerRef}
-            variants={gridVariants}
-            initial={reduceMotion ? false : "hidden"}
-            animate="visible"
             aria-busy={filter.isPending}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 list-none"
           >
             {currentItems.map((photo, i) => (
-              <motion.li key={photo.id} variants={itemVariants}>
+              <li key={photo.id} data-card data-reveal>
                 <PaintingCard
                   photo={photo}
                   isActive={ui.activeId === photo.id}
                   onCardClick={ui.handleItemClick}
                   index={i}
                 />
-              </motion.li>
+              </li>
             ))}
-          </motion.ul>
+          </ul>
 
           <footer className="mt-10 flex flex-col items-center justify-between gap-4 sm:flex-row w-full">
             <div className="hidden sm:flex items-center gap-2">
@@ -317,12 +356,11 @@ export default function PaintingsPage() {
               onPageChange={goToPage}
             />
           </footer>
-        </motion.section>
+        </section>
       ) : (
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+        <div
+          data-card
+          data-reveal
           role="region"
           aria-labelledby="empty-section-title"
         >
@@ -333,8 +371,8 @@ export default function PaintingsPage() {
             buttonText="Limpar filtros"
             onClear={filter.clearFilters}
           />
-        </motion.div>
+        </div>
       )}
-    </motion.main>
+    </main>
   );
 }

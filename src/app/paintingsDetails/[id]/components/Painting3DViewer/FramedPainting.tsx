@@ -227,6 +227,8 @@ export function FramedPainting({
       <mesh position-z={canvasDepth + 0.0005}>
         <planeGeometry args={[width, height]} />
         <meshPhysicalMaterial
+          // Adding the relief later needs a new shader program.
+          key={bumpMap ? "relief" : "flat"}
           map={texture}
           bumpMap={bumpMap ?? undefined}
           bumpScale={1.4}

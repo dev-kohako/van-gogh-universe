@@ -1,14 +1,23 @@
-import { Variants } from "motion/react";
-import { Painting } from "./types";
+import type { Painting } from "./types";
 
-export interface AnimationVariants {
-  hover: Variants;
-  overlay: Variants;
-  title: Variants;
-}
+/** What the gallery needs to show a painting. */
+export type GalleryPainting = Pick<
+  Painting,
+  | "id"
+  | "namePainting"
+  | "datePainting"
+  | "imagePainting"
+  | "width"
+  | "height"
+  | "blurDataURL"
+  | "alt"
+>;
 
 export interface PaintingCardProps {
-  painting: Painting;
+  painting: GalleryPainting;
   index: number;
-  variants: AnimationVariants;
+}
+
+export interface GalleryClientProps {
+  paintings: GalleryPainting[];
 }

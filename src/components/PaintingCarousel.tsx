@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { v4 as uuidv4 } from "uuid";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -31,16 +30,20 @@ export function PaintingCarousel({ paintings }: PaintingCarouselProps) {
     >
       {paintings.map((painting, i) => (
         <SwiperSlide
-          key={uuidv4()}
+          // biome-ignore lint/suspicious/noArrayIndexKey: the list repeats paintings
+          key={`${painting.src}-${i}`}
           className="flex justify-center items-center"
         >
           <Image
             src={painting.src}
             alt={painting.alt ?? `Obra de arte ${i + 1}`}
-            width={400}
-            height={300}
-            sizes=""
-            className="w-full h-40 sm:h-52 md:h-64 lg:h-80 xl:h-96 object-cover rounded-lg"
+            width={800}
+            height={600}
+            // Two slides share the carousel width (90vw).
+            sizes="(min-width: 1440px) 640px, 45vw"
+            placeholder={painting.blurDataURL ? "blur" : "empty"}
+            blurDataURL={painting.blurDataURL}
+            className="w-full h-40 sm:h-52 md:h-64 lg:h-80 xl:h-96 short:h-64 object-cover rounded-lg"
             priority={i < 2}
           />
         </SwiperSlide>

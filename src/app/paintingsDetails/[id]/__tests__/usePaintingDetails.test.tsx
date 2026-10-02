@@ -1,79 +1,71 @@
-import { renderHook, act } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react";
 import { usePaintingDetails } from "../usePaintingDetails";
 
-jest.mock("../../../../../public/data/data.json", () => ({
-  data_painting: [
-    { id: "1", namePainting: "Primeira" },
-    { id: "2", namePainting: "Segunda" },
-    { id: "3", namePainting: "Terceira" },
-  ],
+const push = jest.fn();
+jest.mock("next/navigation", () => ({
+  useRouter: () => ({ push }),
 }));
 
+const prev = { id: "1", namePainting: "Primeira" };
+const next = { id: "3", namePainting: "Terceira" };
+
+const press = (key: string, target: EventTarget = window) => {
+  act(() => {
+    target.dispatchEvent(new KeyboardEvent("keydown", { key, bubbles: true }));
+  });
+};
+
 describe("usePaintingDetails", () => {
-  beforeEach(() => {
-    jest.clearAllMocks();
-  });
+  beforeEach(() => jest.clearAllMocks());
 
-  it("returns prevPainting and nextPainting correctly", () => {
-    const painting = { id: "2", namePainting: "Segunda" } as any;
-    const { result } = renderHook(() => usePaintingDetails(painting));
-
-    expect(result.current.prevPainting?.namePainting).toBe("Primeira");
-    expect(result.current.nextPainting?.namePainting).toBe("Terceira");
-  });
-
-  it("returns undefined when painting is not provided", () => {
-    const { result } = renderHook(() => usePaintingDetails(undefined));
-    expect(result.current.prevPainting).toBeUndefined();
-    expect(result.current.nextPainting).toBeUndefined();
-  });
-
-  it("initializes with default states", () => {
-    const painting = { id: "1", namePainting: "Primeira" } as any;
-    const { result } = renderHook(() => usePaintingDetails(painting));
+  it("starts with both viewers closed", () => {
+    const { result } = renderHook(() => usePaintingDetails(prev, next));
 
     expect(result.current.show3D).toBe(false);
     expect(result.current.isFullscreen).toBe(false);
   });
 
-  it("updates show3D and isFullscreen states", () => {
-    const painting = { id: "1", namePainting: "Primeira" } as any;
-    const { result } = renderHook(() => usePaintingDetails(painting));
-
-    act(() => result.current.setShow3D(true));
-    act(() => result.current.setIsFullscreen(true));
-
-    expect(result.current.show3D).toBe(true);
-    expect(result.current.isFullscreen).toBe(true);
-  });
-
-  it("resets both states when Escape key is pressed", () => {
-    const painting = { id: "2", namePainting: "Segunda" } as any;
-    const { result } = renderHook(() => usePaintingDetails(painting));
+  it("closes the viewers with Escape", () => {
+    const { result } = renderHook(() => usePaintingDetails(prev, next));
 
     act(() => {
       result.current.setShow3D(true);
       result.current.setIsFullscreen(true);
     });
-
-    act(() => {
-      const event = new KeyboardEvent("keydown", { key: "Escape" });
-      window.dispatchEvent(event);
-    });
+    press("Escape");
 
     expect(result.current.show3D).toBe(false);
     expect(result.current.isFullscreen).toBe(false);
   });
 
-  it("removes keydown listener on unmount", () => {
-    const painting = { id: "1", namePainting: "Primeira" } as any;
-    const addSpy = jest.spyOn(window, "addEventListener");
-    const removeSpy = jest.spyOn(window, "removeEventListener");
+  it("moves between paintings with the arrow keys", () => {
+    renderHook(() => usePaintingDetails(prev, next));
 
-    const { unmount } = renderHook(() => usePaintingDetails(painting));
-    expect(addSpy).toHaveBeenCalledWith("keydown", expect.any(Function));
+    press("ArrowLeft");
+    expect(push).toHaveBeenLastCalledWith("/paintingsDetails/1");
+    press("ArrowRight");
+    expect(push).toHaveBeenLastCalledWith("/paintingsDetails/3");
+  });
 
-    unmount();
-    expect(removeSpy).toHaveBeenCalledWith("keydown", expect.any(Function));
+  it("ignores the arrow keys while a viewer is open or at the ends", () => {
+    const { result } = renderHook(() => usePaintingDetails(undefined, next));
+
+    press("ArrowLeft");
+    expect(push).not.toHaveBeenCalled();
+
+    act(() => result.current.setShow3D(true));
+    press("ArrowRight");
+    expect(push).not.toHaveBeenCalled();
+  });
+
+  it("ignores the arrow keys while typing", () => {
+    renderHook(() => usePaintingDetails(prev, next));
+    const input = document.createElement("input");
+    document.body.appendChild(input);
+
+    press("ArrowRight", input);
+
+    expect(push).not.toHaveBeenCalled();
+    input.remove();
   });
 });

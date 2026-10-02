@@ -19,7 +19,8 @@ interface PaintingsData {
 }
 
 // Usage: bun scripts/process-images.ts [--force]
-// Fills in missing dimensions, color palettes and blur placeholders.
+// Shrinks oversized originals, fills in missing dimensions, color palettes
+// and blur placeholders.
 // --force recomputes palettes and placeholders for every painting.
 const force = process.argv.includes("--force");
 
@@ -30,6 +31,42 @@ const imagesDir = path.join(process.cwd(), "public/assets/paintings");
 // colors instead of blending neighbours into muddier averages.
 const PALETTE_SAMPLE_SIZE = 200;
 const BLUR_SIZE = 16;
+
+// Originals larger than this are resized: 4096px is sharper than any screen
+// needs (and enough to zoom in), while 10–70 MB files make the image
+// optimizer, the lightbox and the 3D textures slow. Files saved at very high
+// JPEG quality (over 1 byte per pixel) are re-encoded too; the output of this
+// script is far below that, so it is never re-encoded twice.
+const MAX_ORIGINAL_SIDE = 4096;
+const MAX_BYTES_PER_PIXEL = 1;
+
+/** Re-encodes an oversized original in place. Returns true if it changed. */
+async function shrinkOriginal(imagePath: string) {
+  const { size } = fs.statSync(imagePath);
+  const { width = 0, height = 0 } = await sharp(imagePath).metadata();
+  if (
+    Math.max(width, height) <= MAX_ORIGINAL_SIDE &&
+    size / Math.max(1, width * height) <= MAX_BYTES_PER_PIXEL
+  ) {
+    return false;
+  }
+
+  const buffer = await sharp(imagePath)
+    .rotate()
+    .resize(MAX_ORIGINAL_SIDE, MAX_ORIGINAL_SIDE, {
+      fit: "inside",
+      withoutEnlargement: true,
+    })
+    .jpeg({ quality: 88, mozjpeg: true })
+    .toBuffer();
+  if (buffer.length >= size) return false;
+
+  fs.writeFileSync(imagePath, buffer);
+  console.log(
+    `Reduzida: ${path.basename(imagePath)} ${(size / 1e6).toFixed(1)} MB -> ${(buffer.length / 1e6).toFixed(1)} MB`,
+  );
+  return true;
+}
 
 async function computePalette(imagePath: string) {
   const { data, info } = await sharp(imagePath)
@@ -66,8 +103,9 @@ async function processPainting(painting: Painting): Promise<Painting> {
   }
 
   const updated: Painting = { ...painting };
+  const shrunk = await shrinkOriginal(imagePath);
 
-  if (!updated.width || !updated.height) {
+  if (shrunk || !updated.width || !updated.height) {
     const { width, height } = await sharp(imagePath).metadata();
     updated.width = width;
     updated.height = height;

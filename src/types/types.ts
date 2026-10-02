@@ -1,4 +1,3 @@
-import type { Dispatch, SetStateAction } from "react";
 import type { PaletteColor } from "@/lib/palette";
 
 export type Painting = {
@@ -23,19 +22,8 @@ export type Painting = {
   alt: string;
 };
 
-export interface AppSidebarProps {
-  open: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
-}
-
 export interface Links {
   label: string;
-  href?: string;
-  icon?: React.JSX.Element | React.ReactNode;
-}
-
-export interface SidebarContextProps {
-  open: boolean;
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  animate: boolean;
+  href: string;
+  icon: React.ReactNode;
 }

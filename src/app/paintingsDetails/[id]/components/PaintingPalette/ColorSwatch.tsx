@@ -16,7 +16,13 @@ function isLightColor(hex: string) {
   return 0.299 * r + 0.587 * g + 0.114 * b > 160;
 }
 
-export function ColorSwatch({ color, share, onCopy }: ColorSwatchProps) {
+export function ColorSwatch({
+  color,
+  share,
+  onCopy,
+  active = false,
+  onActiveChange,
+}: ColorSwatchProps) {
   const [isCopied, setIsCopied] = useState(false);
   const light = isLightColor(color);
 
@@ -39,7 +45,7 @@ export function ColorSwatch({ color, share, onCopy }: ColorSwatchProps) {
     share !== undefined ? ` (${formatShare(share)} da obra)` : "";
 
   return (
-    <div className="flex flex-col items-center gap-2">
+    <div className="flex flex-col items-center gap-1.5">
       <motion.button
         type="button"
         onClick={handleCopy}
@@ -48,13 +54,18 @@ export function ColorSwatch({ color, share, onCopy }: ColorSwatchProps) {
           boxShadow: "0 10px 24px rgba(0,0,0,0.25)",
         }}
         whileTap={{ scale: 0.92 }}
+        animate={{ scale: active ? 1.08 : 1 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        onPointerEnter={() => onActiveChange?.(true)}
+        onPointerLeave={() => onActiveChange?.(false)}
+        onFocus={() => onActiveChange?.(true)}
+        onBlur={() => onActiveChange?.(false)}
         aria-label={
           isCopied
             ? `Cor ${color} copiada!`
             : `Copiar cor ${color}${shareLabel}`
         }
-        className="group relative w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-border shadow-lg cursor-pointer overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        className="group relative size-11 min-[380px]:size-12 sm:size-14 short:size-11 rounded-full border border-border shadow-lg cursor-pointer overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         style={{ backgroundColor: color }}
       >
         <AnimatePresence>
@@ -84,7 +95,7 @@ export function ColorSwatch({ color, share, onCopy }: ColorSwatchProps) {
       </motion.button>
 
       <span
-        className="flex flex-col items-center leading-tight text-xs"
+        className="flex flex-col items-center leading-tight text-[0.65rem] min-[380px]:text-xs"
         aria-hidden="true"
       >
         <span className="font-medium uppercase tracking-wide tabular-nums">
