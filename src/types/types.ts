@@ -1,4 +1,5 @@
 import type { Dispatch, SetStateAction } from "react";
+import type { PaletteColor } from "@/lib/palette";
 
 export type Painting = {
   id: string;
@@ -13,11 +14,10 @@ export type Painting = {
   physicalDimensions: string;
   local: string;
   description: string;
-  color1: string;
-  color2: string;
-  color3: string;
-  color4: string;
-  color5: string;
+  /** Dominant colors extracted by `scripts/process-images.ts`, by share. */
+  palette: PaletteColor[];
+  /** Tiny base64 preview shown while the full image loads. */
+  blurDataURL?: string;
   width: number;
   height: number;
   alt: string;

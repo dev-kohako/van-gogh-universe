@@ -2,11 +2,15 @@ import * as THREE from "three";
 import { Vector3 } from "three";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import { Painting } from "./types";
+import type { PaletteColor } from "@/lib/palette";
 import { RefObject } from "react";
 
 export type PaintingLink = { id: string | number } | undefined;
 
-export type PaintingSceneProps = Omit<Painting3DViewerProps, "onClose" | "title">;
+export type PaintingSceneProps = Omit<
+  Painting3DViewerProps,
+  "onClose" | "title"
+>;
 
 export interface PaintingImageProps {
   painting: Painting;
@@ -57,11 +61,13 @@ export interface GalleryPlaqueProps {
 }
 
 export interface PaletteProps {
-  colors: string[];
+  colors: PaletteColor[];
 }
 
 export interface ColorSwatchProps {
   color: string;
+  /** Fraction of the painting (0–1) covered by this color. */
+  share?: number;
   onCopy: (color: string) => void;
 }
 
