@@ -4,9 +4,21 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, Copy } from "lucide-react";
 import { ColorSwatchProps } from "@/types/paintingDetails.type";
+import { cn } from "@/lib/utils";
+import { formatShare } from "@/lib/palette";
 
-export function ColorSwatch({ color, onCopy }: ColorSwatchProps) {
+function isLightColor(hex: string) {
+  const value = Number.parseInt(hex.replace("#", ""), 16);
+  if (Number.isNaN(value)) return false;
+  const r = (value >> 16) & 255;
+  const g = (value >> 8) & 255;
+  const b = value & 255;
+  return 0.299 * r + 0.587 * g + 0.114 * b > 160;
+}
+
+export function ColorSwatch({ color, share, onCopy }: ColorSwatchProps) {
   const [isCopied, setIsCopied] = useState(false);
+  const light = isLightColor(color);
 
   useEffect(() => {
     if (!isCopied) return;
@@ -23,46 +35,67 @@ export function ColorSwatch({ color, onCopy }: ColorSwatchProps) {
     setIsCopied(true);
   };
 
+  const shareLabel =
+    share !== undefined ? ` (${formatShare(share)} da obra)` : "";
+
   return (
-    <motion.button
-      onClick={handleCopy}
-      whileHover={{
-        scale: 1.15,
-        rotate: 3,
-        boxShadow: "0 0 20px rgba(0,0,0,0.25)",
-      }}
-      whileTap={{ scale: 0.9 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      aria-label={
-        isCopied ? `Cor ${color} copiada!` : `Copiar cor ${color}`
-      }
-      className="group relative w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-border shadow-lg cursor-pointer overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary"
-      style={{ backgroundColor: color }}
-    >
-      <AnimatePresence>
-        {isCopied ? (
-          <motion.div
-            key="check"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.2 }}
-            className="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm rounded-full"
-          >
-            <Check
-              className="text-zinc-50 w-6 h-6"
-              aria-hidden="true"
-            />
-          </motion.div>
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity rounded-full">
-            <Copy
-              className="text-zinc-50 opacity-80 w-5 h-5"
-              aria-hidden="true"
-            />
-          </div>
+    <div className="flex flex-col items-center gap-2">
+      <motion.button
+        type="button"
+        onClick={handleCopy}
+        whileHover={{
+          scale: 1.1,
+          boxShadow: "0 10px 24px rgba(0,0,0,0.25)",
+        }}
+        whileTap={{ scale: 0.92 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        aria-label={
+          isCopied
+            ? `Cor ${color} copiada!`
+            : `Copiar cor ${color}${shareLabel}`
+        }
+        className="group relative w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-border shadow-lg cursor-pointer overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        style={{ backgroundColor: color }}
+      >
+        <AnimatePresence>
+          {isCopied ? (
+            <motion.div
+              key="check"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.2 }}
+              className="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm rounded-full"
+            >
+              <Check className="text-zinc-50 w-6 h-6" aria-hidden="true" />
+            </motion.div>
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity rounded-full">
+              <Copy
+                className={cn(
+                  "w-5 h-5 opacity-80",
+                  light ? "text-zinc-900" : "text-zinc-50",
+                )}
+                aria-hidden="true"
+              />
+            </div>
+          )}
+        </AnimatePresence>
+      </motion.button>
+
+      <span
+        className="flex flex-col items-center leading-tight text-xs"
+        aria-hidden="true"
+      >
+        <span className="font-medium uppercase tracking-wide tabular-nums">
+          {color}
+        </span>
+        {share !== undefined && (
+          <span className="text-muted-foreground tabular-nums">
+            {formatShare(share)}
+          </span>
         )}
-      </AnimatePresence>
-    </motion.button>
+      </span>
+    </div>
   );
 }

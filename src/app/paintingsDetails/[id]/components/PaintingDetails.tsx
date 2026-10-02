@@ -18,13 +18,7 @@ export function PaintingDetails({ painting }: PaintingDetailsProps) {
     { label: "Gênero:", value: painting.genre },
   ];
 
-  const colors = [
-    painting.color1,
-    painting.color2,
-    painting.color3,
-    painting.color4,
-    painting.color5,
-  ].filter(Boolean) as string[];
+  const colors = (painting.palette ?? []).filter((color) => color.hex);
 
   return (
     <motion.article
@@ -37,11 +31,14 @@ export function PaintingDetails({ painting }: PaintingDetailsProps) {
       <dl>
         {details.map((item) =>
           item.value ? (
-            <div key={item.label} className="flex items-baseline text-lg lg:text-xl gap-2 space-y-4">
+            <div
+              key={item.label}
+              className="flex items-baseline text-lg lg:text-xl gap-2 space-y-4"
+            >
               <dt className="font-bold text-nowrap">{item.label}</dt>
               <dd className="font-light ">{capitalizeFirst(item.value)}</dd>
             </div>
-          ) : null
+          ) : null,
         )}
       </dl>
 
@@ -51,14 +48,7 @@ export function PaintingDetails({ painting }: PaintingDetailsProps) {
         </p>
       )}
 
-      {colors.length > 0 && (
-        <section aria-labelledby="palette-heading">
-          <h2 id="palette-heading" className="sr-only">
-            Paleta de Cores Principal
-          </h2>
-          <PaintingPalette colors={colors} />
-        </section>
-      )}
+      {colors.length > 0 && <PaintingPalette colors={colors} />}
     </motion.article>
   );
 }

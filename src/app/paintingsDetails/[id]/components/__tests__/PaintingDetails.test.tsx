@@ -4,7 +4,7 @@ import { Painting } from "@/types/types";
 
 const mockPaintingPalette = jest.fn();
 
-jest.mock("../components/PaintingPalette/PaintingPalette", () => ({
+jest.mock("../PaintingPalette/PaintingPalette", () => ({
   PaintingPalette: (props: any) => mockPaintingPalette(props),
 }));
 
@@ -25,11 +25,13 @@ describe("PaintingDetails", () => {
     genre: "Paisagem",
     description:
       "Uma das pinturas mais famosas de Van Gogh, representando a vista de seu quarto no asilo de Saint-Rémy.",
-    color1: "#123456",
-    color2: "#654321",
-    color3: "#abcdef",
-    color4: "#fedcba",
-    color5: "#0f0f0f",
+    palette: [
+      { hex: "#123456", share: 0.4 },
+      { hex: "#654321", share: 0.3 },
+      { hex: "#abcdef", share: 0.15 },
+      { hex: "#fedcba", share: 0.1 },
+      { hex: "#0f0f0f", share: 0.05 },
+    ],
   } as Painting;
 
   beforeEach(() => {
@@ -75,13 +77,7 @@ describe("PaintingDetails", () => {
     render(<PaintingDetails painting={painting} />);
 
     expect(mockPaintingPalette).toHaveBeenCalledWith({
-      colors: [
-        "#123456",
-        "#654321",
-        "#abcdef",
-        "#fedcba",
-        "#0f0f0f",
-      ],
+      colors: painting.palette,
     });
 
     expect(screen.getByTestId("mock-palette")).toBeInTheDocument();
@@ -90,11 +86,7 @@ describe("PaintingDetails", () => {
   it("does not render palette section when no colors exist", () => {
     const paintingWithoutColors = {
       ...painting,
-      color1: "",
-      color2: "",
-      color3: "",
-      color4: "",
-      color5: "",
+      palette: [],
     };
 
     render(<PaintingDetails painting={paintingWithoutColors} />);

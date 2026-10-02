@@ -9,10 +9,11 @@ jest.mock("sonner", () => ({
   },
 }));
 
-jest.mock("../components/PaintingPalette/ColorSwatch", () => ({
-  ColorSwatch: ({ color, onCopy }: any) => (
+jest.mock("../ColorSwatch", () => ({
+  ColorSwatch: ({ color, share, onCopy }: any) => (
     <button
       data-testid={`swatch-${color}`}
+      data-share={share}
       onClick={() => onCopy(color)}
     >
       {color}
@@ -21,7 +22,11 @@ jest.mock("../components/PaintingPalette/ColorSwatch", () => ({
 }));
 
 describe("PaintingPalette", () => {
-  const colors = ["#FF0000", "#00FF00", "#0000FF"];
+  const colors = [
+    { hex: "#FF0000", share: 0.5 },
+    { hex: "#00FF00", share: 0.3 },
+    { hex: "#0000FF", share: 0.2 },
+  ];
   const mockCopy = require("copy-to-clipboard");
   const mockToast = require("sonner").toast;
 
@@ -34,7 +39,10 @@ describe("PaintingPalette", () => {
     expect(screen.getByText("Paleta de cores")).toBeInTheDocument();
 
     colors.forEach((color) => {
-      expect(screen.getByTestId(`swatch-${color}`)).toBeInTheDocument();
+      expect(screen.getByTestId(`swatch-${color.hex}`)).toHaveAttribute(
+        "data-share",
+        String(color.share),
+      );
     });
   });
 
@@ -59,6 +67,16 @@ describe("PaintingPalette", () => {
     fireEvent.click(secondSwatch);
 
     expect(mockToast.error).toHaveBeenCalledWith("Falha ao copiar a cor.");
+  });
+
+  it("describes the color proportions for assistive technologies", () => {
+    render(<PaintingPalette colors={colors} />);
+
+    expect(
+      screen.getByRole("img", { name: /proporção das cores/i }),
+    ).toHaveAccessibleName(
+      "Proporção das cores: #FF0000 50%, #00FF00 30%, #0000FF 20%",
+    );
   });
 
   it("renders correct aria-label and structure", () => {
