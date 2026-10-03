@@ -10,23 +10,13 @@ import { Image as ImageIcon } from "lucide-react";
 import { useRef } from "react";
 import { EmptySection } from "@/components/empty-section";
 import { useGsap } from "@/hooks/useGsap";
-import { gsap, hasFinePointer, prefersReducedMotion } from "@/lib/gsap";
+import { gsap, prefersReducedMotion } from "@/lib/gsap";
+import { revealPaintings } from "@/lib/reveal";
 import { ScrollTrigger } from "@/lib/scrollTrigger";
 import type { GalleryClientProps } from "@/types/galleryTypes.type";
 import { GalleryCard } from "./components/GalleryCard";
 
 const TITLE = "Galeria";
-
-function sortByPosition(elements: Element[]) {
-  return elements
-    .map((element) => ({ element, rect: element.getBoundingClientRect() }))
-    .sort(
-      (a, b) =>
-        Math.round(a.rect.top / 40) - Math.round(b.rect.top / 40) ||
-        a.rect.left - b.rect.left,
-    )
-    .map(({ element }) => element);
-}
 
 export function GalleryClient({ paintings }: GalleryClientProps) {
   const scopeRef = useRef<HTMLElement>(null);
@@ -64,49 +54,14 @@ export function GalleryClient({ paintings }: GalleryClientProps) {
       },
     );
 
-    // Paintings are hung on the wall as they scroll into view.
-    gsap.set("[data-gallery-item]", {
-      transformPerspective: 1000,
-      transformOrigin: "50% 0%",
-    });
+    // Each painting is unveiled as it scrolls into view, row by row.
     ScrollTrigger.batch("[data-gallery-item]", {
-      start: "top bottom",
+      start: "top bottom-=40",
       once: true,
-      onEnter: (batch) =>
-        gsap.fromTo(
-          // The DOM order runs down each column; reveal row by row instead.
-          sortByPosition(batch),
-          { autoAlpha: 0, y: 70, rotationX: -22, scale: 0.94 },
-          {
-            autoAlpha: 1,
-            y: 0,
-            rotationX: 0,
-            scale: 1,
-            duration: 1.1,
-            ease: "expo.out",
-            stagger: 0.05,
-            overwrite: true,
-          },
-        ),
+      onEnter: (batch) => {
+        revealPaintings(batch, { stagger: 0.07 });
+      },
     });
-
-    // The wall sways with the scroll speed, then settles.
-    if (hasFinePointer()) {
-      const wall = document.querySelector("[data-gallery-wall]");
-      if (wall) {
-        const skew = gsap.quickTo(wall, "skewY", {
-          duration: 0.8,
-          ease: "power3",
-        });
-        const settle = gsap.delayedCall(0.12, () => skew(0)).pause();
-        ScrollTrigger.create({
-          onUpdate: (self) => {
-            skew(gsap.utils.clamp(-3, 3, self.getVelocity() / -400));
-            settle.restart(true);
-          },
-        });
-      }
-    }
   }, scopeRef);
 
   return (
@@ -151,7 +106,7 @@ export function GalleryClient({ paintings }: GalleryClientProps) {
 
       {paintings.length > 0 ? (
         <section aria-labelledby="gallery-title" className="w-full">
-          <div data-gallery-wall>
+          <div>
             <LightGallery
               speed={500}
               plugins={[lgThumbnail, lgZoom]}

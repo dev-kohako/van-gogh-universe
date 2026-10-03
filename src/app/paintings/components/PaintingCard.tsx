@@ -1,15 +1,13 @@
 "use client";
 
-import { memo, useState } from "react";
-import type { KeyboardEvent } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-
-import type { Painting } from "@/types/types";
-import { cn } from "@/lib/utils";
-
+import type { KeyboardEvent } from "react";
+import { memo, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import type { Painting } from "@/types/types";
 import { usePaintingAnimations } from "./usePaintingAnimations";
 
 const MotionImage = motion.create(Image);
@@ -56,7 +54,7 @@ export const PaintingCard = memo(function PaintingCard({
       whileHover="hover"
       onClick={() => onCardClick(photo.id)}
     >
-      <motion.figure className="m-0 relative">
+      <motion.figure data-reveal-media className="m-0 relative">
         {/* Blurred preview of the painting + shimmer until the image arrives. */}
         <div
           aria-hidden="true"
@@ -110,7 +108,12 @@ export const PaintingCard = memo(function PaintingCard({
               asChild
               onClick={(e) => e.stopPropagation()}
             >
-              <Link href={`/paintingsDetails/${photo.id}`}>Ver detalhes</Link>
+              <Link
+                href={`/paintingsDetails/${photo.id}`}
+                data-transition-label={photo.namePainting}
+              >
+                Ver detalhes
+              </Link>
             </Button>
           </motion.div>
         </motion.figcaption>
