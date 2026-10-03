@@ -30,7 +30,7 @@ export function GalleryCard({ painting, index }: PaintingCardProps) {
       className="group relative mb-3 block w-full break-inside-avoid overflow-hidden rounded-md bg-muted shadow-[0_18px_40px_-22px_rgb(0_0_0/0.7)] outline-none ring-gold/60 transition-shadow duration-500 hover:shadow-[0_26px_50px_-20px_rgb(0_0_0/0.8)] focus-visible:ring-2 sm:mb-5"
       style={{ aspectRatio: painting.width / painting.height }}
     >
-      <figure className="m-0 h-full w-full">
+      <figure data-reveal-media className="m-0 h-full w-full">
         <Image
           src={painting.imagePainting}
           alt={painting.alt}

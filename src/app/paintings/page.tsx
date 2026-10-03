@@ -2,12 +2,7 @@
 
 import { FilterX, Palette, Search, X } from "lucide-react";
 import { useRef } from "react";
-
-import type { SortBy, SortOrder } from "@/types/paiting.type";
-import type { Painting } from "@/types/types";
-import { data_painting } from "../../../public/data/data.json";
-import { ALL, usePaintings } from "./usePantings";
-
+import { EmptySection } from "@/components/empty-section";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,11 +13,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { PaintingCard } from "./components/PaintingCard";
-import { PaintingsPagination } from "./components/PaintingsPagination";
-import { EmptySection } from "@/components/empty-section";
 import { useGsap } from "@/hooks/useGsap";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
+import { revealPaintings } from "@/lib/reveal";
+import type { SortBy, SortOrder } from "@/types/paiting.type";
+import type { Painting } from "@/types/types";
+import { data_painting } from "../../../public/data/data.json";
+import { PaintingCard } from "./components/PaintingCard";
+import { PaintingsPagination } from "./components/PaintingsPagination";
+import { ALL, usePaintings } from "./usePantings";
 
 const paintings: Painting[] = (data_painting || [])
   .filter((p) => p.width && p.height && p.imagePainting)
@@ -99,7 +98,7 @@ export default function PaintingsPage() {
       );
   }, scopeRef);
 
-  // Cards are hung on the wall one after another.
+  // Cards are unveiled one after another on every page or filter change.
   useGsap(
     () => {
       const cards = gsap.utils.toArray<HTMLElement>("[data-card]");
@@ -107,27 +106,7 @@ export default function PaintingsPage() {
         gsap.set(cards, { autoAlpha: 1 });
         return;
       }
-      gsap.fromTo(
-        cards,
-        {
-          autoAlpha: 0,
-          y: 40,
-          rotationX: -18,
-          scale: 0.96,
-          transformPerspective: 1000,
-          transformOrigin: "50% 0%",
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          rotationX: 0,
-          scale: 1,
-          duration: 0.9,
-          ease: "expo.out",
-          stagger: 0.06,
-          delay: 0.15,
-        },
-      );
+      revealPaintings(cards, { stagger: 0.09, delay: 0.1 });
     },
     scopeRef,
     [gridKey],

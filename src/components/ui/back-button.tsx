@@ -1,8 +1,9 @@
 "use client";
 
-import { Undo2 } from "lucide-react";
 import { motion } from "framer-motion";
+import { Undo2 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { usePageTransition } from "@/components/PageTransition";
 import { Button } from "./button";
 
 type Variant =
@@ -27,10 +28,11 @@ export function BackButton({
   buttonVariant = "ghost",
 }: BackButtonProps) {
   const router = useRouter();
+  const { navigate } = usePageTransition();
 
   const handleClick = () => {
     if (redirect) {
-      router.push(redirect);
+      navigate(redirect);
     } else {
       router.back();
     }

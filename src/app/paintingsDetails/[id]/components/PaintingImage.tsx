@@ -134,7 +134,7 @@ export function PaintingImage({
         data-light
         data-reveal
         aria-hidden="true"
-        className="pointer-events-none absolute -top-24 left-1/2 h-[calc(100%+6rem)] w-[150%] -translate-x-1/2 bg-[radial-gradient(ellipse_45%_50%_at_50%_0%,var(--wall-light),transparent_75%)]"
+        className="picture-light pointer-events-none absolute left-1/2 top-0 h-[85%] w-[140%] -translate-x-1/2 -translate-y-[60%]"
       />
 
       <div data-tilt-area className="relative flex w-full justify-center py-2">

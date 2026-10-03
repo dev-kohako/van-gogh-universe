@@ -32,6 +32,7 @@ function NeighbourLink({
   return (
     <Link
       href={`/paintingsDetails/${painting.id}`}
+      data-transition-label={painting.namePainting}
       aria-label={`${label}: ${painting.namePainting}`}
       className="group/neighbour relative flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm transition-colors hover:border-gold/70 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
     >

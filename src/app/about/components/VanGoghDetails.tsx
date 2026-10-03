@@ -1,8 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import React, { memo, useMemo } from "react";
-import { InfoGridProps } from "@/types/about.type";
+import { memo, useMemo } from "react";
+import type { InfoGridProps } from "@/types/about.type";
 import { vanGoghInfo } from "../../../../public/data/vanGoghInfos";
 
 export function formatLabel(label: string) {
@@ -14,49 +13,44 @@ export function formatLabel(label: string) {
 }
 
 const InfoGrid = memo(function InfoGrid({ data }: InfoGridProps) {
-  const formattedEntries = useMemo(() => Object.entries(data), [data]);
+  const entries = useMemo(() => Object.entries(data), [data]);
 
   return (
-    <motion.dl
-      className="flex flex-col gap-x-8 gap-y-2 md:gap-y-3.5 text-base leading-relaxed"
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
+    <dl
+      className="grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2"
       aria-label="Informações biográficas de Van Gogh"
     >
-      {formattedEntries.map(([label, value]) => (
-        <motion.div
+      {entries.map(([label, value]) => (
+        <div
           key={label}
-          className="text-foreground font-light flex items-start"
-          whileHover={{ scale: 1.02 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          data-bio-field
+          className={Array.isArray(value) ? "sm:col-span-2" : undefined}
         >
-          <p className="font-bold text-foreground">
-            {formatLabel(label)}:{" "}
-            <span className="text-muted-foreground font-normal">
-              {Array.isArray(value) ? value.join(", ") : value}
-            </span>
-          </p>
-        </motion.div>
+          <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+            {formatLabel(label)}:
+          </dt>
+          <dd className="mt-0.5 text-base text-foreground">
+            {Array.isArray(value) ? value.join(", ") : value}
+          </dd>
+        </div>
       ))}
-    </motion.dl>
+    </dl>
   );
 });
 
-export default function AboutPage() {
+/** Museum placard about the artist. */
+export default function VanGoghDetails() {
   return (
-    <section className="mt-4" aria-labelledby="about-title">
-      <motion.h2
-        id="about-title"
-        className="text-5xl 2xl:text-6xl text-center text-foreground font-semibold mb-6"
-        initial={{ opacity: 0, y: -15 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+    <section aria-labelledby="artist-title" className="space-y-6">
+      <h2
+        id="artist-title"
+        data-bio-title
+        className="text-4xl font-semibold leading-tight text-foreground md:text-5xl"
       >
         Vincent Willem
         <br />
-        Van Gogh
-      </motion.h2>
+        <span className="text-gilded">Van Gogh</span>
+      </h2>
 
       <InfoGrid data={vanGoghInfo} />
     </section>

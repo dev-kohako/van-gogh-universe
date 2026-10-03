@@ -3,19 +3,13 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { lazy, Suspense, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { PaintingCarousel } from "@/components/PaintingCarousel";
 import { Button } from "@/components/ui/button";
-import { CarouselSkeleton } from "@/components/ui/carousel-skeleton";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { useGsap } from "@/hooks/useGsap";
 import { gsap, hasFinePointer, prefersReducedMotion } from "@/lib/gsap";
 import type { HomePageClientProps } from "@/types/homePage.type";
-
-const PaintingCarousel = lazy(() =>
-  import("@/components/PaintingCarousel").then((module) => ({
-    default: module.PaintingCarousel,
-  })),
-);
 
 export function HomePageClient({ paintings }: HomePageClientProps) {
   const { resolvedTheme } = useTheme();
@@ -53,23 +47,30 @@ export function HomePageClient({ paintings }: HomePageClientProps) {
         0.35,
       )
       .from("[data-brush]", { y: 14, duration: 1.4 }, 0.35)
+      // Then a glint of light runs over the gold leaf, now and again.
+      .fromTo(
+        "[data-brush]",
+        { backgroundPosition: "100% 0" },
+        {
+          backgroundPosition: "0% 0",
+          duration: 2.2,
+          ease: "power2.inOut",
+          repeat: -1,
+          repeatDelay: 4,
+        },
+        1.4,
+      )
       .from(
         "[data-intro]",
         { y: 24, autoAlpha: 0, duration: 1, stagger: 0.1 },
         0.6,
       )
-      .from(
+      // The ring animates its own entrance (see PaintingCarousel).
+      .fromTo(
         "[data-carousel]",
-        {
-          y: 60,
-          scale: 0.92,
-          rotateX: 14,
-          autoAlpha: 0,
-          transformPerspective: 1200,
-          transformOrigin: "50% 100%",
-          duration: 1.6,
-        },
-        0.7,
+        { autoAlpha: 0 },
+        { autoAlpha: 1, duration: 0.6 },
+        0.4,
       )
       .from(
         "[data-cta]",
@@ -135,7 +136,7 @@ export function HomePageClient({ paintings }: HomePageClientProps) {
           </span>
           <span
             data-brush
-            className="text-6xl sm:text-7xl font-brush bg-gradient-to-br from-blue-700 via-blue-500 to-cyan-700 text-transparent bg-clip-text -mt-9 sm:-mt-11 px-4"
+            className="text-gilded text-6xl sm:text-7xl font-brush -mt-9 sm:-mt-11 px-4"
           >
             Universe
           </span>
@@ -158,9 +159,7 @@ export function HomePageClient({ paintings }: HomePageClientProps) {
           Galeria de destaque de obras de Van Gogh
         </h2>
         <div data-carousel data-reveal>
-          <Suspense fallback={<CarouselSkeleton />}>
-            <PaintingCarousel paintings={paintings} />
-          </Suspense>
+          <PaintingCarousel paintings={paintings} />
         </div>
       </section>
 

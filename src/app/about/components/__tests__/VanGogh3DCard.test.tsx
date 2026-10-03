@@ -1,6 +1,5 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { VanGogh3DCard } from "../VanGogh3DCard";
-import React from "react";
 
 jest.mock("@react-three/fiber", () => ({
   Canvas: ({ children }: any) => <div data-testid="mock-canvas">{children}</div>,
@@ -9,17 +8,14 @@ jest.mock("@react-three/fiber", () => ({
     wrapT: 0,
     repeat: { set: jest.fn() },
   })),
-  mesh: "mesh",
-  planeGeometry: "planeGeometry",
-  shadowMaterial: "shadowMaterial",
-  sphereGeometry: "sphereGeometry",
-  cylinderGeometry: "cylinderGeometry",
 }));
 
 jest.mock("@react-three/drei", () => ({
   OrbitControls: () => <div data-testid="mock-orbit-controls" />,
   Loader: () => <div data-testid="mock-loader" />,
-  useGLTF: () => ({ scene: { clone: jest.fn(() => ({ traverse: jest.fn() })) } }),
+  useGLTF: () => ({
+    scene: { clone: jest.fn(() => ({ traverse: jest.fn() })) },
+  }),
 }));
 
 jest.mock("three", () => ({
@@ -29,56 +25,54 @@ jest.mock("three", () => ({
   TextureLoader: class MockTextureLoader {},
 }));
 
-jest.mock("../components/RotationMenuItems", () => ({
+jest.mock("../RotationMenuItems", () => ({
   RotationMenuItems: ({ autoRotate, velocity }: any) => (
     <div data-testid="mock-rotation-menu">
-      Menu — autoRotate: {String(autoRotate)} — velocity: {velocity}
+      autoRotate: {String(autoRotate)} — velocity: {velocity}
     </div>
   ),
 }));
 
-jest.mock("../components/VanGoghDetails", () => () => (
-  <div data-testid="mock-details">Detalhes de Van Gogh</div>
-));
+let observerCallback: IntersectionObserverCallback;
+beforeAll(() => {
+  window.IntersectionObserver = jest.fn((callback) => {
+    observerCallback = callback;
+    return { observe: jest.fn(), disconnect: jest.fn(), unobserve: jest.fn() };
+  }) as unknown as typeof IntersectionObserver;
+});
+
+const enterViewport = () =>
+  act(() =>
+    observerCallback(
+      [{ isIntersecting: true } as IntersectionObserverEntry],
+      {} as IntersectionObserver,
+    ),
+  );
 
 describe("VanGogh3DCard", () => {
-  beforeEach(() => {
-    jest.clearAllMocks();
-  });
-
-  it("renders without crashing and shows core UI elements", () => {
+  it("waits until it is near the viewport to start the 3D scene", () => {
     render(<VanGogh3DCard />);
 
     expect(
-      screen.getByRole("region", { name: /seção 3d de van gogh/i })
+      screen.getByRole("region", { name: /tridimensional interativa/i }),
     ).toBeInTheDocument();
-    expect(screen.getByTestId("mock-loader")).toBeInTheDocument();
+    expect(screen.queryByTestId("mock-canvas")).not.toBeInTheDocument();
+
+    enterViewport();
+
     expect(screen.getByTestId("mock-canvas")).toBeInTheDocument();
-    expect(screen.getByTestId("mock-details")).toBeInTheDocument();
-    expect(
-      screen.getByText(/eu sonho minha pintura e depois pinto meu sonho/i)
-    ).toBeInTheDocument();
+    expect(screen.getByTestId("mock-loader")).toBeInTheDocument();
   });
 
-  it("shows rotation badges with default states", () => {
+  it("shows the rotation state and its controls", () => {
     render(<VanGogh3DCard />);
 
     expect(
-      screen.getByLabelText(/rotação automática ativada/i)
+      screen.getByText(/rotação automática: ativada/i),
     ).toBeInTheDocument();
-
-    expect(
-      screen.getByLabelText(/velocidade atual de rotação: 0\.5/i)
-    ).toBeInTheDocument();
-  });
-
-  it("includes the rotation control menu component", () => {
-    render(<VanGogh3DCard />);
+    expect(screen.getByText(/velocidade: 0\.5/i)).toBeInTheDocument();
     expect(screen.getByTestId("mock-rotation-menu")).toHaveTextContent(
-      "autoRotate: true"
-    );
-    expect(screen.getByTestId("mock-rotation-menu")).toHaveTextContent(
-      "velocity: 0.5"
+      "autoRotate: true — velocity: 0.5",
     );
   });
 });

@@ -58,6 +58,10 @@
 
 :root {
   --radius: 0.625rem;
+  /* Plaster texture: fine grain + large trowel patches (see .gallery-wall). */
+  --plaster:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='g' x='0' y='0' width='100%25' height='100%25' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.859375' numOctaves='3' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.6 0 0 0 1.3' result='d'/%3E%3CfeColorMatrix in='t' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 2.6 0 0 0 -1.3' result='l'/%3E%3CfeMerge%3E%3CfeMergeNode in='d'/%3E%3CfeMergeNode in='l'/%3E%3C/feMerge%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23g%29'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800' preserveAspectRatio='none'%3E%3Cfilter id='m' x='0' y='0' width='100%25' height='100%25' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.008' numOctaves='4' seed='11' result='t'/%3E%3CfeColorMatrix in='t' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.4 0 0 0 0.7' result='d'/%3E%3CfeColorMatrix in='t' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1.4 0 0 0 -0.7' result='l'/%3E%3CfeMerge%3E%3CfeMergeNode in='d'/%3E%3CfeMergeNode in='l'/%3E%3C/feMerge%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23m%29'/%3E%3C/svg%3E");
   --background: oklch(0.915 0.012 80);
   --foreground: oklch(0.17 0.008 60);
   --card: oklch(1 0 0);
@@ -94,24 +98,27 @@
   --wall-shade: oklch(0.42 0.04 60 / 0.28);
   --wall-cool: oklch(0.85 0.02 240 / 0.25);
   --wall-grain: 0.07;
+  --picture-light: oklch(1 0.03 85 / 0.85);
+  --gold-deep: oklch(0.42 0.08 70);
+  --gold-shine: oklch(0.82 0.12 90);
   --lamp: oklch(1 0.04 85 / 0.45);
   --gold: oklch(0.62 0.11 75);
 }
 
 .dark {
-  --background: oklch(0.205 0.007 60);
-  --foreground: oklch(0.975 0.004 80);
-  --card: oklch(0.235 0.008 60);
-  --card-foreground: oklch(0.975 0.004 80);
-  --popover: oklch(0.225 0.008 60);
+  --background: oklch(0.155 0.003 270);
+  --foreground: oklch(0.97 0.003 85);
+  --card: oklch(0.195 0.004 270);
+  --card-foreground: oklch(0.97 0.003 85);
+  --popover: oklch(0.19 0.004 270);
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.92 0.004 286.32);
   --primary-foreground: oklch(0.21 0.006 285.885);
-  --secondary: oklch(0.28 0.009 60);
-  --secondary-foreground: oklch(0.975 0.004 80);
-  --muted: oklch(0.28 0.009 60);
-  --muted-foreground: oklch(0.72 0.014 75);
-  --accent: oklch(0.28 0.009 60);
+  --secondary: oklch(0.245 0.004 270);
+  --secondary-foreground: oklch(0.97 0.003 85);
+  --muted: oklch(0.245 0.004 270);
+  --muted-foreground: oklch(0.72 0.008 80);
+  --accent: oklch(0.245 0.004 270);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(1 0 0 / 10%);
@@ -130,11 +137,15 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
-  --wall-light: oklch(0.78 0.07 70 / 0.24);
-  --wall-shade: oklch(0.09 0.012 270 / 0.82);
-  --wall-cool: oklch(0.22 0.045 265 / 0.35);
-  --wall-grain: 0.08;
-  --lamp: oklch(0.8 0.08 70 / 0.11);
+  /* Black plaster: a soft, almost neutral light so the wall stays dark. */
+  --wall-light: oklch(0.6 0.025 75 / 0.2);
+  --wall-shade: oklch(0.05 0.004 270 / 0.88);
+  --wall-cool: oklch(0.24 0.03 265 / 0.2);
+  --wall-grain: 0.16;
+  --picture-light: oklch(0.78 0.04 80 / 0.3);
+  --gold-deep: oklch(0.55 0.1 70);
+  --gold-shine: oklch(0.96 0.07 95);
+  --lamp: oklch(0.75 0.025 75 / 0.075);
   --gold: oklch(0.78 0.11 80);
 }
 
@@ -176,35 +187,45 @@
   inset: 0;
 }
 
-/* Plaster: fine grain plus large, uneven trowel patches. */
+/*
+ * Picture light from above, a cool fill from the left and a vignette. Every
+ * gradient fades out before the edge of its box, so no light is ever cut.
+ */
 .gallery-wall::before {
-  opacity: var(--wall-grain);
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.006' numOctaves='4' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E");
-  background-size:
-    220px 220px,
-    900px 900px;
-}
-
-/* Warm picture light from above and a soft vignette towards the corners. */
-.gallery-wall::after {
   background:
     radial-gradient(
-      ellipse 55% 60% at 50% -8%,
+      ellipse 60% 65% at 50% -10%,
       var(--wall-light),
-      transparent 72%
+      color-mix(in oklab, var(--wall-light) 45%, transparent) 40%,
+      color-mix(in oklab, var(--wall-light) 12%, transparent) 65%,
+      transparent 85%
     ),
     radial-gradient(
-      ellipse 115% 95% at 50% 32%,
-      transparent 42%,
-      var(--wall-shade) 100%
-    ), /* Cool fill light from the left, like the 3D gallery. */
-    radial-gradient(
-      ellipse 45% 80% at 0% 55%,
+      ellipse 50% 80% at -5% 55%,
       var(--wall-cool),
-      transparent 70%
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse 120% 100% at 50% 35%,
+      transparent 40%,
+      color-mix(in oklab, var(--wall-shade) 55%, transparent) 75%,
+      var(--wall-shade) 100%
     );
+}
+
+/*
+ * Plaster on top of the light (it also dithers the gradients): fine grain
+ * tiles seamlessly, the large trowel patches cover the screen in one piece.
+ * Both add light and dark specks around a transparent middle, so the wall
+ * keeps its tone.
+ */
+.gallery-wall::after {
+  opacity: var(--wall-grain);
+  background-image: var(--plaster);
+  background-size:
+    256px 256px,
+    100% 100%;
+  background-repeat: repeat, no-repeat;
 }
 
 /* Hand-held lamp that follows the pointer on devices with a mouse. */
@@ -215,8 +236,14 @@
   width: 70vmax;
   height: 70vmax;
   margin: -35vmax 0 0 -35vmax;
-  border-radius: 9999px;
-  background: radial-gradient(circle, var(--lamp), transparent 62%);
+  background: radial-gradient(
+    closest-side,
+    var(--lamp),
+    color-mix(in oklab, var(--lamp) 60%, transparent) 30%,
+    color-mix(in oklab, var(--lamp) 25%, transparent) 60%,
+    color-mix(in oklab, var(--lamp) 6%, transparent) 85%,
+    transparent
+  );
   opacity: 0;
   transition: opacity 0.8s ease;
   will-change: transform;
@@ -282,6 +309,138 @@
   100% {
     left: 100%;
   }
+}
+
+/*
+ * Home ring of paintings (see PaintingCarousel). Sizes derive from the card
+ * width, so the ring looks the same on every screen; the sides fade out
+ * softly instead of being cut.
+ */
+.carousel-stage {
+  --card-w: clamp(130px, 17vw, 280px);
+  --card-h: calc(var(--card-w) * 0.75);
+  /* Room above and below for the card shadows: the fade mask clips there. */
+  height: calc(var(--card-h) * 1.45 + 4.5rem);
+  perspective: calc(var(--card-w) * 6.5);
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 16%,
+    #000 84%,
+    transparent
+  );
+}
+
+@media (min-width: 64rem) and (max-height: 50rem) {
+  .carousel-stage {
+    --card-w: clamp(140px, 15vw, 240px);
+  }
+}
+
+.carousel-view {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+.carousel-track {
+  position: relative;
+  width: var(--card-w);
+  height: var(--card-h);
+  transform-style: preserve-3d;
+}
+
+.carousel-card {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.carousel-card > [data-ring-inner] {
+  backface-visibility: hidden;
+}
+
+.carousel-frame {
+  border-radius: 4px;
+  box-shadow: 0 18px 28px -16px rgb(0 0 0 / 0.75);
+}
+
+/* Gold leaf lettering with a light sheen that GSAP sweeps across. */
+.text-gilded {
+  background-image: linear-gradient(
+    100deg,
+    var(--gold-deep) 0%,
+    var(--gold) 28%,
+    var(--gold-shine) 46%,
+    var(--gold) 58%,
+    var(--gold-deep) 100%
+  );
+  background-size: 250% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Curtain of the page transition (see PageTransition). */
+.page-curtain {
+  background:
+    radial-gradient(
+      closest-side,
+      var(--picture-light),
+      color-mix(in oklab, var(--picture-light) 30%, transparent) 55%,
+      transparent
+    )
+    center / 80% 70% no-repeat,
+    var(--background);
+  /* Gilded edges lead the curtain in and out. */
+  box-shadow:
+    0 -2px 0 var(--gold),
+    0 2px 0 var(--gold),
+    0 -40px 60px -30px color-mix(in oklab, var(--gold) 55%, transparent),
+    0 40px 60px -30px color-mix(in oklab, var(--gold) 55%, transparent);
+  will-change: transform;
+}
+
+.page-curtain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: var(--wall-grain);
+  background-image: var(--plaster);
+  background-size:
+    256px 256px,
+    100% 100%;
+  background-repeat: repeat, no-repeat;
+}
+
+/* About hero: the portrait melts into the wall instead of ending in edges. */
+.about-portrait {
+  /* closest-side: fully transparent before it reaches any edge. */
+  mask-image: radial-gradient(
+    closest-side at 42% 46%,
+    #000 42%,
+    rgb(0 0 0 / 0.6) 66%,
+    rgb(0 0 0 / 0.18) 84%,
+    transparent 100%
+  );
+}
+
+/* Glow of the picture light above a frame; fades out on every side. */
+.picture-light {
+  background: radial-gradient(
+    closest-side,
+    var(--picture-light),
+    color-mix(in oklab, var(--picture-light) 55%, transparent) 35%,
+    color-mix(in oklab, var(--picture-light) 18%, transparent) 65%,
+    color-mix(in oklab, var(--picture-light) 4%, transparent) 88%,
+    transparent
+  );
 }
 
 /* Gilded moulding around the painting on the details page. */
