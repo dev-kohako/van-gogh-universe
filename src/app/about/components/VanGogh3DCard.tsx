@@ -1,18 +1,17 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { Loader, OrbitControls, useGLTF } from "@react-three/drei";
 import { Canvas, useLoader } from "@react-three/fiber";
-import { OrbitControls, useGLTF, Loader } from "@react-three/drei";
+import { memo, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { BackSide, Mesh, RepeatWrapping, TextureLoader } from "three";
-import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { Suspense, useMemo, useState, memo } from "react";
-import VanGoghDetails from "./VanGoghDetails";
-import { RotationMenuItems } from "./RotationMenuItems";
 import { Badge } from "@/components/ui/badge";
+import { RotationMenuItems } from "./RotationMenuItems";
+
+/** Simplified and meshopt-compressed (~1 MB instead of 17 MB). */
+const MODEL_URL = "/models/van-gogh.glb";
 
 const VanGoghModel = memo(function VanGoghModel() {
-  const { scene } = useGLTF("/models/victorian+gentleman+3d+model.glb");
+  const { scene } = useGLTF(MODEL_URL);
 
   const memoizedScene = useMemo(() => {
     const clone = scene.clone();
@@ -35,7 +34,7 @@ const VanGoghModel = memo(function VanGoghModel() {
 const StarrySkySphere = memo(function StarrySkySphere() {
   const texture = useLoader(
     TextureLoader,
-    "/textures/noite-estrelada-texture.jpg"
+    "/textures/noite-estrelada-texture.jpg",
   );
   return (
     <mesh>
@@ -48,7 +47,7 @@ const StarrySkySphere = memo(function StarrySkySphere() {
 const RoundedBase = memo(function RoundedBase() {
   const texture = useLoader(
     TextureLoader,
-    "/textures/brick_villa_floor_diff_1k.jpg"
+    "/textures/brick_villa_floor_diff_1k.jpg",
   );
   texture.wrapS = texture.wrapT = RepeatWrapping;
   texture.repeat.set(1, 1);
@@ -61,142 +60,123 @@ const RoundedBase = memo(function RoundedBase() {
   );
 });
 
+/** Mounts its children once the element comes close to the viewport. */
+function useNearViewport(margin = "300px") {
+  const ref = useRef<HTMLDivElement>(null);
+  const [near, setNear] = useState(false);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element || near) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setNear(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setNear(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: margin },
+    );
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [margin, near]);
+
+  return { ref, near };
+}
+
+/** Van Gogh in 3D under the Starry Night sky, turning on a pedestal. */
 export function VanGogh3DCard() {
   const [autoRotate, setAutoRotate] = useState(true);
   const [velocity, setVelocity] = useState(0.5);
+  // three.js work (and the model download) waits until the card is close.
+  const { ref, near } = useNearViewport();
 
   return (
-    <motion.section
-      className="w-full max-w-7xl"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      aria-label="Seção 3D de Van Gogh"
+    <section
+      ref={ref}
+      className="relative h-[60vh] min-h-[420px] w-full overflow-hidden rounded-2xl border border-border bg-black shadow-[0_30px_60px_-30px_rgb(0_0_0/0.8)] lg:h-full lg:min-h-[520px]"
+      aria-label="Visualização tridimensional interativa de Van Gogh"
     >
-      <Card
-        className="bg-background/60 backdrop-blur-md !py-0 border-border overflow-hidden shadow-xl rounded-2xl"
-        role="region"
-        aria-labelledby="vangogh-card-title"
-      >
-        <CardContent className="!p-0 flex flex-col lg:flex-row">
-          <div
-            className="w-full lg:w-1/2 min-h-[450px] h-[60vh] lg:h-auto relative border-r border-border"
-            aria-label="Visualização tridimensional interativa"
+      {near && (
+        <>
+          <Loader />
+          <Canvas
+            camera={{ position: [0, 0, 5], fov: 50 }}
+            shadows
+            dpr={[1, 1.75]}
+            aria-label="Cena 3D de Van Gogh"
           >
-            <Loader />
+            <ambientLight intensity={0.4} />
+            <directionalLight
+              position={[5, 8, 5]}
+              intensity={2.2}
+              castShadow
+              shadow-mapSize-width={1024}
+              shadow-mapSize-height={1024}
+            />
+            <pointLight
+              position={[-4, 3, -3]}
+              intensity={0.7}
+              color="#ffd27f"
+            />
+            <pointLight position={[4, 2, 3]} intensity={0.7} color="#aaccff" />
 
-            <div className="absolute top-2 left-2 z-50 flex flex-wrap gap-2">
-              <Badge
-                variant="outline"
-                className="pt-1 text-zinc-50 border-zinc-300/80"
-                aria-live="polite"
-                aria-label={`Rotação automática ${
-                  autoRotate ? "ativada" : "desativada"
-                }`}
+            <Suspense fallback={null}>
+              <VanGoghModel />
+              <StarrySkySphere />
+              <RoundedBase />
+
+              <mesh
+                rotation={[-Math.PI / 2, 0, 0]}
+                position={[0, -1.8, 0]}
+                receiveShadow
               >
-                Rotação automática: {autoRotate ? "Ativada" : "Desativada"}
-              </Badge>
-              <Badge
-                variant="outline"
-                className="pt-1 text-zinc-50 border-zinc-300/80"
-                aria-live="polite"
-                aria-label={`Velocidade atual de rotação: ${velocity.toFixed(
-                  1
-                )}`}
-              >
-                Velocidade: {velocity.toFixed(1)}
-              </Badge>
-            </div>
+                <planeGeometry args={[1, 1]} />
+                <shadowMaterial opacity={0.1} />
+              </mesh>
+            </Suspense>
 
-            <Canvas
-              camera={{ position: [0, 0, 5], fov: 50 }}
-              shadows
-              aria-label="Cena 3D de Van Gogh"
-            >
-              <ambientLight intensity={0.4} />
-              <directionalLight
-                position={[5, 8, 5]}
-                intensity={2.2}
-                castShadow
-                shadow-mapSize-width={2048}
-                shadow-mapSize-height={2048}
-              />
-              <pointLight
-                position={[-4, 3, -3]}
-                intensity={0.7}
-                color="#ffd27f"
-              />
-              <pointLight
-                position={[4, 2, 3]}
-                intensity={0.7}
-                color="#aaccff"
-              />
+            <OrbitControls
+              enableZoom={false}
+              enablePan={false}
+              minPolarAngle={Math.PI / 2}
+              maxPolarAngle={Math.PI / 2}
+              autoRotate={autoRotate}
+              autoRotateSpeed={velocity}
+            />
+          </Canvas>
+        </>
+      )}
 
-              <Suspense fallback={null}>
-                <VanGoghModel />
-                <StarrySkySphere />
-                <RoundedBase />
+      <div className="absolute left-3 top-3 z-10 flex flex-wrap gap-2">
+        <Badge
+          variant="outline"
+          className="border-zinc-300/60 bg-black/30 pt-1 text-zinc-50 backdrop-blur-sm"
+          aria-live="polite"
+        >
+          Rotação automática: {autoRotate ? "Ativada" : "Desativada"}
+        </Badge>
+        <Badge
+          variant="outline"
+          className="border-zinc-300/60 bg-black/30 pt-1 text-zinc-50 backdrop-blur-sm"
+          aria-live="polite"
+        >
+          Velocidade: {velocity.toFixed(1)}
+        </Badge>
+      </div>
 
-                <mesh
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  position={[0, -1.8, 0]}
-                  receiveShadow
-                >
-                  <planeGeometry args={[1, 1]} />
-                  <shadowMaterial opacity={0.1} />
-                </mesh>
-              </Suspense>
-
-              <OrbitControls
-                enableZoom={false}
-                enablePan={false}
-                minPolarAngle={Math.PI / 2}
-                maxPolarAngle={Math.PI / 2}
-                autoRotate={autoRotate}
-                autoRotateSpeed={velocity}
-              />
-            </Canvas>
-
-            <div className="absolute bottom-4 right-4">
-              <RotationMenuItems
-                autoRotate={autoRotate}
-                setAutoRotate={setAutoRotate}
-                velocity={velocity}
-                setVelocity={setVelocity}
-              />
-            </div>
-          </div>
-
-          <Separator
-            orientation="vertical"
-            className="hidden lg:block h-auto"
-          />
-          <Separator className="block lg:hidden" />
-
-          <article
-            className="w-full lg:w-1/2 p-6 text-muted-foreground space-y-3 text-base leading-relaxed"
-            aria-labelledby="vangogh-card-title"
-          >
-            <VanGoghDetails />
-
-            <Separator className="my-4" />
-
-            <p className="text-justify">
-              Van Gogh foi um dos artistas mais influentes da história da arte
-              ocidental. Sua paleta vibrante e pinceladas intensas expressavam
-              emoções profundas, tornando visível a beleza e o sofrimento
-              humanos.
-            </p>
-
-            <blockquote
-              className="italic text-center pt-4 text-foreground"
-              aria-label="Citação de Van Gogh"
-            >
-              “Eu sonho minha pintura e depois pinto meu sonho.”
-            </blockquote>
-          </article>
-        </CardContent>
-      </Card>
-    </motion.section>
+      <div className="absolute bottom-4 right-4 z-10">
+        <RotationMenuItems
+          autoRotate={autoRotate}
+          setAutoRotate={setAutoRotate}
+          velocity={velocity}
+          setVelocity={setVelocity}
+        />
+      </div>
+    </section>
   );
 }

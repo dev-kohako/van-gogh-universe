@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import VanGoghDetails from "../VanGoghDetails";
 import React from "react";
 
-jest.mock("../../../../public/data/vanGoghInfos", () => ({
+jest.mock("../../../../../public/data/vanGoghInfos", () => ({
   vanGoghInfo: {
     birthDate: "30 de março de 1853",
     deathDate: "29 de julho de 1890",
@@ -38,7 +38,7 @@ describe("VanGoghDetails", () => {
   });
 
   it("formats labels correctly using formatLabel()", () => {
-    const { formatLabel } = jest.requireActual("../components/VanGoghDetails");
+    const { formatLabel } = jest.requireActual("../VanGoghDetails");
 
     expect(formatLabel("birthDate")).toBe("Birth Date");
     expect(formatLabel("death_date")).toBe("Death date");
