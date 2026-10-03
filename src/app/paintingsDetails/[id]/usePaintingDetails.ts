@@ -1,5 +1,5 @@
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { usePageTransition } from "@/components/PageTransition";
 import type { PaintingLink } from "@/types/paintingDetails.type";
 
 function isTyping(target: EventTarget | null) {
@@ -18,7 +18,7 @@ export function usePaintingDetails(
   prevPainting?: PaintingLink,
   nextPainting?: PaintingLink,
 ) {
-  const router = useRouter();
+  const { navigate } = usePageTransition();
   const [show3D, setShow3D] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
@@ -38,11 +38,13 @@ export function usePaintingDetails(
           : event.key === "ArrowRight"
             ? nextPainting
             : undefined;
-      if (target) router.push(`/paintingsDetails/${target.id}`);
+      if (target) {
+        navigate(`/paintingsDetails/${target.id}`, target.namePainting);
+      }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [router, prevPainting, nextPainting, show3D, isFullscreen]);
+  }, [navigate, prevPainting, nextPainting, show3D, isFullscreen]);
 
   return {
     show3D,
