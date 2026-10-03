@@ -12,10 +12,6 @@ jest.mock("@/components/ui/sparkles", () => ({
   ),
 }));
 
-jest.mock("@/components/ui/carousel-skeleton", () => ({
-  CarouselSkeleton: () => <div data-testid="carousel-skeleton" />,
-}));
-
 jest.mock("@/components/PaintingCarousel", () => ({
   PaintingCarousel: ({ paintings }: any) => (
     <div data-testid="painting-carousel">{paintings?.length} obras</div>
@@ -24,8 +20,20 @@ jest.mock("@/components/PaintingCarousel", () => ({
 
 describe("HomePageClient", () => {
   const mockPaintings = [
-    { id: 1, src: "/test-img-1.jpg", alt: "Mock painting 1" },
-    { id: 2, src: "/test-img-2.jpg", alt: "Mock painting 2" },
+    {
+      id: "1",
+      src: "/test-img-1.jpg",
+      alt: "Mock painting 1",
+      name: "Obra 1",
+      date: "1889",
+    },
+    {
+      id: "2",
+      src: "/test-img-2.jpg",
+      alt: "Mock painting 2",
+      name: "Obra 2",
+      date: "1888",
+    },
   ];
 
   it("renders title, description, and CTA correctly", async () => {
@@ -55,7 +63,7 @@ describe("HomePageClient", () => {
     );
   });
 
-  it("renders PaintingCarousel inside Suspense fallback", async () => {
+  it("renders the featured paintings carousel", async () => {
     (useTheme as jest.Mock).mockReturnValue({ resolvedTheme: "dark" });
     render(<HomePageClient paintings={mockPaintings} />);
     expect(screen.getByTestId("painting-carousel")).toBeInTheDocument();
